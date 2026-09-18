@@ -1,0 +1,33 @@
+export { Autocomplete } from '../selection';
+export type {
+  AutocompleteRootProps,
+  Filter as AutocompleteFilter,
+  FilterOptions as AutocompleteFilterOptions,
+} from '../selection';
+export type {
+  AutocompleteArrowProps,
+  AutocompleteArrowState,
+  AutocompleteBackdropProps,
+  AutocompleteBackdropState,
+  AutocompleteClearProps,
+  AutocompleteClearState,
+  AutocompleteIconProps,
+  AutocompleteIconState,
+  AutocompleteInputGroupProps,
+  AutocompleteInputGroupState,
+  AutocompleteInputProps,
+  AutocompleteInputState,
+  AutocompleteItemProps,
+  AutocompleteItemState,
+  AutocompleteListProps,
+  AutocompleteListState,
+  AutocompleteRootActions,
+  AutocompleteRootChangeEventDetails,
+  AutocompleteRootChangeEventReason,
+  AutocompleteRootHighlightEventDetails,
+  AutocompleteRootHighlightEventReason,
+  AutocompletePopupProps,
+  AutocompletePopupState,
+  AutocompletePositionerProps,
+  AutocompletePositionerState,
+} from '../selection';
