@@ -1,0 +1,26 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    "paths": {
+      "@solid-cn/base-ui": [
+        "base-ui/packages/solid/dist/index.d.ts"
+      ],
+      "@solid-cn/base-ui/*": [
+        "base-ui/packages/solid/dist/*/index.d.ts"
+      ]
+    },
+    "baseUrl": "../../.."
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "dist"
+  ]
+}

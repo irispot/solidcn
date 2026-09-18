@@ -1,0 +1,14 @@
+@import 'tw-animate-css';
+@import './styles/tailwind.css';
+@import './styles/theme.css';
+@import './styles/style-nova.css';
+@source './';
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
