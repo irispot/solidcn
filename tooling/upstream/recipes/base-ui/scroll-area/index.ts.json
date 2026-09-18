@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/scroll-area/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/scroll-area/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": ["overrides/scroll-area-public-types.json"],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../structure",
+    "nativeTypes": "omit",
+    "expectedTypeSurface": [
+      {
+        "module": "./root/ScrollAreaRoot",
+        "kind": "star"
+      },
+      {
+        "module": "./viewport/ScrollAreaViewport",
+        "kind": "star"
+      },
+      {
+        "module": "./scrollbar/ScrollAreaScrollbar",
+        "kind": "star"
+      },
+      {
+        "module": "./content/ScrollAreaContent",
+        "kind": "star"
+      },
+      {
+        "module": "./thumb/ScrollAreaThumb",
+        "kind": "star"
+      },
+      {
+        "module": "./corner/ScrollAreaCorner",
+        "kind": "star"
+      }
+    ]
+  },
+  "scope": "Public export declarations only. Names come from upstream declarations and route to an explicit native group. The current native type policy is retained, not certified as equivalent; changes to the upstream type export surface fail for review. This does not generate component behavior."
+}

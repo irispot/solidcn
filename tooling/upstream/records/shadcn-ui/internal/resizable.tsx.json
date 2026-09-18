@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/internal/resizable.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "442083d05e2a452a95007354f3ba97cc7da0c5a854c7e21cecb23e4dcf600807",
+  "classification": "manual-native-engine-replacement",
+  "mappingScope": "Original registry or engine API reference; this is a separate native implementation.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": []
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/resizable.tsx",
+      "blob": "76d7a0e2dc9e2ea70b7d01bc286f7cde64fbe6c8",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Original registry or engine API reference; this is a separate native implementation.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator",
+    "missingExternalSource": "The react-resizable-panels engine source is not pinned as source blobs in these clones."
+  }
+}

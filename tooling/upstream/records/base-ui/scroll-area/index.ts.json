@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/scroll-area/index.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "3fcbffb18bcae4c108551e1acb605787e45cd827c21361d610027802f43d0521",
+  "classification": "generated-public-entry-with-manual-maintenance",
+  "mappingScope": "Public export reference only.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. The family-local type module gives the Scroll Area public source audit zero missing names; render states omit fields not supplied by native Solid. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/scroll-area/index.ts",
+      "blob": "4ea5801d9e7e546b00093e05d02064aad4aea3c6",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/base-ui/scroll-area/index.ts.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/base-ui/scroll-area/index.ts.json",
+          "sha256": "3b97ae7a3a440fd7c9bcf2ac653246b692560cacdfd12e65ca64d237eea63528"
+        },
+        {
+          "path": "generators/base-entry.mjs",
+          "sha256": "e8e74928397ba79b917c73974fe3b62edd3feba7163fe249c0ad0898975f52dd"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        },
+        {
+          "path": "overrides/scroll-area-public-types.json",
+          "sha256": "107f4f41959541617b5b288a641018beb92b41c2047f7ddf0a72c8dc9a52b77e"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "fcee455cc184127ab673ca86cf9e3aaa0e49e9dd21e6acb1a3b92d19a1bcc5e4",
+    "finalSha256": "3fcbffb18bcae4c108551e1acb605787e45cd827c21361d610027802f43d0521",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/scroll-area-public-types.json",
+        "purpose": "Export family-local Scroll Area types that describe native Solid render state and props.",
+        "sha256": "107f4f41959541617b5b288a641018beb92b41c2047f7ddf0a72c8dc9a52b77e"
+      }
+    ]
+  },
+  "manualException": null
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Export the native Accordion public component and state types from its public module.",
+  "replacements": [
+    {
+      "find": "export { Accordion } from '../structure';\n",
+      "replace": "import type { ChangeEventDetails } from '../core';\n\nexport { Accordion } from '../structure';\nexport type AccordionRoot = typeof import('../structure').Accordion.Root;\nexport type AccordionItem = typeof import('../structure').Accordion.Item;\nexport type AccordionHeader = typeof import('../structure').Accordion.Header;\nexport type AccordionTrigger = typeof import('../structure').Accordion.Trigger;\nexport type AccordionPanel = typeof import('../structure').Accordion.Panel;\nexport type AccordionItemChangeEventReason = 'trigger-press' | 'none';\nexport type AccordionItemChangeEventDetails = ChangeEventDetails & {\n  reason: AccordionItemChangeEventReason;\n};\nexport type AccordionHeaderState = import('../structure').AccordionItemState;\nexport type {\n  AccordionHeaderProps,\n  AccordionItemProps,\n  AccordionItemState,\n  AccordionPanelProps,\n  AccordionPanelState,\n  AccordionRootChangeEventDetails,\n  AccordionRootChangeEventReason,\n  AccordionRootProps,\n  AccordionRootState,\n  AccordionTriggerProps,\n  AccordionTriggerState,\n  AccordionValue,\n} from '../structure';\n",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

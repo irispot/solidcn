@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/number-field/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/number-field/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": [],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../controls",
+    "nativeTypes": "group-star",
+    "expectedTypeSurface": [
+      {
+        "module": "./root/NumberFieldRoot",
+        "kind": "star"
+      },
+      {
+        "module": "./group/NumberFieldGroup",
+        "kind": "star"
+      },
+      {
+        "module": "./increment/NumberFieldIncrement",
+        "kind": "star"
+      },
+      {
+        "module": "./decrement/NumberFieldDecrement",
+        "kind": "star"
+      },
+      {
+        "module": "./input/NumberFieldInput",
+        "kind": "star"
+      },
+      {
+        "module": "./scrub-area/NumberFieldScrubArea",
+        "kind": "star"
+      },
+      {
+        "module": "./scrub-area-cursor/NumberFieldScrubAreaCursor",
+        "kind": "star"
+      }
+    ]
+  },
+  "scope": "Public export declarations only. Names come from upstream declarations and route to an explicit native group. The current native type policy is retained, not certified as equivalent; changes to the upstream type export surface fail for review. This does not generate component behavior."
+}

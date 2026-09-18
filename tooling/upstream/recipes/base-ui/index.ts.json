@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/index.ts",
+  "generator": "generators/exact-source-copy.mjs",
+  "generatorInputs": ["packages/react/src/index.ts"],
+  "supportFiles": [],
+  "overrides": ["overrides/base-root-family-types.json"],
+  "dependencies": [],
+  "scope": "Replay the pinned root family list as type-only native exports. Keep grouped native runtime exports and explicit conflict resolutions in one exact-context override. A changed upstream family count or first anchor requires review. This does not generate component behavior."
+}

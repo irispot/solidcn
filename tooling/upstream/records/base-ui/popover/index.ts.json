@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/popover/index.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "39913dd1316a8462000d8cc2f8311fbcfed5cbcc989221ed2b9fa827f4aa7f2d",
+  "classification": "generated-public-entry-with-manual-maintenance",
+  "mappingScope": "Public export reference only.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance.",
+      "An exact-context override adds the family-local native Solid type export. The static public source audit now finds 35 of 36 pinned Popover type names; PopoverViewportState remains absent because native Viewport does not provide React's transition state. This is name coverage, not type-field or runtime acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/popover/index.ts",
+      "blob": "fc762c3b9b938f1e6e319aac7c0c3a3f78bd1555",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/base-ui/popover/index.ts.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/base-ui/popover/index.ts.json",
+          "sha256": "4991f45c5fbab406040d5b7bd22fa1598db7c15be0b992f836be33c7684b154c"
+        },
+        {
+          "path": "generators/base-entry.mjs",
+          "sha256": "e8e74928397ba79b917c73974fe3b62edd3feba7163fe249c0ad0898975f52dd"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        },
+        {
+          "path": "overrides/popover-public-types.json",
+          "sha256": "7390fd9e7426ad20abd489d26120130488809c09db907ccd9b40eb23ba8945b4"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "385850afacb1230fa1c11fbfec6e53847857e9a23c39004713092d23b0b3f683",
+    "finalSha256": "39913dd1316a8462000d8cc2f8311fbcfed5cbcc989221ed2b9fa827f4aa7f2d",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/popover-public-types.json",
+        "purpose": "Export native Solid Popover types from the family-local type module.",
+        "sha256": "7390fd9e7426ad20abd489d26120130488809c09db907ccd9b40eb23ba8945b4"
+      }
+    ]
+  },
+  "manualException": null
+}

@@ -1,0 +1,8 @@
+{
+  "name": "solid-cn-visual-solid",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node ../../../../node_modules/vite/bin/vite.js --config vite.config.ts"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/tabs/types.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "ceab24ac714ffe83e88b411957b0f87281bb0867db2f5732ac152e383296ee40",
+  "classification": "manual-native-public-types",
+  "mappingScope": "Pinned Tabs public type declarations translated to Solid callback and element props.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "The 24 pinned Tabs public type names now exist in the native Tabs module and root type barrel. Typecheck passes. Exact public prop equivalence still requires separate type-spec tests."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/tabs/indicator/TabsIndicator.tsx",
+      "blob": "098fe092b742806574f3c5f64e96a865ba4ae420",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/list/TabsList.tsx",
+      "blob": "eaba971c358ae02f1b94f77cce8ae22946356757",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/panel/TabsPanel.tsx",
+      "blob": "f746e227d6567dace11c2a0dafb4d2e9ce0dc3a5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/root/TabsRoot.tsx",
+      "blob": "2a4641e52db92b617ecf03203f16a78d81fb37a1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/tab/TabsTab.tsx",
+      "blob": "1b18ab9dc4fb7e06f322ea803749fffa19b82097",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Pinned Tabs public type declarations translated to Solid callback and element props.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

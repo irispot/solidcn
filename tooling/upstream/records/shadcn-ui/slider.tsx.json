@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/slider.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "409da64e555a73b1f079db6ae97f7b78929aedef3e62d3c9d3f64adfa28d5c5f",
+  "classification": "generated-wrapper-with-manual-fixes",
+  "mappingScope": "Registry source selected with Base first, legacy only if the Base file does not exist.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": []
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/slider.tsx",
+      "blob": "2e55a9a0fc07b66fc86ce1df33c86c2501939088",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Registry source selected with Base first, legacy only if the Base file does not exist.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/direction-provider/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/direction-provider/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": [],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../core",
+    "nativeTypes": [
+      { "public": "DirectionProviderProps" },
+      { "public": "TextDirection" }
+    ],
+    "expectedTypeSurface": [
+      {
+        "module": "./index.parts",
+        "kind": "named",
+        "local": "TextDirection",
+        "name": "TextDirection"
+      },
+      {
+        "module": "./DirectionProvider",
+        "kind": "named",
+        "local": "DirectionProviderProps",
+        "name": "DirectionProviderProps"
+      }
+    ]
+  },
+  "scope": "Public export declarations only. Names come from upstream declarations and route to an explicit native group. The current native type policy is retained, not certified as equivalent; changes to the upstream type export surface fail for review. This does not generate component behavior."
+}

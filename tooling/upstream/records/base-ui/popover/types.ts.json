@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/popover/types.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "19100989542bedcf8e0bebbb0cb89fc80a79941618a3384da8ec0a96b089cb94",
+  "classification": "manual-native-public-types",
+  "mappingScope": "Pinned family type declarations translated to native Solid types; name coverage is not type or behavior acceptance.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Reviewed the pinned popover family type declarations and the native Solid type module. The public source-name audit and workspace typecheck cover the declared names. This manual record does not prove type-field, behavior, or pixel parity."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/popover/arrow/PopoverArrow.tsx",
+      "blob": "32a3e3adda72037baabb7eeda890ec371277373c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/arrow/PopoverArrowDataAttributes.ts",
+      "blob": "0e8ea720885545f5d7dc203f317492ebab8191a2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/backdrop/PopoverBackdrop.tsx",
+      "blob": "5fe2b7184859787b2e6b16909bc2c751874d713e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/backdrop/PopoverBackdropDataAttributes.ts",
+      "blob": "b7700c3c83ed87e98750564a06eaf56bb5e21e1e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/close/PopoverClose.tsx",
+      "blob": "8f1dc1e076b2c863fd9c5e2463b714ae7b9cf94e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/description/PopoverDescription.tsx",
+      "blob": "5883025569179d6960c88066e05a9f98e5bc814d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/index.parts.ts",
+      "blob": "22f1b3d43c6a71a31811f1dca25a9680e1428eb8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/index.ts",
+      "blob": "fc762c3b9b938f1e6e319aac7c0c3a3f78bd1555",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/popup/PopoverPopup.tsx",
+      "blob": "c89c3dc64a5cd224828ff62182c947b38d175540",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/popup/PopoverPopupCssVars.ts",
+      "blob": "a6625ad84f74deaf1e81f0afab0cd90a76dc6f3f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/popup/PopoverPopupDataAttributes.ts",
+      "blob": "ff812ae41182aad9378bb50383f316fd96cf57f4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/portal/PopoverPortal.tsx",
+      "blob": "91d1b193ced4d32170411272e3a937f577c8620f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/portal/PopoverPortalContext.ts",
+      "blob": "ab5e3b6829747478ebd0e52e767bd9cbb8d9a79a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/positioner/PopoverPositioner.tsx",
+      "blob": "e2fa272effc2a74e118fb3c8a0d0c5e55bc76acf",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/positioner/PopoverPositionerContext.ts",
+      "blob": "639b19d37256fc0888018120ea2d30f397902413",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/positioner/PopoverPositionerCssVars.ts",
+      "blob": "e1cbb5b08d92ba0a1a34036fe0b28975cf99f430",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/positioner/PopoverPositionerDataAttributes.ts",
+      "blob": "b693a09b0a7f950912ad2cf42ed6e723245897c6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/root/PopoverRoot.tsx",
+      "blob": "9e258bf8d8a2e4cc96c14399ca891cb4deab6221",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/root/PopoverRootContext.ts",
+      "blob": "4af44de829bcf8071bf6545c3448a9b6601381da",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/store/PopoverHandle.ts",
+      "blob": "b7166adb51e60fdac352dcc91f186c421c715f2d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/store/PopoverStore.ts",
+      "blob": "346c126251a2912d74c04bbdf42ad2670773cdb3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/title/PopoverTitle.tsx",
+      "blob": "ebfcf47c2fed325f53c3405d04f1365364a7eeea",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/trigger/PopoverTrigger.tsx",
+      "blob": "f7dbc831073fb42557ebce6f6a802b6a84e35d22",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/trigger/PopoverTriggerDataAttributes.ts",
+      "blob": "c960bf8567d37bdf269467468cd20de22bf6f232",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/utils/constants.ts",
+      "blob": "8a7158161999b5668f73ea50ace21f5ef66530bf",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/viewport/PopoverViewport.tsx",
+      "blob": "2f86f2dd480caed7abff24e53fd8865d837d635f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/viewport/PopoverViewportCssVars.ts",
+      "blob": "29e12362ef68357f14d9f544dc4565ff16867ef5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/viewport/PopoverViewportDataAttributes.ts",
+      "blob": "45a835347b66161106837168c0d4f6bb8b0c19bb",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Pinned family type declarations translated to native Solid types; name coverage is not type or behavior acceptance.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

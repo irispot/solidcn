@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "purpose": "KbdGroup renders a kbd element. Keep the native prop type aligned with that element instead of the upstream div annotation.",
+  "replacements": [
+    {
+      "find": "function KbdGroup(__props1: ComponentProps<'div'>)",
+      "replace": "function KbdGroup(__props1: ComponentProps<'kbd'>)",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

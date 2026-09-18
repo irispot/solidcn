@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/popover/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/popover/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": ["overrides/popover-public-types.json"],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../overlays",
+    "nativeTypes": "omit",
+    "expectedTypeSurface": [
+      {
+        "module": "./root/PopoverRoot",
+        "kind": "star"
+      },
+      {
+        "module": "./trigger/PopoverTrigger",
+        "kind": "star"
+      },
+      {
+        "module": "./portal/PopoverPortal",
+        "kind": "star"
+      },
+      {
+        "module": "./positioner/PopoverPositioner",
+        "kind": "star"
+      },
+      {
+        "module": "./popup/PopoverPopup",
+        "kind": "star"
+      },
+      {
+        "module": "./arrow/PopoverArrow",
+        "kind": "star"
+      },
+      {
+        "module": "./backdrop/PopoverBackdrop",
+        "kind": "star"
+      },
+      {
+        "module": "./title/PopoverTitle",
+        "kind": "star"
+      },
+      {
+        "module": "./description/PopoverDescription",
+        "kind": "star"
+      },
+      {
+        "module": "./close/PopoverClose",
+        "kind": "star"
+      },
+      {
+        "module": "./viewport/PopoverViewport",
+        "kind": "star"
+      }
+    ]
+  },
+  "scope": "Public export declarations plus an exact-context native type export. Names come from upstream declarations and route to an explicit native group. Changes to the upstream type export surface fail for review. This does not generate component behavior."
+}

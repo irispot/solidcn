@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Component gallery · Solid CN</title>
+    <link rel="stylesheet" href="./gallery.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Solid CN project preview">
+        <span class="brand-mark" aria-hidden="true">S<span>∕</span></span>
+        <span>SOLID CN</span>
+      </a>
+      <span class="header-divider" aria-hidden="true"></span>
+      <span class="header-label">Component gallery</span>
+      <span class="local-badge">Local workspace</span>
+    </header>
+    <div id="gallery" class="gallery-shell">
+      <aside class="sidebar" aria-label="Example catalog">
+        <div class="sidebar-tools">
+          <p class="eyebrow">THE CATALOG</p>
+          <h1>Find an example.</h1>
+          <p class="sidebar-copy">Original source. React and Solid views.</p>
+          <div class="catalog-counts" id="catalog-counts" aria-label="Catalog totals"></div>
+          <label class="search-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.5" cy="10.5" r="6.5"></circle>
+              <path d="m16 16 4 4"></path>
+            </svg>
+            <input
+              id="search"
+              type="search"
+              placeholder="Search components or examples"
+              aria-label="Search components or examples"
+              autocomplete="off"
+            />
+            <kbd aria-hidden="true">/</kbd>
+          </label>
+          <div class="filter-row">
+            <label for="status-filter">Show</label>
+            <select id="status-filter">
+              <option value="all">All examples</option>
+              <option value="runnable">Conversion ready</option>
+              <option value="unconnected">Needs conversion</option>
+              <option value="unlisted">Not linked in docs</option>
+              <option value="docs">Documentation</option>
+              <option value="fixtures">Checks</option>
+              <option value="local">Local files</option>
+            </select>
+            <span id="result-count" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+        <nav id="example-list" class="example-list" aria-label="Examples"></nav>
+        <div class="sidebar-footer">
+          <span class="status-dot ready"></span> Conversion ready
+          <span class="status-dot pending"></span> Needs conversion
+        </div>
+      </aside>
+      <main class="workspace" id="main-content">
+        <section class="example-header" aria-labelledby="example-title">
+          <div class="example-heading">
+            <p id="example-category" class="eyebrow"></p>
+            <h2 id="example-title">Load the catalog</h2>
+            <p id="example-description" class="description"></p>
+          </div>
+          <div id="source-links" class="source-links"></div>
+        </section>
+        <div id="example-status" class="example-status"></div>
+        <pre id="conversion-error" class="conversion-error" hidden></pre>
+        <div class="pixel-status" id="pixel-status" role="status">
+          Pixel check: no current result.
+        </div>
+        <section id="connected-view" hidden aria-label="Live example">
+          <div class="preview-toolbar">
+            <div class="view-tabs" role="tablist" aria-label="Preview view">
+              <button
+                id="tab-solid"
+                type="button"
+                role="tab"
+                aria-controls="preview-panels"
+                data-view="solid"
+              >
+                Solid <span>2 RC</span>
+              </button>
+              <button
+                id="tab-react"
+                type="button"
+                role="tab"
+                aria-controls="preview-panels"
+                data-view="react"
+              >
+                React <span>Original</span>
+              </button>
+              <button
+                id="tab-both"
+                type="button"
+                role="tab"
+                aria-controls="preview-panels"
+                data-view="both"
+              >
+                Side by side
+              </button>
+            </div>
+            <div class="case-controls">
+              <label for="case-select">Case</label>
+              <select id="case-select"></select>
+              <button
+                id="reload"
+                class="icon-button"
+                type="button"
+                aria-label="Reload both previews"
+                title="Reload both previews"
+              >
+                ↻
+              </button>
+            </div>
+          </div>
+          <div id="interaction-note" class="interaction-note"></div>
+          <div id="preview-panels" class="preview-panels" role="tabpanel" tabindex="0">
+            <section id="solid-panel" class="preview-panel" aria-label="Native Solid preview">
+              <header class="frame-header">
+                <span><i class="runtime-dot solid"></i>Native Solid</span
+                ><a id="solid-open" target="_blank" rel="noopener noreferrer">Open preview ↗</a>
+              </header>
+              <div class="frame-scroll">
+                <iframe id="solid-frame" title="Native Solid example" loading="eager"></iframe>
+              </div>
+            </section>
+            <section id="react-panel" class="preview-panel" aria-label="Original React preview">
+              <header class="frame-header">
+                <span><i class="runtime-dot react"></i>Original React</span
+                ><a id="react-open" target="_blank" rel="noopener noreferrer">Open preview ↗</a>
+              </header>
+              <div class="frame-scroll">
+                <iframe id="react-frame" title="Original React example" loading="eager"></iframe>
+              </div>
+            </section>
+          </div>
+          <p class="preview-footnote">
+            These are live examples, not screenshots. The views are independent. A working preview
+            does not prove complete behavior or pixel parity.
+          </p>
+          <details id="case-details" class="case-details">
+            <summary>Case details and manual steps</summary>
+            <div id="case-information"></div>
+          </details>
+        </section>
+        <footer class="workspace-footer">
+          <span>One source example. Two separate runtimes.</span><span>Base UI + shadcn/ui</span>
+        </footer>
+      </main>
+    </div>
+    <noscript><p class="noscript">Enable JavaScript to open the component gallery.</p></noscript>
+    <script type="module" src="./gallery.ts"></script>
+  </body>
+</html>

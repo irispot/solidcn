@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/internal/message-scroller/geometry.ts",
+  "generator": "generators/exact-source-copy.mjs",
+  "generatorInputs": ["packages/react/src/message-scroller/geometry.ts"],
+  "supportFiles": [],
+  "overrides": [],
+  "dependencies": [],
+  "scope": "Copy the framework-neutral geometry functions exactly; the adjacent Solid-owned types module supplies their imported constants and types."
+}

@@ -1,0 +1,25 @@
+@import 'tailwindcss' source(none);
+@import 'tw-animate-css';
+@import '../../../../shadcn-ui/packages/shadcn/src/tailwind.css';
+@import '../../../../shadcn-ui/apps/v4/registry/styles/style-nova.css';
+@import '../shared.css';
+@source '../../../../shadcn-ui/apps/v4/registry/bases/base/ui';
+@source '../../fixtures.mjs';
+@source '../../../../shadcn-ui/apps/v4/examples/base';
+@source '../../examples';
+@source '../../docs/adapters';
+@source '../../../../shadcn-ui/apps/v4/registry/new-york-v4/ui/card.tsx';
+@source '../../../../shadcn-ui/apps/v4/registry/new-york-v4/ui/chart.tsx';
+@source '../../../../shadcn-ui/apps/v4/registry/new-york-v4/ui/form.tsx';
+@source '../../../../shadcn-ui/apps/v4/registry/bases/radix/ui';
+@source './node_modules/streamdown/dist';
+
+/* Original app/globals.css base declarations also supplied by native styles.css. */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

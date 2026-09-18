@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/slider/utils/roundValueToStep.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "8948a34ffbb38cc64de99599ac1a9df80737120b3169abebed73897d3a3ab18f",
+  "classification": "replayed-framework-neutral-slider-helper",
+  "mappingScope": "Pinned helper source with only local import and Solid-owned type edits where required.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/slider/utils/roundValueToStep.ts",
+      "blob": "c9d7db5d423fb586f25b37a6eede5c3241fc554d",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/base-ui/slider/utils/roundValueToStep.ts.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/base-ui/slider/utils/roundValueToStep.ts.json",
+          "sha256": "ab40a6668289569f6dbdfee9e606d032b9ca0f67a7e5bc946fb264b35ceb33dd"
+        },
+        {
+          "path": "generators/exact-source-copy.mjs",
+          "sha256": "71a6f8290e24a0a8da0e021a58fa9fdea27737bed42cb3b3a6c02fa3b3ec938c"
+        }
+      ],
+      "dependencies": {},
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "8948a34ffbb38cc64de99599ac1a9df80737120b3169abebed73897d3a3ab18f",
+    "finalSha256": "8948a34ffbb38cc64de99599ac1a9df80737120b3169abebed73897d3a3ab18f",
+    "equalsNative": true,
+    "overrides": []
+  },
+  "manualException": null
+}

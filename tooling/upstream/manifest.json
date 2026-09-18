@@ -1,0 +1,160 @@
+{
+  "format": 1,
+  "baselineFile": "../parity/upstreams.json",
+  "policy": "Read-only impact report. A local upstream candidate is never fetched, checked out, merged, or accepted as a new baseline.",
+  "repositories": {
+    "base-ui": {
+      "portRoot": "packages/solid/src",
+      "maintenance": {
+        "mode": "hand-maintained-grouped-native-port",
+        "upstreamRebaseUpdatesNativeBehavior": false,
+        "nativeImplementationGenerator": null,
+        "entryPointGenerator": "tooling/generate-entries.mjs",
+        "entryPointGeneratorScope": "Public entry files and license only; it does not migrate component behavior.",
+        "provenanceLevel": "Per-module records contain exact pinned source blobs and observed native hashes. Forty-one leaf export files have source-based replay with explicit native type policies. All Base UI source-to-module behavior reviews remain pending; no behavior generator is provided.",
+        "reviewRecords": "tooling/upstream/records/base-ui/"
+      },
+      "sourcePrefix": "packages/react/src/",
+      "referenceFiles": {
+        "selection.tsx": [
+          "packages/react/src/internals/resolveValueLabel.tsx",
+          "packages/react/src/floating-ui-react/hooks/useClick.ts"
+        ]
+      },
+      "groups": {
+        "structure.tsx": [
+          "accordion",
+          "avatar",
+          "collapsible",
+          "menubar",
+          "scroll-area",
+          "separator",
+          "tabs",
+          "toolbar"
+        ],
+        "controls.tsx": [
+          "button",
+          "checkbox",
+          "checkbox-group",
+          "field",
+          "fieldset",
+          "form",
+          "input",
+          "meter",
+          "number-field",
+          "otp-field",
+          "progress",
+          "radio",
+          "radio-group",
+          "slider",
+          "switch",
+          "toggle",
+          "toggle-group"
+        ],
+        "overlays.tsx": [
+          "alert-dialog",
+          "context-menu",
+          "dialog",
+          "drawer",
+          "menu",
+          "navigation-menu",
+          "popover",
+          "preview-card",
+          "tooltip"
+        ],
+        "selection.tsx": ["select", "combobox", "autocomplete"],
+        "notifications.tsx": ["toast"],
+        "core.tsx": [
+          "csp-provider",
+          "direction-provider",
+          "types",
+          "use-render",
+          "unstable-use-media-query"
+        ],
+        "merge-props/mergeProps.ts": ["merge-props"]
+      },
+      "sharedPrefixes": [
+        "packages/react/src/utils/",
+        "packages/react/src/internals/",
+        "packages/react/src/floating-ui-react/",
+        "packages/utils/",
+        "packages/react/test/",
+        "test/"
+      ],
+      "sharedFiles": [
+        "package.json",
+        "pnpm-lock.yaml",
+        "packages/react/package.json",
+        "packages/react/src/index.ts",
+        "packages/react/src/index.test.ts",
+        "packages/react/src/global.d.ts"
+      ]
+    },
+    "shadcn-ui": {
+      "portRoot": "packages/solid/src",
+      "maintenance": {
+        "mode": "generated-starting-point-with-manual-native-fixes",
+        "upstreamRebaseUpdatesNativeBehavior": false,
+        "historyScriptDirectory": "shadcn-ui/packages/solid/scripts",
+        "scriptsAreReproducibleBuild": false,
+        "safeToRerunScriptsInPlace": false,
+        "historyScripts": {
+          "convert-registry.mjs": "Overwrites wrapper source and copied style files; excludes only calendar, carousel, chart, and sonner.",
+          "finalize-v2.mjs": "Rewrites all local TSX files, including manual engines and type definitions.",
+          "render-props.mjs": "Rewrites local render-prop expressions.",
+          "data-attributes.mjs": "Rewrites local data-attribute expressions.",
+          "copy-styles.mjs": "Overwrites copied Tailwind and theme CSS.",
+          "inventory.mjs": "Despite its name, overwrites index.ts and the license file."
+        },
+        "converterExcludedModules": ["calendar.tsx", "carousel.tsx", "chart.tsx", "sonner.tsx"],
+        "manualNativeEngines": [
+          "calendar.tsx",
+          "carousel.tsx",
+          "chart.tsx",
+          "sonner.tsx",
+          "form.tsx",
+          "internal/command.tsx",
+          "internal/input-otp.tsx",
+          "internal/resizable.tsx",
+          "internal/questionnaire.tsx",
+          "internal/message-scroller.tsx"
+        ],
+        "knownManualWrapperFixes": [
+          "sidebar.tsx",
+          "toast.tsx",
+          "input-group.tsx",
+          "field.tsx",
+          "pagination.tsx",
+          "progress.tsx",
+          "kbd.tsx",
+          "index.ts"
+        ],
+        "manualTypeFixes": "Public export and prop-type changes also exist across wrappers and shared types; the wrapper list is not a complete patch ledger.",
+        "candidateGenerationPolicy": "Use tooling/upstream/replay.mjs for recorded recipes only. It reads Git blobs and writes only to a new system temporary directory. Never run historical migration scripts over the live port.",
+        "provenanceLevel": "Per-module records cover all native files. Forty-nine Shadcn wrappers and nine stylesheets have exact source-based replay. Other Shadcn modules remain manual-review-pending. Complete behavior and historical-patch provenance are not claimed.",
+        "reviewRecords": "tooling/upstream/records/shadcn-ui/",
+        "safeRecipeDirectory": "tooling/upstream/recipes/shadcn-ui/"
+      },
+      "componentPatterns": [
+        "^apps/v4/registry/bases/base/ui/([^/]+)\\.[jt]sx?$",
+        "^apps/v4/registry/new-york-v4/ui/([^/]+)\\.[jt]sx?$"
+      ],
+      "extraTargets": {
+        "command": ["internal/command.tsx"],
+        "input-otp": ["internal/input-otp.tsx"],
+        "message-scroller": ["internal/message-scroller.tsx", "internal/message-scroller/geometry.ts", "internal/message-scroller/types.ts"],
+        "questionnaire": ["internal/questionnaire.tsx"],
+        "resizable": ["internal/resizable.tsx"]
+      },
+      "sharedPatterns": [
+        "^apps/v4/registry/(?:bases/base|new-york-v4)/(?:lib|hooks)/",
+        "^apps/v4/registry/icons/",
+        "^apps/v4/registry/styles/",
+        "^packages/shadcn/src/tailwind\\.css$",
+        "^apps/v4/(?:styles/|app/.*\\.css$)",
+        "^apps/v4/registry/(?:themes|_legacy-themes|config)\\.",
+        "^(?:package\\.json|pnpm-lock\\.yaml|apps/v4/package\\.json)$"
+      ]
+    }
+  }
+}

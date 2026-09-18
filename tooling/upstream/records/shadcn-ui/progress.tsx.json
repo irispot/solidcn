@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/progress.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "dade57a0c34acce8f1b29a38c5998a99d4b04a259133aaeef2e4f4ccd616b883",
+  "classification": "generated-wrapper-with-manual-fixes",
+  "mappingScope": "Registry source selected with Base first, legacy only if the Base file does not exist.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/progress.tsx",
+      "blob": "43df6eb11e1c55ad939e24dc408042efa6fe8f93",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/shadcn-ui/progress.tsx.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/shadcn-ui/progress.tsx.json",
+          "sha256": "653957530776aa8f3a52bac632efc0808f43123d31a4643b70480c4fa3831dfb"
+        },
+        {
+          "path": "generators/stateless-wrapper.mjs",
+          "sha256": "ca9100eda42a35657471586ba9d333fd73c744fce7cb0bf736e5650c8c965887"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        },
+        {
+          "path": "overrides/progress-prop-order.json",
+          "sha256": "5b6a76db05794be9ad829901112c56efb1fdab7729c79fd702b033586b02e1b9"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "4ab2b8b5f602243db9e0179d4ac63200e2d87e1b33b1ff9e9471f03c9fcdf2f2",
+    "finalSha256": "dade57a0c34acce8f1b29a38c5998a99d4b04a259133aaeef2e4f4ccd616b883",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/progress-prop-order.json",
+        "purpose": "Preserve the native Progress prop order: the omitted-prop object precedes the controlled value and native wrapper attributes. This keeps the current reactive spread boundary.",
+        "sha256": "5b6a76db05794be9ad829901112c56efb1fdab7729c79fd702b033586b02e1b9"
+      }
+    ]
+  },
+  "manualException": null
+}

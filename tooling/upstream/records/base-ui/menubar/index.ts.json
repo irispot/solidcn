@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/menubar/index.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "5bb387ede43434111b59263a96ec60ac2be911e252ea05133db0c5523f3e25cf",
+  "classification": "generated-public-entry-with-manual-maintenance",
+  "mappingScope": "Public export reference only.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/menubar/index.ts",
+      "blob": "dce5d8d809dd63c1bfaf2ff01cc3559a5fb3d2d7",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/base-ui/menubar/index.ts.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/base-ui/menubar/index.ts.json",
+          "sha256": "fcd4f2bcb0c9350f2ed2d6cf02acf73599996e73951bc091b0512ded49ec2aff"
+        },
+        {
+          "path": "generators/base-entry.mjs",
+          "sha256": "e8e74928397ba79b917c73974fe3b62edd3feba7163fe249c0ad0898975f52dd"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "5bb387ede43434111b59263a96ec60ac2be911e252ea05133db0c5523f3e25cf",
+    "finalSha256": "5bb387ede43434111b59263a96ec60ac2be911e252ea05133db0c5523f3e25cf",
+    "equalsNative": true,
+    "overrides": []
+  },
+  "manualException": null
+}

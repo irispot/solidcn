@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/index.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "38436366ccd0f52419b888426b5a5ba58c937996decea0c0b188cbfcb434e445",
+  "classification": "generated-public-entry-with-manual-maintenance",
+  "mappingScope": "Public export reference only.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/index.ts",
+      "blob": "c2c9c5d56de3fcf331d21ef99a85b809bbb2d9e5",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/base-ui/index.ts.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/base-ui/index.ts.json",
+          "sha256": "0bde8b34484b09a56608acd6cdad0a52d22d8f73ded97f2be1842f69b13289bb"
+        },
+        {
+          "path": "generators/exact-source-copy.mjs",
+          "sha256": "71a6f8290e24a0a8da0e021a58fa9fdea27737bed42cb3b3a6c02fa3b3ec938c"
+        },
+        {
+          "path": "overrides/base-root-family-types.json",
+          "sha256": "d539d29c1cee5300c6c304fe2af04c29604765a15779a4e8510f066225e03934"
+        }
+      ],
+      "dependencies": {},
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "bdc94b38f7d1ab96c528b46d28b87db4e20caaf65629acec6ffd9b5f16bb90ed",
+    "finalSha256": "38436366ccd0f52419b888426b5a5ba58c937996decea0c0b188cbfcb434e445",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/base-root-family-types.json",
+        "purpose": "Retain grouped native runtime exports, export pinned root families as types only, and resolve native type-name conflicts explicitly.",
+        "sha256": "d539d29c1cee5300c6c304fe2af04c29604765a15779a4e8510f066225e03934"
+      }
+    ]
+  },
+  "manualException": null
+}

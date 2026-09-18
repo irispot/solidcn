@@ -1,0 +1,644 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/structure.tsx",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "4e59d5e134d3bfe9fd1fa051c3b554d82c4d8761ccb4008df64ff0636023ef73",
+  "classification": "manual-grouped-native-implementation",
+  "mappingScope": "Family-level review relationship. It is not an exact function or copied-source mapping.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Removed the AccordionRoot and AccordionPanel function overload declarations that the Solid Vite transform left beside generated component constants. The native generic function signatures remain. Typecheck, the unchanged AccordionRoot client and type routes, the transform check, and both package builds pass; the transform check no longer reports duplicate declarations. This is a build fix, not full behavior acceptance.",
+      "The unchanged AccordionRoot client route passes 38 active cases in React and Solid with 12 matching original skips. Its type spec compiles in both runtimes with no diagnostics. The browser route passes 50 React cases, 49 Solid browser cases, and one real Solid SSR/hydration case with no result difference. Server output has generated trigger and panel links; hydration keeps all five server nodes. The unchanged four-part route passes 69 client cases and one server case in each runtime. These checks do not accept full grouped-engine behavior.",
+      "Native Accordion item change details cancel before the root value changes. Manual trigger and panel IDs update on the client. A non-native trigger uses Space on keyup. A panel with no animation closes at once. The panel forwards the native prop proxy and gives initial-open motion suppression priority over user animation style. Header and Item report the pinned missing-context errors; Trigger reports button semantics and item index; Panel warns when hiddenUntilFound overrides keepMounted=false. Other grouped-engine behavior remains pending.",
+      "Read the current AvatarImage lifecycle: default mode loads an image before mounting, while keepMounted mode reads the mounted image state. ScrollScrollbar mounts only on overflow unless keepMounted is set. This records current native code only; behavior review remains pending.",
+      "Avatar Root, Image, and Fallback now have native exported state and prop types and type namespaces. ImageLoadingStatus and callback status values match the pinned React source. Root typecheck passes. Full Avatar behavior and public prop equivalence remain pending.",
+      "Scroll Area Root now mounts the shared inline scrollbar style unless CSPProvider disables it; the viewport carries the matching scrollbar class. Direct Chromium probes show default, nonce, and disabled cases. Full Scroll Area behavior remains pending.",
+      "Reviewed CollapsiblePanel natural open/close measurement, motion completion, initial-open motion suppression, and inherited mount options. Reviewed Accordion single-open default and focusable aria-disabled triggers.",
+      "Read artifacts/visual/batches/accordion/report.json (SHA256 bf9cdc8b8a7e2690ac3679b8aeee41f3d99ec6eccf3e057a37e1a515970b2141): 7 default Accordion image cases pass. The author also reports matching single/multiple click checks. Other families and full behavior remain pending.",
+      "Reviewed Scroll Area changes: the root keeps relative positioning without forced clipping; scrollbar measurements include track padding; wheel handling clamps scroll bounds and preserves edge propagation. The author reports native drag/wheel checks, typecheck and the 1,083-file guard. Full Scroll Area or grouped-engine behavior remains pending.",
+      "Read artifacts/visual/cases/docs-scroll-area-demo-default/report.json (SHA256 be9a2a44b4ade53ed393d5b0a60031da05a3eefc6c7a88de911d5014ec450fc5) and artifacts/visual/cases/docs-scroll-area-rtl-default/report.json (SHA256 09d2b4dec3fb92b6e935948b81abef59d3b8e2e57a0d39ad15b3959484e2083f). Each complete single-case run passed with zero changed pixels.",
+      "Tabs Root now uses native Solid registration for enabled and mounted tabs, automatic fallback, roving focus, and activation direction. The guarded unchanged TabsRoot file passes 109 JSDOM assertions with 27 original browser skips in each runtime, and all 136 assertions in Chromium with zero skips or mismatches. The unchanged Tabs parts files pass 87 JSDOM assertions with 28 original skips and four server-routed cases; Chromium passes 115 assertions with two original skips and two server-routed cases. The four original Indicator server cases pass genuine Node SSR and Solid hydration. The Indicator composite passes 45 of 45 assertions. Grouped structure source review remains pending.",
+      "Toolbar Root now supplies native Solid context, disabled and orientation states, and roving keyboard focus. Group disabled state reaches child Buttons and Inputs, while Links remain enabled. Disabled items stay focusable by default; focusableWhenDisabled=false removes them from the focus order. The unchanged ToolbarRoot file passes all 18 JSDOM assertions in each runtime with 10 original browser skips, and all 28 Chromium assertions in each runtime with zero skips or mismatches. This records Toolbar behavior only; grouped structure review remains pending.",
+      "Scroll Area Root now reports scrolling and overflow state, updates edge metrics when content changes, measures scrollbar and thumb sizes, and mounts Corner only on two-axis overflow. A narrow fixture adapter gives unchanged React numeric styles their React px units and restores real timers after the fake-clock case. The unchanged ScrollAreaRoot file passes 16 JSDOM assertions in each runtime with 20 original browser skips, and all 36 Chromium assertions in each runtime with zero skips or mismatches. This records Scroll Area Root behavior only; grouped structure review remains pending."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/accordion/header/AccordionHeader.tsx",
+      "blob": "9a0536b8c4dc768213ab3ad17c9e6b471406493f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/accordion/header/AccordionHeaderDataAttributes.ts",
+      "blob": "ab09d339cd032513e441dd188cdd48ee60532c31",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/accordion/index.parts.ts",
+      "blob": "56b2822a55f58608b6a4c15baf972ec871a08d69",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/accordion/index.ts",
+      "blob": "8efc69a3f554658f140041f4b3829861782143b5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/accordion/item/AccordionItem.tsx",
+      "blob": "8c835353cdb2d676ca615f2d40df2ef6c98e05c5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/accordion/item/AccordionItemContext.ts",
+      "blob": "1ee4dbb4efeb797a591efbd5a36d1ca80189a4c9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/accordion/item/AccordionItemDataAttributes.ts",
+      "blob": "ab09d339cd032513e441dd188cdd48ee60532c31",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/accordion/item/stateAttributesMapping.ts",
+      "blob": "617034e6f6ba4931b31eb034c4209681bace9634",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/accordion/panel/AccordionPanel.tsx",
+      "blob": "4e84937f630a1ece7131cfe9b019e5a06d443f51",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/accordion/panel/AccordionPanelCssVars.ts",
+      "blob": "e4f19f32af69915b87937e48184e31c4f89299a0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/accordion/panel/AccordionPanelDataAttributes.ts",
+      "blob": "d3b5bc716e4a1e90b545dab1df42381264eb0a3b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/accordion/root/AccordionRoot.tsx",
+      "blob": "30e2f69892d75a831ea6cbda988ce3f2b8682856",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/accordion/root/AccordionRootContext.ts",
+      "blob": "e6ef1ce07737ec75b87b68fde327bded35525539",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/accordion/root/AccordionRootDataAttributes.ts",
+      "blob": "23a0e5c045ce3a33a5debfbd1f06531b3e97f92b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/accordion/trigger/AccordionTrigger.tsx",
+      "blob": "10a47069d216633f3d329187ffd4a94cb94bd674",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/accordion/trigger/AccordionTriggerDataAttributes.ts",
+      "blob": "7f45548f9bbca51173b9ac4c0202fe9226e74791",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/avatar/fallback/AvatarFallback.tsx",
+      "blob": "bfcd0ab9c6a4f2681fcfa096ab9c16a11715c5a5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/avatar/image/AvatarImage.tsx",
+      "blob": "05c0c544b46ed984aeec0a7b6e6bd04d680c9a9a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/avatar/image/AvatarImageDataAttributes.ts",
+      "blob": "8d3077fbf6951679919a5ad7df8696ac9e5668b8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/avatar/image/useImageLoadingStatus.ts",
+      "blob": "14abbad257debe27ca4f448729142a8cd2b6105b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/avatar/index.parts.ts",
+      "blob": "9fca12b2239136e4c344d5a6f9044f727dd59d27",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/avatar/index.ts",
+      "blob": "add96c6cdcaaa8d7dfbe6344c8582c0619134ea2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/avatar/root/AvatarRoot.tsx",
+      "blob": "b17179f4dc1e7b5ed50c5814002744e4f66f4f67",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/avatar/root/AvatarRootContext.ts",
+      "blob": "034cb83036a339fd8924df47abca6ccfd3d988c1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/avatar/root/stateAttributesMapping.ts",
+      "blob": "f608a89957233a84f9d1ff5f2658293c00200406",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/collapsible/index.parts.ts",
+      "blob": "93a0c5238a25e7a128691e758a3a4bb24c153c7d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/collapsible/index.ts",
+      "blob": "a8c3f341cede5c9f575c3be67e9b4bf2aba427db",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/collapsible/panel/CollapsiblePanel.tsx",
+      "blob": "f486efc012f8e5f80473a1a9b5b54de28d81c3c8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/collapsible/panel/CollapsiblePanelCssVars.ts",
+      "blob": "21e0763faeb14aff9ea2d215f6ee944010fcf997",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/collapsible/panel/CollapsiblePanelDataAttributes.ts",
+      "blob": "1d2f6bf4ff9919ba3b79578994831c826d62e515",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/collapsible/panel/useCollapsiblePanel.ts",
+      "blob": "940cafb937d4c55f9590c4dd47ea1a0e30541ac8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/collapsible/root/CollapsibleRoot.tsx",
+      "blob": "969f728999eaf77ce960d7b4eb2bb9b97d23c81e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/collapsible/root/CollapsibleRootContext.ts",
+      "blob": "8a2461a0e44f707fe003c1447eb57a8909aa6049",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/collapsible/root/CollapsibleRootDataAttributes.ts",
+      "blob": "ba5f26f205ec4e02faf8abcc9580120da712af3a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/collapsible/root/stateAttributesMapping.ts",
+      "blob": "7e30f9c8920a61c2233e26acf745379bb7670fe6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/collapsible/root/useCollapsibleRoot.ts",
+      "blob": "cfa0c5c6243e00565bd913434ab1b9c8275243d2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/collapsible/trigger/CollapsibleTrigger.tsx",
+      "blob": "15b48d774474d25cf1f9f129a54da111fa9d1239",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/collapsible/trigger/CollapsibleTriggerDataAttributes.ts",
+      "blob": "b6e43dbef916147e69bd95316c7b83b3129519a2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menubar/Menubar.tsx",
+      "blob": "9ac5411ed200a170397ce763d1491aa8c8eee843",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menubar/MenubarContext.ts",
+      "blob": "c96f8fcedac4898da31610fc3382ba99d9be0f59",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menubar/MenubarDataAttributes.ts",
+      "blob": "8064e210f147788d404245ac4f41bbb79a5832d9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menubar/index.ts",
+      "blob": "dce5d8d809dd63c1bfaf2ff01cc3559a5fb3d2d7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/constants.ts",
+      "blob": "1372a9533a6b8b9c03149ff887241b172792b006",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/content/ScrollAreaContent.tsx",
+      "blob": "93a8870f8a11b28cf67a73c7fd3f1f6288e91b2b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/content/ScrollAreaContentDataAttributes.ts",
+      "blob": "fec5e1687b8643fc5ff5a73f92a7ea12b667db80",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/corner/ScrollAreaCorner.tsx",
+      "blob": "6d567d67caa06c713680663ad0a841d017831356",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/index.parts.ts",
+      "blob": "a754e48d8eee11b80e332de772e611f4895c821e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/index.ts",
+      "blob": "4ea5801d9e7e546b00093e05d02064aad4aea3c6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/root/ScrollAreaRoot.tsx",
+      "blob": "a6f44c2a8dfcfca8975157efc6c2d980fbdd42c0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/root/ScrollAreaRootContext.ts",
+      "blob": "0d04449ef1c93cfae44abbe61f77d7db2a73287e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/root/ScrollAreaRootCssVars.ts",
+      "blob": "2fd5261f27181fca877b37a70e8291bd4139154e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/root/ScrollAreaRootDataAttributes.ts",
+      "blob": "fec5e1687b8643fc5ff5a73f92a7ea12b667db80",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/root/stateAttributes.ts",
+      "blob": "7bfecddc28fd88426d1bef9c5f42f4231b5d0b08",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/scrollbar/ScrollAreaScrollbar.tsx",
+      "blob": "2ab99b7051c477e3a002c84578b6b16c8aad1eec",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/scrollbar/ScrollAreaScrollbarContext.ts",
+      "blob": "24513ccebc84dad87a1033608aaf2d3332053abc",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/scrollbar/ScrollAreaScrollbarCssVars.ts",
+      "blob": "f494bbd308ca7d16530bcac7fa080a3d4656de37",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/scrollbar/ScrollAreaScrollbarDataAttributes.ts",
+      "blob": "60fd02c70020d186243af9bc3302138e140708ed",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/thumb/ScrollAreaThumb.tsx",
+      "blob": "cf53bae8110a28ab87de7576ddccbd9785e753b7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/thumb/ScrollAreaThumbDataAttributes.ts",
+      "blob": "60a7ab224d6d0f39c54d8d7963ee2f1a81aab159",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/utils/getOffset.ts",
+      "blob": "9858533cc1dbb5269857bb432be99bde3041d4bf",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/viewport/ScrollAreaViewport.tsx",
+      "blob": "d817198769520c74a323b92955907c770688f20c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/viewport/ScrollAreaViewportContext.ts",
+      "blob": "0189130ddad7b6f688c38b1007ea95cd91a85534",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/viewport/ScrollAreaViewportCssVars.ts",
+      "blob": "ca4dcd321603301789e244f9dbf5f3a65de26159",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/viewport/ScrollAreaViewportDataAttributes.ts",
+      "blob": "fec5e1687b8643fc5ff5a73f92a7ea12b667db80",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/separator/Separator.tsx",
+      "blob": "48a07d477a703c3b5ef7dc49431ce43bfc848fa4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/separator/SeparatorDataAttributes.ts",
+      "blob": "7f2b3a06799e17c5222b80249c5b58c960100c1d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/separator/index.ts",
+      "blob": "7fd3fd2b69f92a295ccfe7e96ca32b5c4d110caa",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/index.parts.ts",
+      "blob": "b63d488656e093ef5ce1b678159da9076394854b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/index.ts",
+      "blob": "7e23fd5a807fe76aba2f3364f1a93af5b9c046a1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/indicator/TabsIndicator.tsx",
+      "blob": "098fe092b742806574f3c5f64e96a865ba4ae420",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/indicator/TabsIndicatorCssVars.ts",
+      "blob": "b52ff493d1de26a91c473ab27cf3e2be61e5f5dc",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/indicator/TabsIndicatorDataAttributes.ts",
+      "blob": "0f601e9ee72adb7d4311921b89913201a8f76714",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/indicator/prehydrationScript.min.ts",
+      "blob": "e25d0665ebb8338dc847658b80f4fbfe070a822c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/indicator/prehydrationScript.template.js",
+      "blob": "c08d6c554adb3e29505234696a8d4796a9acc201",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/list/TabsList.tsx",
+      "blob": "eaba971c358ae02f1b94f77cce8ae22946356757",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/list/TabsListContext.ts",
+      "blob": "f3f848e2ecb5650e718fc36495e3398059eed870",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/list/TabsListDataAttributes.ts",
+      "blob": "0f601e9ee72adb7d4311921b89913201a8f76714",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/panel/TabsPanel.tsx",
+      "blob": "f746e227d6567dace11c2a0dafb4d2e9ce0dc3a5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/panel/TabsPanelDataAttributes.ts",
+      "blob": "b3007fadb7d19b484b9c93417fe2d3322b5cf8db",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/root/TabsRoot.tsx",
+      "blob": "2a4641e52db92b617ecf03203f16a78d81fb37a1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/root/TabsRootContext.ts",
+      "blob": "0073816e4e6e760d96350e4fa382b317026a4dfb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/root/TabsRootDataAttributes.ts",
+      "blob": "0f601e9ee72adb7d4311921b89913201a8f76714",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/root/stateAttributesMapping.ts",
+      "blob": "1f761a3b8cf35b01b920476ec3bc30b3e9c753a4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/tab/TabsTab.tsx",
+      "blob": "1b18ab9dc4fb7e06f322ea803749fffa19b82097",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/tab/TabsTabDataAttributes.ts",
+      "blob": "ce5295ecfe8b16106db6019e4bab61b87c936ac5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/button/ToolbarButton.tsx",
+      "blob": "3e24da370f007ba1393b09af7d2d0ca72a08e8e9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/button/ToolbarButtonDataAttributes.ts",
+      "blob": "7065c802d2ab0621c86c9eed206e4ea735d494ca",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/group/ToolbarGroup.tsx",
+      "blob": "c2e34a49e0a75d379ea2e9f41757444695d36268",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/group/ToolbarGroupContext.ts",
+      "blob": "aed5f11c7feed25cbbb58029db005689e84b1454",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/group/ToolbarGroupDataAttributes.ts",
+      "blob": "f40e828dbca167c2d580e1927da0d7fe9b259ba1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/index.parts.ts",
+      "blob": "528becb735bdf27476e6db3caf2e105847d18420",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/index.ts",
+      "blob": "4b88fd9a578baa9b593d879b3f2492ced48c76d1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/input/ToolbarInput.tsx",
+      "blob": "464f1f583e30de65e33430344305edaebc2ec51c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/input/ToolbarInputDataAttributes.ts",
+      "blob": "fcb6d45f077a76b17c059ec66f540624d154f694",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/link/ToolbarLink.tsx",
+      "blob": "e9024a8228f78759eafece60f09fd954b708b7c1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/link/ToolbarLinkDataAttributes.ts",
+      "blob": "d03b1458ef6e913db323f0f2b624af4aface992c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/root/ToolbarRoot.tsx",
+      "blob": "bd524289dde833feed582d0d746007de984719cf",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/root/ToolbarRootContext.ts",
+      "blob": "3f15ed65b762aacec09da43e079977d6c4cab9ec",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/root/ToolbarRootDataAttributes.ts",
+      "blob": "dd0be9bbf69f125385b72ecd38843b9704bd12e8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/separator/ToolbarSeparator.tsx",
+      "blob": "52c28212c902ef23064945cc1d0971f2374ccdbb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/separator/ToolbarSeparatorDataAttributes.ts",
+      "blob": "6edc4ad9c6fa8333e4d89b3ac4b4a0e1e093c8fb",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Family-level review relationship. It is not an exact function or copied-source mapping.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

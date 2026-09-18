@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/slider/utils/asc.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "9189165637122fad956e7ef529044a044b4060784e6d37696a6b0b5c8c0651df",
+  "classification": "replayed-framework-neutral-slider-helper",
+  "mappingScope": "Pinned helper source with only local import and Solid-owned type edits where required.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/slider/utils/asc.ts",
+      "blob": "7ec2016b0288a90b14487b23f16651ac9f8df761",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/base-ui/slider/utils/asc.ts.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/base-ui/slider/utils/asc.ts.json",
+          "sha256": "34839442f6d7aebc1b1f3a39e198cbc5d66afc460eb79da0527934c1b1555cac"
+        },
+        {
+          "path": "generators/exact-source-copy.mjs",
+          "sha256": "71a6f8290e24a0a8da0e021a58fa9fdea27737bed42cb3b3a6c02fa3b3ec938c"
+        }
+      ],
+      "dependencies": {},
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "9189165637122fad956e7ef529044a044b4060784e6d37696a6b0b5c8c0651df",
+    "finalSha256": "9189165637122fad956e7ef529044a044b4060784e6d37696a6b0b5c8c0651df",
+    "equalsNative": true,
+    "overrides": []
+  },
+  "manualException": null
+}

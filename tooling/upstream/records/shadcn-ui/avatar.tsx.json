@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/avatar.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "c7f4e2081e312e9d10e78f494024cb44846f9bc1bc5a9ee315f305b0a2b67a10",
+  "classification": "generated-wrapper-with-manual-fixes",
+  "mappingScope": "Registry source selected with Base first, legacy only if the Base file does not exist.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/avatar.tsx",
+      "blob": "d46f2e9392747cd065e6e760092a7a2b500b4634",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/shadcn-ui/avatar.tsx.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/shadcn-ui/avatar.tsx.json",
+          "sha256": "c040fcd6ca7f5e22b8581532469407897b3664c088d179d37904b45ca52a1f5e"
+        },
+        {
+          "path": "generators/stateless-wrapper.mjs",
+          "sha256": "ca9100eda42a35657471586ba9d333fd73c744fce7cb0bf736e5650c8c965887"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "c7f4e2081e312e9d10e78f494024cb44846f9bc1bc5a9ee315f305b0a2b67a10",
+    "finalSha256": "c7f4e2081e312e9d10e78f494024cb44846f9bc1bc5a9ee315f305b0a2b67a10",
+    "equalsNative": true,
+    "overrides": []
+  },
+  "manualException": null
+}

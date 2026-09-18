@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/csp-provider/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/csp-provider/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": ["overrides/csp-provider-public-types.json"],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../core",
+    "nativeTypes": "omit",
+    "expectedTypeSurface": [
+      {
+        "module": "./CSPProvider",
+        "kind": "star"
+      }
+    ]
+  },
+  "scope": "Public export declarations with a checked native CSPProvider type export. Names come from upstream declarations and route to an explicit native group. A changed upstream type export surface fails for review. This does not generate component behavior."
+}

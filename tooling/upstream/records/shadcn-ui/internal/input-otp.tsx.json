@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/internal/input-otp.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "1689ecf17fc62367355382728ca82239948a70f292ae82fccb88f28dd8169fd6",
+  "classification": "manual-native-engine-replacement",
+  "mappingScope": "Original registry or engine API reference; this is a separate native implementation.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Read OTPInput: selection paint is hidden, and focus and input handlers set the caret in the visual slot. The docs-input-otp-demo-typed report (SHA256 97ec1a1e2d99663764b060a97a3373229e49c494727a2a97d47ba93336b39c78) and docs-input-otp-demo-default report (SHA256 ca30fb0b404fd5aa3c2d6945694089622c8470937024f008cf5da5b73e33cf19) are complete and passed with zero changed pixels. Full OTP behavior remains pending.",
+      "Read the current OTPInput code: it measures container height, places the native input in an absolute overlay, and provides typed slot state for the visual cells. This records current native code only; behavior review remains pending.",
+      "Native engine now forwards input events, exposes focus and hover context, provides placeholder and selection slot state, rejects invalid patterns without moving the caret, and emits completion only on a transition to full length. The 11 upstream InputOTP documentation cases passed exact React/Solid browser images with zero changed pixels in artifacts/visual/batches/input-otp/report.json (SHA256 dde94ab8bce025a793370c10d0385c13062d0fdf104ad4aabd809c508fe142d6). The unchanged upstream examples also passed 9 paired DOM and behavior states in tooling/parity/run-shadcn-input-otp-browser.mjs. This does not establish full input-otp engine behavior parity."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/input-otp.tsx",
+      "blob": "9680970c7bfcf40588b8c69123b2d02a1e2699b6",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Original registry or engine API reference; this is a separate native implementation.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator",
+    "missingExternalSource": "The input-otp engine source is not pinned as source blobs in these clones."
+  }
+}

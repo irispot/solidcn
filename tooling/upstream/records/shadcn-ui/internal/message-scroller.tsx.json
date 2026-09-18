@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/internal/message-scroller.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "04c81caf8a126dc59bfa8441354d286807b99e8fc5aaa88bb25cd612459f8a11",
+  "classification": "manual-native-engine-replacement",
+  "mappingScope": "Original registry or engine API reference; this is a separate native implementation.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "The unchanged MessageScroller browser file passes 17/17 in both React and native Solid Chromium. Solid preserves the viewport anchor on prepend without double compensation and marks a bulk batch of new turn anchors as handled while it follows the bottom. The guarded paired runner records stable source hashes and native execution for all 17 cases in artifacts/unchanged-shadcn-message-scroller-browser-comparison.json. This does not establish full migration parity.",
+      "Moved Item registration cleanup into a Solid 2 two-stage effect and unobserved removed message nodes. The same unchanged 49-case React and native Solid comparison passes, including the two live hydration cases. This corrects cleanup ownership only; full component parity remains pending.",
+      "The unchanged 49-case MessageScroller test file passes in React and native Solid. Solid uses 44 client cases and 5 live SSR or hydration cases. The native engine now tracks scroll mode, target restoration, anchored turns, state attributes, and subscribed visibility. This records the current native code and one test file only; full component behavior review remains pending."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/message-scroller.tsx",
+      "blob": "37268f119d3298c7c428bda0751c2af32f0ada9e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/message-scroller/components.tsx",
+      "blob": "5174d9c55b799077c6a38fe59854af411bef64ef",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/message-scroller/geometry.ts",
+      "blob": "c3137f68e659c9640d45f377f82c2c63ddd80e2e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/message-scroller/index.ts",
+      "blob": "66391058f4f02feeeedd581b76684588c51aa9c8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/message-scroller/stores.ts",
+      "blob": "7d670b5800537bd3ed0c09339f2274a795631401",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/message-scroller/types.ts",
+      "blob": "7959990d925c01ef30d025c9235210453fbcfec4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/message-scroller/use-message-scroller-commands.ts",
+      "blob": "468e0a7466ab221fcccd9d27576519a5dc00c193",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/message-scroller/use-message-scroller-controller.ts",
+      "blob": "d5656235ee71c0931af58ca9fb606d2102cf111c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/message-scroller/use-message-scroller-refs.ts",
+      "blob": "79f16a54b758753ca199d0b46645f8c1c56a7584",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/message-scroller/utils.ts",
+      "blob": "6396aecb1cf6a37f1089d998dd66628023077414",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Original registry or engine API reference; this is a separate native implementation.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/table.tsx",
+  "generator": "generators/simple-wrapper.mjs",
+  "generatorInputs": ["apps/v4/registry/bases/base/ui/table.tsx"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": [],
+  "dependencies": ["typescript", "prettier"],
+  "scope": "Eight stateless native table wrappers with separate reactive prop scopes and type-only React namespace removal."
+}

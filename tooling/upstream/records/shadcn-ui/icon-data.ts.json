@@ -1,0 +1,438 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/icon-data.ts",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "7aa2121bf7620a2b5e1b4d4c2a48d1fb989466d12de90acfb40dfe3323b9c83d",
+  "classification": "generated-external-svg-data",
+  "mappingScope": "Pinned Base registry files select the icon names. SVG geometry comes from the separate lucide-react package, not these Git blobs. Candidate replay is not integrated.",
+  "externalInputs": {
+    "package": "lucide-react",
+    "pinnedVersion": "0.474.0",
+    "installedVersion": "0.474.0",
+    "declaredSourceSha256": {
+      "ArrowDownIcon": "d424552815ddadbffffe6af601e5d83c08f491b591e8a3847d692019eebabe1a",
+      "CheckIcon": "4c0e42583f17c668dccb48561695a71b66ba58089553991d1193fc47bcba3cf5",
+      "ChevronDownIcon": "344e7fbc178ddb2153f1f6a7dae68e50c2b9a39d48ca810181c0c1d3f6e62e0d",
+      "ChevronLeftIcon": "42d9f2585268ea5122030c0b989db50e6fd981a7f918e8c49020d1e57ed1738d",
+      "ChevronRightIcon": "da79871fd67b58bf433f5422e01b8420f66583fd95a4da05c1b4c1c983b64bd2",
+      "ChevronUpIcon": "ed81c85de9516c14b09f7c3f731fa0b93fca1746ce61adbd0462ef4a43c86160",
+      "CircleCheckIcon": "2d3f46124f461a2d93a08a270df6e9ff6c980c81d049ab4b761517a24572a4de",
+      "InfoIcon": "ca753544e90ab260ada515c124c39a33f0116afcbe4b3c27ecaad1bb811aacd0",
+      "Loader2Icon": "73159e901fbab2743eee2e1493919b4a0e1c30d2073eb8a10898742895619224",
+      "MinusIcon": "80818d41d58a14a517cc136c38f7e594fae3d7a0acdf18ce3fc4c2c04a2e4b07",
+      "MoreHorizontalIcon": "e2ae3fb5f8023892cd2d95f499ea0a76735f0dd5a307cceaebc1ee3b1963fb25",
+      "OctagonXIcon": "61a6e5fbbc1e0318ad424bf70cae4569ed86991cc73c03f4506b1604fd108351",
+      "PanelLeftIcon": "4d063a688ee364f54bb163220ec169e619937c6d7a33c15e27c35fb315c82040",
+      "SearchIcon": "12949d3ed3918b80560ee901364e72c0270499a179eab7f692cf2eea30a0dfd8",
+      "TriangleAlertIcon": "ae729e0c95282b23da93d5898ad5de3e86ea2ffb5dc9f05074f04e7c42d8494e",
+      "XIcon": "9645e990fe0abe7701b7c7b2b4a0b0e8c878141e1d47b817eef1932f96fe5f07"
+    },
+    "declaredHashesVerifiedHere": false,
+    "verificationCommand": "node tooling/generate-icons.mjs --check",
+    "verificationScope": "Separate current-registry and installed-package byte check. It is not a candidate Git-ref replay or behavior check.",
+    "referenceLockSha256": "39c33d0be4792cc4f1c7f8065e8a8234ea88fef7512f5dc8257e24552eb7e2cf",
+    "license": {
+      "path": "shadcn-ui/packages/solid/LUCIDE-LICENSE",
+      "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+    }
+  },
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Reviewed current renderer and literal data provenance. Native byte check: node tooling/generate-icons.mjs --check passed for 16 Lucide 0.474.0 icons. Behavior and candidate-ref replay remain pending.",
+      "Reviewed the later reference dependency-lock change. Only referenceLockSha256 changed in the declared external inputs; package version, all 16 source hashes and license hash are unchanged. Re-ran node tooling/generate-icons.mjs --check: it passed. This updates observed dependency provenance only.",
+      "Reviewed the next reference lock digest d267d5146517ca0dcbbe508b4018efbfa467c5bb29ecff33c806fe30995065a7. Again, only the lock digest changed in the declared external inputs. The separate 16-icon Lucide 0.474.0 generator check passed; candidate replay and behavior remain pending.",
+      "The visual reference app added exact react-hook-form 7.62.0 for an unchanged Shadcn Form comparison. Its lock digest is now 39c33d0be4792cc4f1c7f8065e8a8234ea88fef7512f5dc8257e24552eb7e2cf. Lucide stays at 0.474.0; all 16 source SVG hashes and the license are unchanged. The separate icon generator check passed."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/_registry.ts",
+      "blob": "80a3a705187e8c7c2cc0c7f6c0423d6b85d973df",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/accordion.tsx",
+      "blob": "182ccd8e3e872fc0b0a24bb72c0469b6a5857b16",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/alert-dialog.tsx",
+      "blob": "ab1dc757812bf207ee16691f265470b78ce56d40",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/alert.tsx",
+      "blob": "e9aa02f381ef6e588cfb57696f76703c0f7c4ceb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/aspect-ratio.tsx",
+      "blob": "ebe2783654a6ce3240b2bd3a4bdb80b07c26cf8f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/attachment.tsx",
+      "blob": "be31b4b73bb15e7e080e0b63681a8cae1793261e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/avatar.tsx",
+      "blob": "d46f2e9392747cd065e6e760092a7a2b500b4634",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/badge.tsx",
+      "blob": "10a7f676f81090c851211f363057238d5906e2ca",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/breadcrumb.tsx",
+      "blob": "e0a0a2f1f55e4bba083ddf7a44f85bd34ce91804",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/bubble.tsx",
+      "blob": "0b5a88bcce7ee588094c255e823d69950f841138",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/button-group.tsx",
+      "blob": "9bdfea8e85060ffbc302fab7dad64ca761b4b073",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/button.tsx",
+      "blob": "2007374034d564bb926915baa057e500cab631a4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/calendar.tsx",
+      "blob": "568ab9fd00a03d1651d1b42cb8915eed282cf1a4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/card.tsx",
+      "blob": "2062884f29a8044fa48edf86605182eca29f8716",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/carousel.tsx",
+      "blob": "67bb25fa3ad927545ee1b80189cd7e9c9c3ca96a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/chart.tsx",
+      "blob": "fa460c956066fbc5720ebe4203ba7353628201d5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/checkbox.tsx",
+      "blob": "ecf58adc56fd11b95c5962e3e6482fad5c27ebb1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/collapsible.tsx",
+      "blob": "488fb33af5107a94791ef3235ee58861e3ed6855",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/combobox.tsx",
+      "blob": "8fc7ae799f00cec1cf4efa6ab8509717f64a7a91",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/command.tsx",
+      "blob": "21dd5593478db868a6a566af6b2914fd1dfbc96f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/context-menu.tsx",
+      "blob": "3fc2b82c358ed8f592a6a13539bb051c9d978d19",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/dialog.tsx",
+      "blob": "8c68524ade906dc3754769729ae3cbcb1b9d7b55",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/direction.tsx",
+      "blob": "d8cf134614ac38b4fbc6c902e6e2cf770ba389c1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/drawer.tsx",
+      "blob": "bebe3a912626745d7567982acd7b2465504e59c1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/dropdown-menu.tsx",
+      "blob": "4c4543e2954441c012d3a7dc1d850e99613f5651",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/empty.tsx",
+      "blob": "6a49a9813c02e2ce2548402e1a63b05de550bace",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/field.tsx",
+      "blob": "d58e0d29dbfe52053a21eff0b837f571b278f1ef",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/hover-card.tsx",
+      "blob": "f76bbaa239c8907d8935521f20e940bb4e3a40ff",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/input-group.tsx",
+      "blob": "cb328462c7c372f1b22342b25d396704d87247c1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/input-otp.tsx",
+      "blob": "9680970c7bfcf40588b8c69123b2d02a1e2699b6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/input.tsx",
+      "blob": "06c96abffafcd0fbbedb24778f0c2f668e1b2109",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/item.tsx",
+      "blob": "ebdb220dcada0975388fbf2b095b1db61c5d8413",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/kbd.tsx",
+      "blob": "1fc8d9c188183e3df985d9a1f454ca692186790f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/label.tsx",
+      "blob": "3b0886ba1826c80e7c6e0c22b699a43cb6df5bc9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/marker.tsx",
+      "blob": "4fcf772c96f7649cea01ad6f7a688a521a817a42",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/menubar.tsx",
+      "blob": "ac05ba9b8ef04ea55c038d8b6eb244a8c0f323ef",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/message-scroller.tsx",
+      "blob": "37268f119d3298c7c428bda0751c2af32f0ada9e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/message.tsx",
+      "blob": "ae7aef393f0714997c632fdac0755ce9d830f965",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/native-select.tsx",
+      "blob": "273a3bc8ea586d4d525c7d3da108c65810894e93",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/navigation-menu.tsx",
+      "blob": "54bf3f8c29ab48b087a62dce4bcbe8ede7ab6418",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/pagination.tsx",
+      "blob": "b1f8b1df96e8a29f8f799c190cf545544607d2a5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/popover.tsx",
+      "blob": "808aa62dc13b4b9c37efbe9c676c09b8e06c0738",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/progress.tsx",
+      "blob": "43df6eb11e1c55ad939e24dc408042efa6fe8f93",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/questionnaire.tsx",
+      "blob": "59de4ea25facd1a4514a192eb08d6fe7987ca14e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/radio-group.tsx",
+      "blob": "1293df6fbc4dde4dcd15cb60aacb734031844164",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/resizable.tsx",
+      "blob": "76d7a0e2dc9e2ea70b7d01bc286f7cde64fbe6c8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/scroll-area.tsx",
+      "blob": "a7acc33718ff8d558e276048c9cc191d8d0d5b2b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/select.tsx",
+      "blob": "2cb76c117197336324cfaed1300e92ca65273b40",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/separator.tsx",
+      "blob": "d69c13426761105ab42e5a6bd364dc54bd70f78c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/sheet.tsx",
+      "blob": "72669ad9cb812dcbf389f8be6e8157eaa8023479",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/sidebar.tsx",
+      "blob": "1ca3356406a02d78b828f8ade02a420f19b40e55",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/skeleton.tsx",
+      "blob": "0439455a951949f8a75be48fa2c8b8e9f3d8b0f2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/slider.tsx",
+      "blob": "2e55a9a0fc07b66fc86ce1df33c86c2501939088",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/sonner.tsx",
+      "blob": "0c2e93ea32d47a346e4dd0d92b916d965c09d7e5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/spinner.tsx",
+      "blob": "2a91bf988618e87a3698133b0bd971a00ec3f61b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/switch.tsx",
+      "blob": "753fd22a92536c103d3ff4c4c6171d48f428ead7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/table.tsx",
+      "blob": "160cf7aa14b8467a777eb2405053d2d968f641b9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/tabs.tsx",
+      "blob": "2b39bbfe73883fcb8a6630e0d6af953ed0b08f49",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/textarea.tsx",
+      "blob": "8b8d3f1c6cc7c66c2fab2e050164f355a655b6c9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/toast.tsx",
+      "blob": "0c9dfc0a76eeacfde789c4beed5f4eea2666c686",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/toggle-group.tsx",
+      "blob": "f2d9475eaaa1132ea00efd113a415dac46cd2bb3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/toggle.tsx",
+      "blob": "b058b4d0e74ccc7de2258b63a77f0136bb391b11",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/tooltip.tsx",
+      "blob": "8fbd22dacb65913e7e31cde7ad800dce6f889116",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Pinned Base registry files select the icon names. SVG geometry comes from the separate lucide-react package, not these Git blobs. Candidate replay is not integrated.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

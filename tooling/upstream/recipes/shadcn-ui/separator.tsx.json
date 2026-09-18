@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/separator.tsx",
+  "generator": "generators/simple-wrapper.mjs",
+  "generatorInputs": ["apps/v4/registry/bases/base/ui/separator.tsx"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": ["overrides/separator-props.json"],
+  "dependencies": ["typescript", "prettier"],
+  "scope": "One stateless Base UI wrapper, a literal default prop, native class mapping, and a separate native prop-type override."
+}

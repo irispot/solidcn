@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/slider/utils/resolveThumbCollision.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "be8f00f4068b24184352d2a18c6c5beb36d36a5b4c26c65b2c36fb42864fb66d",
+  "classification": "replayed-framework-neutral-slider-helper",
+  "mappingScope": "Pinned helper source with only local import and Solid-owned type edits where required.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/slider/utils/resolveThumbCollision.ts",
+      "blob": "49657930583051571217895c5f5cbdff298291fb",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/base-ui/slider/utils/resolveThumbCollision.ts.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/base-ui/slider/utils/resolveThumbCollision.ts.json",
+          "sha256": "dd5e055c19a606f117cf813c0e7490ce57e3cf8ba92b2aec20dba3a70ddd64a5"
+        },
+        {
+          "path": "generators/exact-source-copy.mjs",
+          "sha256": "71a6f8290e24a0a8da0e021a58fa9fdea27737bed42cb3b3a6c02fa3b3ec938c"
+        },
+        {
+          "path": "overrides/slider-resolveThumbCollision.json",
+          "sha256": "0e8ecf9804c23ad8784b7a8d2219e1cd13bdac659abc8e2006af95c73188b59b"
+        }
+      ],
+      "dependencies": {},
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "25dd2c6d716978cef0098dc360965b89ce6455e71e97ccae7eef3fe409af2032",
+    "finalSha256": "be8f00f4068b24184352d2a18c6c5beb36d36a5b4c26c65b2c36fb42864fb66d",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/slider-resolveThumbCollision.json",
+        "purpose": "Use native-local dependencies in resolveThumbCollision. No algorithm edits.",
+        "sha256": "0e8ecf9804c23ad8784b7a8d2219e1cd13bdac659abc8e2006af95c73188b59b"
+      }
+    ]
+  },
+  "manualException": null
+}

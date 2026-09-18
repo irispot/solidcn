@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/toolbar/types.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "f6e5bb708ce24dd8395faf80010fdb71ed70e5ad4acce3f9fa7d471c9892aaaa",
+  "classification": "manual-native-public-types",
+  "mappingScope": "Pinned family type declarations translated to native Solid types; name coverage is not type or behavior acceptance.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Reviewed the pinned toolbar family type declarations and the native Solid type module. The public source-name audit and workspace typecheck cover the declared names. This manual record does not prove type-field, behavior, or pixel parity."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/toolbar/button/ToolbarButton.tsx",
+      "blob": "3e24da370f007ba1393b09af7d2d0ca72a08e8e9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/button/ToolbarButtonDataAttributes.ts",
+      "blob": "7065c802d2ab0621c86c9eed206e4ea735d494ca",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/group/ToolbarGroup.tsx",
+      "blob": "c2e34a49e0a75d379ea2e9f41757444695d36268",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/group/ToolbarGroupContext.ts",
+      "blob": "aed5f11c7feed25cbbb58029db005689e84b1454",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/group/ToolbarGroupDataAttributes.ts",
+      "blob": "f40e828dbca167c2d580e1927da0d7fe9b259ba1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/index.parts.ts",
+      "blob": "528becb735bdf27476e6db3caf2e105847d18420",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/index.ts",
+      "blob": "4b88fd9a578baa9b593d879b3f2492ced48c76d1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/input/ToolbarInput.tsx",
+      "blob": "464f1f583e30de65e33430344305edaebc2ec51c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/input/ToolbarInputDataAttributes.ts",
+      "blob": "fcb6d45f077a76b17c059ec66f540624d154f694",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/link/ToolbarLink.tsx",
+      "blob": "e9024a8228f78759eafece60f09fd954b708b7c1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/link/ToolbarLinkDataAttributes.ts",
+      "blob": "d03b1458ef6e913db323f0f2b624af4aface992c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/root/ToolbarRoot.tsx",
+      "blob": "bd524289dde833feed582d0d746007de984719cf",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/root/ToolbarRootContext.ts",
+      "blob": "3f15ed65b762aacec09da43e079977d6c4cab9ec",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/root/ToolbarRootDataAttributes.ts",
+      "blob": "dd0be9bbf69f125385b72ecd38843b9704bd12e8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/separator/ToolbarSeparator.tsx",
+      "blob": "52c28212c902ef23064945cc1d0971f2374ccdbb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toolbar/separator/ToolbarSeparatorDataAttributes.ts",
+      "blob": "6edc4ad9c6fa8333e4d89b3ac4b4a0e1e093c8fb",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Pinned family type declarations translated to native Solid types; name coverage is not type or behavior acceptance.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/styles/style-nova.css",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "5d5751579c015b61e77cf0822862a43ac79f3e6fed236a17624be8e6d1ebea1d",
+  "classification": "copied-stylesheet",
+  "mappingScope": "Exact source file intended; byte comparison is recorded.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/styles/style-nova.css",
+      "blob": "514a3e8e00deac2ef59fee04c57cb10fd277ef39",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/shadcn-ui/styles/style-nova.css.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/shadcn-ui/styles/style-nova.css.json",
+          "sha256": "5778d986051191cbbf5d8fa8467db6b01aa8060f9486013a9f7fda430c6fa6fd"
+        },
+        {
+          "path": "generators/style.mjs",
+          "sha256": "ad7fd90bade998b822a489e08f3ff76739675c93e7053f377aa13b76c72b80a8"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        }
+      ],
+      "dependencies": {
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "5d5751579c015b61e77cf0822862a43ac79f3e6fed236a17624be8e6d1ebea1d",
+    "finalSha256": "5d5751579c015b61e77cf0822862a43ac79f3e6fed236a17624be8e6d1ebea1d",
+    "equalsNative": true,
+    "overrides": []
+  },
+  "manualException": null
+}

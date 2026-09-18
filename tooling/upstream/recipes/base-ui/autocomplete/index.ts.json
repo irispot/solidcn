@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/autocomplete/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/autocomplete/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": ["overrides/autocomplete-public-types.json"],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../selection",
+    "nativeTypes": [
+      {
+        "public": "AutocompleteRootProps"
+      },
+      {
+        "public": "AutocompleteFilter",
+        "native": "Filter"
+      },
+      {
+        "public": "AutocompleteFilterOptions",
+        "native": "FilterOptions"
+      }
+    ],
+    "expectedTypeSurface": [
+      {
+        "module": "./root/AutocompleteRoot",
+        "kind": "star"
+      },
+      {
+        "module": "./trigger/AutocompleteTrigger",
+        "kind": "star"
+      },
+      {
+        "module": "./input-group/AutocompleteInputGroup",
+        "kind": "star"
+      },
+      {
+        "module": "./item/AutocompleteItem",
+        "kind": "star"
+      },
+      {
+        "module": "./value/AutocompleteValue",
+        "kind": "star"
+      },
+      {
+        "module": "./separator/AutocompleteSeparator",
+        "kind": "named",
+        "local": "AutocompleteSeparatorProps",
+        "name": "AutocompleteSeparatorProps"
+      },
+      {
+        "module": "./separator/AutocompleteSeparator",
+        "kind": "named",
+        "local": "AutocompleteSeparatorState",
+        "name": "AutocompleteSeparatorState"
+      },
+      {
+        "module": "../combobox/input/ComboboxInput",
+        "kind": "named",
+        "local": "ComboboxInputProps",
+        "name": "AutocompleteInputProps"
+      },
+      {
+        "module": "../combobox/input/ComboboxInput",
+        "kind": "named",
+        "local": "ComboboxInputState",
+        "name": "AutocompleteInputState"
+      },
+      {
+        "module": "../combobox/icon/ComboboxIcon",
+        "kind": "named",
+        "local": "ComboboxIconProps",
+        "name": "AutocompleteIconProps"
+      },
+      {
+        "module": "../combobox/icon/ComboboxIcon",
+        "kind": "named",
+        "local": "ComboboxIconState",
+        "name": "AutocompleteIconState"
+      },
+      {
+        "module": "../combobox/clear/ComboboxClear",
+        "kind": "named",
+        "local": "ComboboxClearProps",
+        "name": "AutocompleteClearProps"
+      },
+      {
+        "module": "../combobox/clear/ComboboxClear",
+        "kind": "named",
+        "local": "ComboboxClearState",
+        "name": "AutocompleteClearState"
+      },
+      {
+        "module": "../combobox/popup/ComboboxPopup",
+        "kind": "named",
+        "local": "ComboboxPopupProps",
+        "name": "AutocompletePopupProps"
+      },
+      {
+        "module": "../combobox/popup/ComboboxPopup",
+        "kind": "named",
+        "local": "ComboboxPopupState",
+        "name": "AutocompletePopupState"
+      },
+      {
+        "module": "../combobox/positioner/ComboboxPositioner",
+        "kind": "named",
+        "local": "ComboboxPositionerProps",
+        "name": "AutocompletePositionerProps"
+      },
+      {
+        "module": "../combobox/positioner/ComboboxPositioner",
+        "kind": "named",
+        "local": "ComboboxPositionerState",
+        "name": "AutocompletePositionerState"
+      },
+      {
+        "module": "../combobox/list/ComboboxList",
+        "kind": "named",
+        "local": "ComboboxListProps",
+        "name": "AutocompleteListProps"
+      },
+      {
+        "module": "../combobox/list/ComboboxList",
+        "kind": "named",
+        "local": "ComboboxListState",
+        "name": "AutocompleteListState"
+      },
+      {
+        "module": "../combobox/row/ComboboxRow",
+        "kind": "named",
+        "local": "ComboboxRowProps",
+        "name": "AutocompleteRowProps"
+      },
+      {
+        "module": "../combobox/row/ComboboxRow",
+        "kind": "named",
+        "local": "ComboboxRowState",
+        "name": "AutocompleteRowState"
+      },
+      {
+        "module": "../combobox/arrow/ComboboxArrow",
+        "kind": "named",
+        "local": "ComboboxArrowProps",
+        "name": "AutocompleteArrowProps"
+      },
+      {
+        "module": "../combobox/arrow/ComboboxArrow",
+        "kind": "named",
+        "local": "ComboboxArrowState",
+        "name": "AutocompleteArrowState"
+      },
+      {
+        "module": "../combobox/backdrop/ComboboxBackdrop",
+        "kind": "named",
+        "local": "ComboboxBackdropProps",
+        "name": "AutocompleteBackdropProps"
+      },
+      {
+        "module": "../combobox/backdrop/ComboboxBackdrop",
+        "kind": "named",
+        "local": "ComboboxBackdropState",
+        "name": "AutocompleteBackdropState"
+      },
+      {
+        "module": "../combobox/portal/ComboboxPortal",
+        "kind": "named",
+        "local": "ComboboxPortalProps",
+        "name": "AutocompletePortalProps"
+      },
+      {
+        "module": "../combobox/portal/ComboboxPortal",
+        "kind": "named",
+        "local": "ComboboxPortalState",
+        "name": "AutocompletePortalState"
+      },
+      {
+        "module": "../combobox/group/ComboboxGroup",
+        "kind": "named",
+        "local": "ComboboxGroupProps",
+        "name": "AutocompleteGroupProps"
+      },
+      {
+        "module": "../combobox/group/ComboboxGroup",
+        "kind": "named",
+        "local": "ComboboxGroupState",
+        "name": "AutocompleteGroupState"
+      },
+      {
+        "module": "../combobox/group-label/ComboboxGroupLabel",
+        "kind": "named",
+        "local": "ComboboxGroupLabelProps",
+        "name": "AutocompleteGroupLabelProps"
+      },
+      {
+        "module": "../combobox/group-label/ComboboxGroupLabel",
+        "kind": "named",
+        "local": "ComboboxGroupLabelState",
+        "name": "AutocompleteGroupLabelState"
+      },
+      {
+        "module": "../combobox/empty/ComboboxEmpty",
+        "kind": "named",
+        "local": "ComboboxEmptyProps",
+        "name": "AutocompleteEmptyProps"
+      },
+      {
+        "module": "../combobox/empty/ComboboxEmpty",
+        "kind": "named",
+        "local": "ComboboxEmptyState",
+        "name": "AutocompleteEmptyState"
+      },
+      {
+        "module": "../combobox/status/ComboboxStatus",
+        "kind": "named",
+        "local": "ComboboxStatusProps",
+        "name": "AutocompleteStatusProps"
+      },
+      {
+        "module": "../combobox/status/ComboboxStatus",
+        "kind": "named",
+        "local": "ComboboxStatusState",
+        "name": "AutocompleteStatusState"
+      },
+      {
+        "module": "../combobox/collection/ComboboxCollection",
+        "kind": "named",
+        "local": "ComboboxCollectionState",
+        "name": "AutocompleteCollectionState"
+      },
+      {
+        "module": "../combobox/collection/ComboboxCollection",
+        "kind": "named",
+        "local": "ComboboxCollectionProps",
+        "name": "AutocompleteCollectionProps"
+      },
+      {
+        "module": "../combobox/root/utils/useFilter",
+        "kind": "named",
+        "local": "Filter",
+        "name": "AutocompleteFilter"
+      },
+      {
+        "module": "../combobox/root/utils/useFilter",
+        "kind": "named",
+        "local": "UseFilterOptions",
+        "name": "AutocompleteFilterOptions"
+      }
+    ]
+  },
+  "scope": "Public export declarations only. Names come from upstream declarations and route to an explicit native group. The current native type policy is retained, not certified as equivalent; changes to the upstream type export surface fail for review. This does not generate component behavior."
+}

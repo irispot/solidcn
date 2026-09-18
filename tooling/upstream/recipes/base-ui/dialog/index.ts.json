@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/dialog/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/dialog/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": [],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../overlays",
+    "nativeTypes": "omit",
+    "expectedTypeSurface": [
+      {
+        "module": "./root/DialogRoot",
+        "kind": "star"
+      },
+      {
+        "module": "./trigger/DialogTrigger",
+        "kind": "star"
+      },
+      {
+        "module": "./portal/DialogPortal",
+        "kind": "star"
+      },
+      {
+        "module": "./popup/DialogPopup",
+        "kind": "star"
+      },
+      {
+        "module": "./backdrop/DialogBackdrop",
+        "kind": "star"
+      },
+      {
+        "module": "./title/DialogTitle",
+        "kind": "star"
+      },
+      {
+        "module": "./description/DialogDescription",
+        "kind": "star"
+      },
+      {
+        "module": "./close/DialogClose",
+        "kind": "star"
+      },
+      {
+        "module": "./viewport/DialogViewport",
+        "kind": "star"
+      }
+    ]
+  },
+  "scope": "Public export declarations only. Names come from upstream declarations and route to an explicit native group. The current native type policy is retained, not certified as equivalent; changes to the upstream type export surface fail for review. This does not generate component behavior."
+}

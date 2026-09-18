@@ -1,0 +1,30 @@
+@import './reference/node_modules/@fontsource-variable/geist/index.css';
+@import './reference/node_modules/@fontsource-variable/geist-mono/index.css';
+@import './reference/node_modules/@fontsource-variable/noto-sans-arabic/index.css';
+@import './reference/node_modules/@fontsource-variable/noto-sans-hebrew/index.css';
+
+body.docs-example {
+  --font-sans: 'Geist Variable', sans-serif;
+  --font-mono: 'Geist Mono Variable', monospace;
+  --font-ar: 'Noto Sans Arabic Variable', sans-serif;
+  --font-he: 'Noto Sans Hebrew Variable', sans-serif;
+  --visual-heading: 'Geist Variable', sans-serif;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: var(--foreground);
+  background: var(--background);
+  position: relative;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+body.docs-example[data-lang='ar'],
+body.docs-example [data-lang='ar'] {
+  font-family: var(--font-ar);
+}
+body.docs-example[data-lang='he'],
+body.docs-example [data-lang='he'] {
+  font-family: var(--font-he);
+}
+body.docs-example #visual-case {
+  padding: 40px;
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/styles.css",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "7d08458487b9b63cd3d5d913f1cd507ad968077839c7b331a5b1344da043f25a",
+  "classification": "manual-stylesheet-integration",
+  "mappingScope": "Theme extraction and integration references, not a byte-for-byte copy.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": []
+  },
+  "sources": [
+    {
+      "path": "apps/v4/app/globals.css",
+      "blob": "32582b53565093c693017d4528d2982642050bfe",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/styles/style-nova.css",
+      "blob": "514a3e8e00deac2ef59fee04c57cb10fd277ef39",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/shadcn/src/tailwind.css",
+      "blob": "7807c58eb94de8b764b9b6b7b5d8cde6d012b17f",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Theme extraction and integration references, not a byte-for-byte copy.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

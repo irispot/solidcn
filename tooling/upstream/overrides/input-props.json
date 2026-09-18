@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Use the native Input primitive's prop type, which includes its native change callback contract, instead of an intrinsic input-only type.",
+  "replacements": [
+    {
+      "find": "function Input(__props0: ComponentProps<'input'>)",
+      "replace": "function Input(__props0: ComponentProps<typeof InputPrimitive>)",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

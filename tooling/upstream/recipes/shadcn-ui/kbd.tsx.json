@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/kbd.tsx",
+  "generator": "generators/simple-wrapper.mjs",
+  "generatorInputs": ["apps/v4/registry/bases/base/ui/kbd.tsx"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": ["overrides/kbd-props.json"],
+  "dependencies": ["typescript", "prettier"],
+  "scope": "Two stateless native wrappers with separate reactive prop scopes and an explicit KbdGroup element-type correction."
+}

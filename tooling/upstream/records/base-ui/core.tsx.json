@@ -1,0 +1,723 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/core.tsx",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "6c5c12d1ee27b83c479f8cd01f6ee7af354455be8879c41ac6ab258452c4afe4",
+  "classification": "manual-grouped-native-implementation",
+  "mappingScope": "Family-level review relationship. It is not an exact function or copied-source mapping.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "CSPProvider exports native Props and State types and a type namespace based on the pinned React declaration. Its context now supplies nonce and disableStyleElements to the shared scrollbar style element in Scroll Area and Select. Direct Chromium probes show a default style tag, the requested nonce, and no tag when disabled for both component families. renderElement reads the initial render function with untrack, while merged props remain reactive. Full behavior review remains pending.",
+      "useMediaQuery now supports the pinned defaultMatches, matchMedia, ssrMatchMedia, and noSsr options, strips an @media prefix, and removes its listener. Two native client tests and two native server tests pass; full original behavior review remains pending."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/csp-provider/CSPProvider.tsx",
+      "blob": "71927266083fe73d639dce3106165e111bf5e25a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/csp-provider/index.parts.ts",
+      "blob": "0cfdf6666b020057d4185349149ad194a316777c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/csp-provider/index.ts",
+      "blob": "267a7f66f4471f2ca05357e598c0fcf1c9a59158",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/direction-provider/DirectionProvider.tsx",
+      "blob": "b5f2b310893fe1d5a33feb24f53fbe5979ae9e46",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/direction-provider/index.parts.ts",
+      "blob": "ae024a9d001eba3219d3dfe01ff84593b33c514f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/direction-provider/index.ts",
+      "blob": "834323baa8fad62b2d3b5090ce93bd353bcebe07",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/types/index.ts",
+      "blob": "ae3f6419e86e49e5005fa8aa460c7204180d02e5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/unstable-use-media-query/index.ts",
+      "blob": "d023b7e1be6194994e38a14cf6499694ca683af3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/use-render/index.ts",
+      "blob": "45b191a14b3e1e24e63f7fae825630b527431de2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/use-render/useRender.ts",
+      "blob": "a1daf368f1aefd7930d98316905e1534529da71e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/CommonPopupCssVars.ts",
+      "blob": "29e12362ef68357f14d9f544dc4565ff16867ef5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/CommonPopupDataAttributes.ts",
+      "blob": "c2f46189432ce8be1f8334b73296733844badbe1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/CommonPositionerCssVars.ts",
+      "blob": "d7e6676dfc29141fb8a1f4cd1fedd67eb73a1ddb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/CommonTriggerDataAttributes.ts",
+      "blob": "c6ca55a53abcaebdcd9090c4d7deb38cd00fb4b2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/CommonViewportDataAttributes.ts",
+      "blob": "f0b8407b38303754a5f3fce4cfcf50a2949b5fe6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/FloatingPortalLite.tsx",
+      "blob": "8e401c52bc6d24c636924720a9b5db580a3b9d06",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/FocusGuard.tsx",
+      "blob": "5774da34394a04390b5fca457deb5aab44e61c01",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/InternalBackdrop.tsx",
+      "blob": "7f5f90fb43d2ef4cc8d7467c2a967d0a2b20eca0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/NullStore.ts",
+      "blob": "2cc7d9e70cfeb0e05827d1b8d7c2d8eaee3fbc8e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/adaptiveOriginConstants.ts",
+      "blob": "d3cdc01e35809dc984d52e0dbc5dd55a2ad4df2a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/adaptiveOriginMiddleware.ts",
+      "blob": "4dbd3996740cca2c3fef5725c3dbf39b231fa1dd",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/closePart.tsx",
+      "blob": "69a6689e8dcef5891ae85808e11c624d08152887",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/collapsibleOpenStateMapping.ts",
+      "blob": "e592a317610095b6d7280610a4398b8d6ed33214",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/dispatchClickWithModifiers.ts",
+      "blob": "d2959075702c72387de50b02e7652714204aed39",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/getCssDimensions.ts",
+      "blob": "d37de089a521b80249d49988386d470930458e52",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/getElementAtPoint.ts",
+      "blob": "ab7793b29aca07dbdf56cf03add26048c43424ee",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/getElementTransform.ts",
+      "blob": "8a619c466ad32a512fc4d3e9bc54fedb9c1204fa",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/getFiniteAnimations.ts",
+      "blob": "b3c70a1feb71bd47d8e113d72c46434d4038f34c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/getPseudoElementBounds.ts",
+      "blob": "f51598d633016428101061bdcf39462938524aec",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/hideMiddleware.ts",
+      "blob": "b9541315b6ba06de4da29457697d8d98de7d7e81",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/listbox-separator/ListboxSeparator.tsx",
+      "blob": "ff4ee2b037c0fd819f3ca9a41c69c37a5830234d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/popupStateMapping.ts",
+      "blob": "8b3c73a386fc267b5c8d2439d5af0f420b0186fa",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/popups/index.ts",
+      "blob": "8b9c5aef16ee630c1aa09d226967ba004d7c6d68",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/popups/inlineRect.ts",
+      "blob": "71699b9aa3ce34c1f97b37daead92e60ff4442e5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/popups/popupHandle.ts",
+      "blob": "4b17d6d9b2acfbc998f2caa4a6299340eb9268ea",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/popups/popupStoreUtils.ts",
+      "blob": "fdcdcfdde8c427b0519a5a47c866525645403954",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/popups/popupTriggerMap.ts",
+      "blob": "b00c94e0880df8820184df5d053e971b2debf859",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/popups/store.ts",
+      "blob": "6daac373e569cb3d0a2c535861dd2ec023098565",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/popups/usePopupHandleStore.ts",
+      "blob": "6067145608809048e7281371b3287b75d53e12cd",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/popups/useTriggerFocusGuards.ts",
+      "blob": "c2f86cf6f306cb54eb1dc4148538d0b695e01809",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/resolveAriaLabelledBy.ts",
+      "blob": "622afe24d2cfe7a7fa79a570a98e78154fc49144",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/resolveClassName.ts",
+      "blob": "486d39cb38116b5072587f4ff15b120243a3f636",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/resolveRef.ts",
+      "blob": "01bfdfe91ea706f67a66234c4f084e8cb4ce3ebc",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/resolveStyle.ts",
+      "blob": "39a7284d88642803fa75847d83692964ec56d48f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/scrollEdges.ts",
+      "blob": "9f56766a62413749ed953b68dbd62e4673014183",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/scrollable.ts",
+      "blob": "bc7ebda4456a8b0851cf0a88a72f1c869f211e4f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/styles.tsx",
+      "blob": "8e75d7e55c07e9e63098fbf28461745ff6df09cb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/useAnchoredPopupScrollLock.ts",
+      "blob": "4b1bddde8fad5f794e9815998db463e59b7f2caa",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/useFocusableWhenDisabled.ts",
+      "blob": "094545bf0b5ba7e099d88fb7480133b890661545",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/useIsHydrating.ts",
+      "blob": "6b9d751cb39d7e92553dbeb1b9b5a66995ae06e9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/useMixedToggleClickHandler.ts",
+      "blob": "397d18f9a8e14d5b922bb44d54f0d493902e7023",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/useOpenInteractionType.ts",
+      "blob": "ded409bfdd25da46a14e0f64a6193b59c93ea47d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/usePopupAutoResize.ts",
+      "blob": "3cf36fa3ac2327ed490b7ffbee6d944166385cb2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/usePopupViewport.tsx",
+      "blob": "d99c1bcf7472c78156c6c8d7bacf2e1779db11b2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/usePositioner.tsx",
+      "blob": "c2b7e777ee61dfeefe1b48d0e6d1e8258e2de746",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/useRegisteredLabelId.ts",
+      "blob": "3a7c1aa9367362a391bc2ff1d4f9b5870c73c0a9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/useSwipeDismiss.ts",
+      "blob": "a3d5be80895380b301779f5f159e8d2d05b9a49e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/utils/valueToPercent.ts",
+      "blob": "9886ee07f26398bcaa01f035284baf58256a0527",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/addEventListener.ts",
+      "blob": "ca1e296616e6b7a15b3849840d137141afa75636",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/areArraysEqual.ts",
+      "blob": "32c0c28e94f44eee492be84a5cd3d00916164efe",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/clamp.ts",
+      "blob": "0dfd57f30b26b625e0b1aa7add9b08aaa8ec14d7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/createLogOnce.ts",
+      "blob": "f6b7d5233f2ff2e921dfa214121691eaa849f3c7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/empty.ts",
+      "blob": "11da033ad3d22d1cee055ea41e4b159ec263eefb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/error.ts",
+      "blob": "767f88180d3fc8b856ff34aabc88ac7989adbc04",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/fastHooks.ts",
+      "blob": "4f92a36f05e8658d0e9606e3e6e4e3395efe750f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/fastObjectShallowCompare.ts",
+      "blob": "18046b3ca5bfadf49d6e10b9db196ea21cd6919b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/formatErrorMessage.ts",
+      "blob": "0f1133e8998ed6e696ac9cbde46e40b3636c73d2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/formatNumber.ts",
+      "blob": "3fb1dfba554f37f88939332dabd3197d2879bb73",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/generateId.ts",
+      "blob": "a4c68b5f581bcaa0ba443706a42d898bcbc67e82",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/getDefaultFormSubmitter.ts",
+      "blob": "bcd03275d8b096ba86a7b500ece899da97e50235",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/getReactElementRef.ts",
+      "blob": "81dfabe210f8efaa1dce12b00e9f38e7f224f209",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/inertValue.ts",
+      "blob": "b04bd81d51fd37daafe3d73106c728e5f9c1bec1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/isElementDisabled.ts",
+      "blob": "e6a06c1c096deb0b48c2b7ecfe8ebf5ca2446bce",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/isMouseWithinBounds.ts",
+      "blob": "110019422d296547580048c7903d8070596ccd18",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/mergeCleanups.ts",
+      "blob": "24ce3cb51f7a8db9076ed3e55c96eeaeba118dea",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/mergeObjects.ts",
+      "blob": "6d801221d609d3ddf5982f32635a4eef8a3af599",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/owner.ts",
+      "blob": "0972be5a42687887ce96c06be9fa08de53834107",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/platform/engine.ts",
+      "blob": "6273bb4b42f0f6b310c781100dab85c9999951a1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/platform/env.ts",
+      "blob": "78482372eb6b444e6d6ffa80e449f3269f87369c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/platform/index.ts",
+      "blob": "c85fd74962225df3e613c6f624e9b550461ce15e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/platform/media-query.ts",
+      "blob": "d0d139f3347041fab54a4aea3fd7929ab76b9b46",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/platform/os.ts",
+      "blob": "92cc0df9d55c9d024baf607d0c36110f9561dcd3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/platform/parts.ts",
+      "blob": "64085c208b273704f65eda44afe3918db49c2260",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/platform/screen-reader.ts",
+      "blob": "cdbd198f63c6327cb4a2c810855266149e865930",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/platform/shared.ts",
+      "blob": "23c4a273ffbad4d2fb8054549afc6449ed760c4d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/reactVersion.ts",
+      "blob": "293a5e8c90288ad1c168f8448d4e9c8a845238a4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/safeReact.ts",
+      "blob": "4e1e2bf1522c584b0ba60c1fdf1e3545c9ea9d76",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/shadowDom.ts",
+      "blob": "4105136a539cb6d0c5aae964c4afe1a21ab37eb5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/store/ReactStore.ts",
+      "blob": "70d256d201f448b1a6538b53dad9f856e0c78e40",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/store/Store.ts",
+      "blob": "c492b4e7f3949d9d4202c02048cf0f6b3ffc1ffd",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/store/StoreInspector.tsx",
+      "blob": "24fd58fc42dcf3c04b2f9de8961fb19171c610d1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/store/createSelector.ts",
+      "blob": "b1797328db45c7bd58789e0ba6abefa4f234d3f7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/store/createSelectorMemoized.ts",
+      "blob": "a24907d8b1a59dc60532ef41b28f0be883a99c42",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/store/index.ts",
+      "blob": "4c9edf88db3b047e3f75bb0f6d63308d1924feba",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/store/useStore.ts",
+      "blob": "8f908778aae0400b71343b618f701450a9902375",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/stringifyLocale.ts",
+      "blob": "dd8406e789a5c18883abb9c5df0956c477755260",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/testUtils.ts",
+      "blob": "1eee151ab9ffef40615fa937fd847c24ef5094ff",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/useAnimationFrame.ts",
+      "blob": "8033fe6659e7c12eedf8358427956f0ff16bcf10",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/useControlled.ts",
+      "blob": "e876b40c1ee0a6b239e2c12a4404a7737de7467e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/useEnhancedClickHandler.ts",
+      "blob": "db5509543e75a8d1aa26b0bb5ab5230171b671cf",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/useForcedRerendering.ts",
+      "blob": "0c2d573eaaf2df6e44e59c64462fc10f98b57174",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/useId.ts",
+      "blob": "2d2cf04dbe9a6c11039b7361931ab82e186ccdc4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/useIdleCallback.ts",
+      "blob": "ec7aefa19136c52a029dc93239e6e713a64262de",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/useInterval.ts",
+      "blob": "88d897e49e842d5202b1bc44f7fd37a52a7fc45b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/useIsoLayoutEffect.ts",
+      "blob": "01d3a9e9bf4275e4815c245e14c92e15f49eba77",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/useMergedRefs.ts",
+      "blob": "2b869242727750842f616f5652583a3a878da28a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/useOnFirstRender.ts",
+      "blob": "4f3cee87a1388051291ec2e98e7a4828d69736b1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/useOnMount.ts",
+      "blob": "e849dcefca021fefc60464d42c6ea0f01eea24f6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/usePreviousValue.ts",
+      "blob": "eae26629965beacffb7a0b2b956cacf75ef01bd1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/useRefWithInit.ts",
+      "blob": "6c13a09648ee6ebd5bd7e39e25673f9be40ff224",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/useScrollLock.ts",
+      "blob": "9877e8862ec585f7083a0791647901ecc0e304c9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/useStableCallback.ts",
+      "blob": "5dd957e39822a0e31d6862b42c9d91c2065a907d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/useTimeout.ts",
+      "blob": "dfdaf4c7e0c51dde5ea9245a97957e2792b991b2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/useValueAsRef.ts",
+      "blob": "30d86860bc53edbefb10273c81252833ec8148b5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/visuallyHidden.ts",
+      "blob": "7d8e676f1bf425889bb80f4804a715ebeacce941",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/utils/src/warn.ts",
+      "blob": "013d17a8423c53a66bdcf4884f90f518ce11e0fb",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Family-level review relationship. It is not an exact function or copied-source mapping.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

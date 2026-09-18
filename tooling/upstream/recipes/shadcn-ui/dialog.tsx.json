@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/dialog.tsx",
+  "generator": "generators/stateless-wrapper.mjs",
+  "generatorInputs": ["apps/v4/registry/bases/base/ui/dialog.tsx"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": [],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "optionalPicks": []
+  },
+  "scope": "Stateless source-to-source wrapper conversion only. Literal CVA definitions, reactive prop/object access, typed native primitives, native render functions, and data attributes are supported. Exact optional Pick type mappings preserve reviewed native annotations; no component-engine behavior is generated or accepted."
+}

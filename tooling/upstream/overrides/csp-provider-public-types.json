@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Export the native CSPProvider prop and state types from its public module.",
+  "replacements": [
+    {
+      "find": "export { CSPProvider } from '../core';\n",
+      "replace": "export { CSPProvider } from '../core';\nexport type { CSPProviderProps, CSPProviderState } from '../core';\n",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

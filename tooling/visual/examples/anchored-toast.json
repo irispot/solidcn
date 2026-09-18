@@ -1,0 +1,16 @@
+{
+  "width": 600,
+  "height": 360,
+  "states": [
+    { "name": "default" },
+    {
+      "name": "shown",
+      "covers": ["toast"],
+      "actions": [
+        { "type": "click", "selector": "button:has-text('Show anchored toast')" },
+        { "type": "wait", "selector": "[data-visual-toast-positioner][data-side='bottom']" }
+      ],
+      "popups": ["[data-visual-toast-positioner]"]
+    }
+  ]
+}

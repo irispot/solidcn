@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/use-mobile.ts",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "929a559abf4b9bad71ba1a3a73b4b58a2e2ee60793539cac1a2a22fb31568cfc",
+  "classification": "manual-native-support",
+  "mappingScope": "API or integration reference; native helpers contain additional code.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": []
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/hooks/use-mobile.ts",
+      "blob": "2b0fe1dfef3b17850bbac040665f514a8ffd0f15",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "API or integration reference; native helpers contain additional code.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

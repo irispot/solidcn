@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/toggle-group.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "88f15e6cbdeffd1f4de04ba9dc29c0de56d1c37efde9deec9864e962773c8bd0",
+  "classification": "generated-wrapper-with-manual-fixes",
+  "mappingScope": "Registry source selected with Base first, legacy only if the Base file does not exist.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": []
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/toggle-group.tsx",
+      "blob": "f2d9475eaaa1132ea00efd113a415dac46cd2bb3",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Registry source selected with Base first, legacy only if the Base file does not exist.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/notifications.tsx",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "cf7ca2c349bf3a1a384063f2c9375ff2d2796fa296796bdbee301fa6fc39afdf",
+  "classification": "manual-grouped-native-implementation",
+  "mappingScope": "Family-level review relationship. It is not an exact function or copied-source mapping.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Read ToastPositioner: anchored placement uses Floating UI, and title and description mount only when they have content. The local-anchored-toast-shown report (SHA256 ed069133e208eef9986d6cfdf6926fff83d7b4ba637de762866d86a79702088d) is complete and passed with zero changed pixels. The native manager exposes the pinned manager subscription key and event actions. The source-stable unchanged ten-file Toast parts client route reports React 220 passed and 38 original skips, and native Solid 209 passed, 11 failed, and the same 38 skips. Native focus guards save and restore prior focus, skip ending or limited toasts, and transfer focus after close; six unchanged focus cases now pass. Five targeted Viewport hover and touch cases pass. The owner-window listener starts when a toast is present and stops when the list is empty. Title, Description, Content, and Portal pass all runnable cases. The public source-name audit has one remaining Toast type name, toastRootStateAttributesMapping; this audit does not prove type-level equivalence. Eleven gaps remain in render class merging, portaled Escape, document swipe release, and Viewport timer or deferred mouseleave behavior. Full Toast behavior remains pending."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/toast/action/ToastAction.tsx",
+      "blob": "e8c4fe9ecb2b86830afe5fdf381338d8412fd883",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/action/ToastActionDataAttributes.ts",
+      "blob": "b82280dcd2d965c7ee90909826a8e2f8d494649a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/arrow/ToastArrow.tsx",
+      "blob": "99d1010c7fc4e61190ef57574f79aaa30ab30904",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/arrow/ToastArrowDataAttributes.ts",
+      "blob": "c80a59f5d4fbee347303f8257276dec7e4885700",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/close/ToastClose.tsx",
+      "blob": "137dbee68e732d680978a6ebe987f96c5faa387d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/close/ToastCloseDataAttributes.ts",
+      "blob": "b82280dcd2d965c7ee90909826a8e2f8d494649a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/content/ToastContent.tsx",
+      "blob": "bcdf2416971a23c1087d9343a7d350b24c6c2272",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/content/ToastContentDataAttributes.ts",
+      "blob": "57208410d97ab256ede9713f4bd8454a33c05c93",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/createToastManager.ts",
+      "blob": "f7d506eb82ee23326c95b625846eb399957e3bb6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/description/ToastDescription.tsx",
+      "blob": "71d36ac92445a435b4bd4a64cd162d2a801243b7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/description/ToastDescriptionDataAttributes.ts",
+      "blob": "b82280dcd2d965c7ee90909826a8e2f8d494649a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/index.parts.ts",
+      "blob": "ed162a89e4596f1b994bfec0f47274f0bb9190d5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/index.ts",
+      "blob": "ad3099a17662ecd4c2b08c82460ea7ecbfcfd770",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/portal/ToastPortal.tsx",
+      "blob": "e61446d022a25231121655eeb00a2881d5e67f33",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/positioner/ToastPositioner.tsx",
+      "blob": "eddedfc90c0def88247c4d99ce2ca5e0b213c723",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/positioner/ToastPositionerContext.ts",
+      "blob": "a0e02bb46a442ddc347374e3653281403c77da3d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/positioner/ToastPositionerCssVars.ts",
+      "blob": "143b8bee1ac5d53a850e36d5f04d71081a2e7e2b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/positioner/ToastPositionerDataAttributes.ts",
+      "blob": "753e3a2142a7bba66b83832740df53aefc601e27",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/provider/ToastProvider.tsx",
+      "blob": "bff2e33d9a329d0eb6ad859761b50f4175fcd040",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/provider/ToastProviderContext.ts",
+      "blob": "ed63c9376541229e14c22e640159bc166694811f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/root/ToastRoot.tsx",
+      "blob": "00779e5b65ac58ab0f931d4be79fd2b82d364c9e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/root/ToastRootContext.ts",
+      "blob": "cbfbed4609b4f27316e990d13e6ec308d2f7e923",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/root/ToastRootCssVars.ts",
+      "blob": "10bd6dad33e533b37a440dff469786a86fcff8be",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/root/ToastRootDataAttributes.ts",
+      "blob": "d7828df9827efdba198b264899a51fb61960d1c1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/store.ts",
+      "blob": "517c6d8e960602cd2e6fefcaeafc805be230da15",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/title/ToastTitle.tsx",
+      "blob": "968b17bde6751deea50cf390ec3e3d460924d34d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/title/ToastTitleDataAttributes.ts",
+      "blob": "b82280dcd2d965c7ee90909826a8e2f8d494649a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/useToastManager.ts",
+      "blob": "065691982e36470d103523481eda8fe38cb230de",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/utils/focusVisible.ts",
+      "blob": "efb95ba2abe2718b9a05d3977385f0ea8360e02a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/utils/isRenderableNode.ts",
+      "blob": "86ed2291ffe0b2fa5131a78c85bd58d9769e4725",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/utils/resolvePromiseOptions.ts",
+      "blob": "677cb9362a85f124283f8db67a5e70577b746bb1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/utils/useToastLabelPart.ts",
+      "blob": "9f74bd868db4aa3e459d137e7fbfacea20305822",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/viewport/ToastViewport.tsx",
+      "blob": "eca1709114324cec86f594aa53a84b580bc24a08",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/viewport/ToastViewportCssVars.ts",
+      "blob": "322237a9e75cc9a95de824190a5538437b00511c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toast/viewport/ToastViewportDataAttributes.ts",
+      "blob": "47777a9721061d5203b528987f64a4e324daff1f",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Family-level review relationship. It is not an exact function or copied-source mapping.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

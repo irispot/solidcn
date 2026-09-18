@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/toolbar/index.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "341c996e3524fc85728647884b7a46da6922b4e5040647f8883d16d0f10da08b",
+  "classification": "generated-public-entry-with-manual-maintenance",
+  "mappingScope": "Public export reference only.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. The family-local type module gives the Toolbar public source audit zero missing names. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/toolbar/index.ts",
+      "blob": "4b88fd9a578baa9b593d879b3f2492ced48c76d1",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/base-ui/toolbar/index.ts.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/base-ui/toolbar/index.ts.json",
+          "sha256": "c33836f978a28b82a4dfb983d0563e4d7eaa7750514ec20079f6c54ad4150c65"
+        },
+        {
+          "path": "generators/base-entry.mjs",
+          "sha256": "e8e74928397ba79b917c73974fe3b62edd3feba7163fe249c0ad0898975f52dd"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        },
+        {
+          "path": "overrides/toolbar-public-types.json",
+          "sha256": "172e4289abd55715965d1d13321e6b8e6946469940f5eada05194eef7d0e3af4"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "f64fb5982a67963756117d6a36ac2459b5d84e3decb254a967b0bbed06a4459c",
+    "finalSha256": "341c996e3524fc85728647884b7a46da6922b4e5040647f8883d16d0f10da08b",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/toolbar-public-types.json",
+        "purpose": "Export family-local Toolbar types that describe native Solid render state and props.",
+        "sha256": "172e4289abd55715965d1d13321e6b8e6946469940f5eada05194eef7d0e3af4"
+      }
+    ]
+  },
+  "manualException": null
+}

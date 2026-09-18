@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Retain grouped native runtime exports, export pinned root families as types only, and resolve native type-name conflicts explicitly.",
+  "replacements": [
+    {
+      "find": "export * from './",
+      "replace": "export type * from './",
+      "expectedOccurrences": 42
+    },
+    {
+      "find": "export type * from './accordion';\n",
+      "replace": "export * from './controls';\nexport * from './structure';\nexport type { Separator } from './separator';\nexport * from './overlays';\nexport * from './selection';\nexport * from './notifications';\nexport { CSPProvider, DirectionProvider, useDirection, useRender, useMediaQuery } from './core';\nexport { makeEventPreventable, mergeClassNames, mergeProps, mergePropsN } from './merge-props/mergeProps';\nexport type {\n  BaseProps,\n  ChangeEventDetails,\n  DirectionProviderProps,\n  DirectionProviderState,\n  Ref,\n  TextDirection,\n  UseMediaQueryOptions,\n  UseMediaQueryState,\n} from './core';\nexport type {\n  ScrollAreaScrollbarProps,\n  ScrollAreaScrollbarState,\n  ScrollAreaThumbProps,\n  ScrollAreaThumbState,\n  ScrollAreaViewportProps,\n  ScrollAreaViewportState,\n} from './scroll-area';\nexport type {\n  Orientation,\n  ToolbarRoot,\n  ToolbarRootOrientation,\n  ToolbarRootProps,\n  ToolbarRootState,\n  ToolbarSeparatorProps,\n  ToolbarSeparatorState,\n} from './toolbar';\nexport type { BaseUIEvent } from './types';\n\nexport type * from './accordion';\n",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

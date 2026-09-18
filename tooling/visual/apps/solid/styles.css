@@ -1,0 +1,11 @@
+@import 'tailwindcss' source(none);
+@import '../../../../shadcn-ui/packages/solid/src/styles.css';
+@import '../shared.css';
+@source '../../fixtures.mjs';
+@source '../../../../shadcn-ui/apps/v4/examples/base';
+@source '../../examples';
+@source '../../docs/adapters';
+@source '../../../../shadcn-ui/apps/v4/registry/new-york-v4/ui/card.tsx';
+@source '../../../../shadcn-ui/apps/v4/registry/new-york-v4/ui/chart.tsx';
+@source '../../../../shadcn-ui/apps/v4/registry/bases/radix/ui';
+@source '../reference/node_modules/streamdown/dist';

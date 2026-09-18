@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/navigation-menu.tsx",
+  "generator": "generators/stateless-wrapper.mjs",
+  "generatorInputs": ["apps/v4/registry/bases/base/ui/navigation-menu.tsx"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": [],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "optionalPicks": [
+      {
+        "source": "Pick<NavigationMenuPrimitive.Positioner.Props, \"align\">",
+        "count": 1
+      }
+    ]
+  },
+  "scope": "Stateless source-to-source wrapper conversion only. Literal CVA definitions, reactive prop/object access, typed native primitives, native render functions, and data attributes are supported. Exact optional Pick type mappings preserve reviewed native annotations; no component-engine behavior is generated or accepted."
+}

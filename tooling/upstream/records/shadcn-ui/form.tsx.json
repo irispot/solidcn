@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/form.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "26fe74d1065ef0318e09111c1e9c14904e47a3a684bf0e306b51873dfbe22355",
+  "classification": "manual-native-engine-replacement",
+  "mappingScope": "Original registry or engine API reference; this is a separate native implementation.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Original React FormItem/FormField/FormControl and native Solid counterparts run the same email input and required-field scenario in tooling/visual/apps/*/parity-scenarios.tsx.",
+      "Focused browser comparison: shadcn-form-default and shadcn-form-invalid both have zero changed pixels; invalid submit focuses the input on both sides.",
+      "This covers the selected scenarios, not all react-hook-form behavior or the full Form API."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/form.tsx",
+      "blob": "c1c77ca6098eef2a4dc6ac8be6ec2ad3100c7237",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Original registry or engine API reference; this is a separate native implementation.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator",
+    "missingExternalSource": "The react-hook-form engine source is not pinned as source blobs in these clones."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/slider/utils/roundValueToStep.ts",
+  "generator": "generators/exact-source-copy.mjs",
+  "generatorInputs": [
+    "packages/react/src/slider/utils/roundValueToStep.ts"
+  ],
+  "supportFiles": [],
+  "overrides": [],
+  "dependencies": [],
+  "scope": "Replay the pinned framework-neutral slider helper. Keep runtime imports local to the native Solid package."
+}

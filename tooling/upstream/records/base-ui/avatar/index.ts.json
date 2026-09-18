@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/avatar/index.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "b5d3841005eea51ee9d6ca501de517a113d1d19f8e31afe537e29968810d6060",
+  "classification": "generated-public-entry-with-manual-maintenance",
+  "mappingScope": "Public export reference only.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration and the exact Avatar type export override equal the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/avatar/index.ts",
+      "blob": "add96c6cdcaaa8d7dfbe6344c8582c0619134ea2",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/base-ui/avatar/index.ts.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/base-ui/avatar/index.ts.json",
+          "sha256": "c331f592b4fc28b726f86a425a13f376ad7c83109b728da13f8aa79194270a89"
+        },
+        {
+          "path": "generators/base-entry.mjs",
+          "sha256": "e8e74928397ba79b917c73974fe3b62edd3feba7163fe249c0ad0898975f52dd"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        },
+        {
+          "path": "overrides/avatar-public-types.json",
+          "sha256": "8c39819e562b440deb4bcd91257cf0f43150ec02c7a4b704cc673cced0ad7de1"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "52e5e1f0ebe0b3305935aca0ccc8f727d477ce5e25af9b4af2c25633fc6a4e20",
+    "finalSha256": "b5d3841005eea51ee9d6ca501de517a113d1d19f8e31afe537e29968810d6060",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/avatar-public-types.json",
+        "purpose": "Export the native Avatar component state and prop types from the public Avatar module.",
+        "sha256": "8c39819e562b440deb4bcd91257cf0f43150ec02c7a4b704cc673cced0ad7de1"
+      }
+    ]
+  },
+  "manualException": null
+}

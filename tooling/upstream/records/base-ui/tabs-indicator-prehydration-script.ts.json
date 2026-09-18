@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/tabs-indicator-prehydration-script.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "9585f15798359906bf0e65640adf0b79dd1e8da73cbc71ebb76b3ca23337491e",
+  "classification": "manual-native-prehydration-script",
+  "mappingScope": "Pinned generated script and its template; Solid owns the export wrapper.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "The unchanged four Tabs Indicator server cases pass in React and genuine Solid SSR and hydration. Source review and replay generation remain pending."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/tabs/indicator/prehydrationScript.min.ts",
+      "blob": "e25d0665ebb8338dc847658b80f4fbfe070a822c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tabs/indicator/prehydrationScript.template.js",
+      "blob": "c08d6c554adb3e29505234696a8d4796a9acc201",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Pinned generated script and its template; Solid owns the export wrapper.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/tooltip/types.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "8bb731daf83034c1254e15dec985e1201c8bbfd0816241525bdde61b312a4433",
+  "classification": "manual-native-public-types",
+  "mappingScope": "Pinned family type declarations translated to native Solid types; name coverage is not type or behavior acceptance.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Reviewed the pinned tooltip family type declarations and the native Solid type module. The public source-name audit and workspace typecheck cover the declared names. This manual record does not prove type-field, behavior, or pixel parity."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/tooltip/arrow/TooltipArrow.tsx",
+      "blob": "223ca42ad0dbb0372caee24239cd1042a902c651",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/arrow/TooltipArrowDataAttributes.ts",
+      "blob": "e148126708ea6de1ee3ff344a0dcd5dff64d077e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/index.parts.ts",
+      "blob": "f2112b8fb6af3ba12ec7a4a2a5085df597428c6a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/index.ts",
+      "blob": "6e7492ef246c34f90ed24cdbead3047eb4fd9bf0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/popup/TooltipPopup.tsx",
+      "blob": "b2397fb623dee12c066034bcbacd0c800c38ad83",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/popup/TooltipPopupDataAttributes.ts",
+      "blob": "c782e68d54a773e5867d3a900c6a8768b5db4750",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/portal/TooltipPortal.tsx",
+      "blob": "6efacfbfb13f860db6b57bc9212959fa71eb79e3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/portal/TooltipPortalContext.ts",
+      "blob": "890e8709614a6accfbe13a9d26770b163a8714ac",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/positioner/TooltipPositioner.tsx",
+      "blob": "0ef6afc40e3b953fe30221d7bb6423d7abab0785",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/positioner/TooltipPositionerContext.ts",
+      "blob": "349106aa81e5a3f61d3fa345c826cb3caf01f3d6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/positioner/TooltipPositionerCssVars.ts",
+      "blob": "11c9bbb456201ba4d5ce5df1780d05dc4ce9d3f7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/positioner/TooltipPositionerDataAttributes.ts",
+      "blob": "c06a7cd7d7503fa793da5e4392d7434b43946f71",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/provider/TooltipProvider.tsx",
+      "blob": "61518f2504b08cd70a728403ba2852b7040e1698",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/provider/TooltipProviderContext.ts",
+      "blob": "a4425f5f99baac6e27a1f5b69cc7e7b4d9c9e248",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/root/TooltipRoot.tsx",
+      "blob": "2511030b7018d973aef4959c0012c5a01cd01a92",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/root/TooltipRootContext.ts",
+      "blob": "9e0def06bb902b49ab278031368e0c35b187ea8b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/store/TooltipHandle.ts",
+      "blob": "4a6723e7cd8d0ba0276eed031c41f51b4401cda3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/store/TooltipStore.ts",
+      "blob": "b4879148e73a8568ac43661b7086acae9caf1d64",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/trigger/TooltipTrigger.tsx",
+      "blob": "307631af7a23c75482ec7d3c29e8a7470616b268",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/trigger/TooltipTriggerDataAttributes.ts",
+      "blob": "683ac53d13b03d14810a57646d01c6d3ea37b4d0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/utils/constants.ts",
+      "blob": "16c23aa3b75f44da900c88d1b7d7cc93606cd90c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/viewport/TooltipViewport.tsx",
+      "blob": "40830d4c946ba1b1f7e8ace98cf02249323cdcce",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/viewport/TooltipViewportCssVars.ts",
+      "blob": "29e12362ef68357f14d9f544dc4565ff16867ef5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/viewport/TooltipViewportDataAttributes.ts",
+      "blob": "e3217f1977c46c6df8d1af1efcf136ce1c9a2329",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Pinned family type declarations translated to native Solid types; name coverage is not type or behavior acceptance.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

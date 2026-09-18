@@ -1,0 +1,10 @@
+{
+  "base-ui": {
+    "origin": "https://github.com/mui/base-ui.git",
+    "commit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35"
+  },
+  "shadcn-ui": {
+    "origin": "https://github.com/shadcn-ui/ui.git",
+    "commit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b"
+  }
+}

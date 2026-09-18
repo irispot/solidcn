@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Export native Solid Tooltip types from the family-local type module.",
+  "replacements": [
+    {
+      "find": "export { Tooltip } from '../overlays';\n",
+      "replace": "export { Tooltip } from '../overlays';\nexport type * from './types';\n",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

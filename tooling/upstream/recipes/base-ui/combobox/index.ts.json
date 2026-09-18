@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/combobox/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/combobox/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": ["overrides/combobox-public-types.json"],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../selection",
+    "nativeTypes": [
+      {
+        "public": "ComboboxRootProps"
+      },
+      {
+        "public": "ComboboxItemCollection"
+      },
+      {
+        "public": "CreateComboboxItemsOptions"
+      },
+      {
+        "public": "ComboboxFilter",
+        "native": "Filter"
+      },
+      {
+        "public": "ComboboxFilterOptions",
+        "native": "FilterOptions"
+      }
+    ],
+    "expectedTypeSurface": [
+      {
+        "module": "./root/ComboboxRoot",
+        "kind": "star"
+      },
+      {
+        "module": "./label/ComboboxLabel",
+        "kind": "star"
+      },
+      {
+        "module": "./trigger/ComboboxTrigger",
+        "kind": "star"
+      },
+      {
+        "module": "./input/ComboboxInput",
+        "kind": "star"
+      },
+      {
+        "module": "./input-group/ComboboxInputGroup",
+        "kind": "star"
+      },
+      {
+        "module": "./popup/ComboboxPopup",
+        "kind": "star"
+      },
+      {
+        "module": "./positioner/ComboboxPositioner",
+        "kind": "star"
+      },
+      {
+        "module": "./list/ComboboxList",
+        "kind": "star"
+      },
+      {
+        "module": "./item/ComboboxItem",
+        "kind": "star"
+      },
+      {
+        "module": "./item-indicator/ComboboxItemIndicator",
+        "kind": "star"
+      },
+      {
+        "module": "./value/ComboboxValue",
+        "kind": "star"
+      },
+      {
+        "module": "./icon/ComboboxIcon",
+        "kind": "star"
+      },
+      {
+        "module": "./arrow/ComboboxArrow",
+        "kind": "star"
+      },
+      {
+        "module": "./backdrop/ComboboxBackdrop",
+        "kind": "star"
+      },
+      {
+        "module": "./portal/ComboboxPortal",
+        "kind": "star"
+      },
+      {
+        "module": "./empty/ComboboxEmpty",
+        "kind": "star"
+      },
+      {
+        "module": "./group/ComboboxGroup",
+        "kind": "star"
+      },
+      {
+        "module": "./group-label/ComboboxGroupLabel",
+        "kind": "star"
+      },
+      {
+        "module": "./row/ComboboxRow",
+        "kind": "star"
+      },
+      {
+        "module": "./chips/ComboboxChips",
+        "kind": "star"
+      },
+      {
+        "module": "./chip/ComboboxChip",
+        "kind": "star"
+      },
+      {
+        "module": "./chip-remove/ComboboxChipRemove",
+        "kind": "star"
+      },
+      {
+        "module": "./clear/ComboboxClear",
+        "kind": "star"
+      },
+      {
+        "module": "./status/ComboboxStatus",
+        "kind": "star"
+      },
+      {
+        "module": "./collection/ComboboxCollection",
+        "kind": "star"
+      },
+      {
+        "module": "./separator/ComboboxSeparator",
+        "kind": "star"
+      },
+      {
+        "module": "../combobox/root/utils/useFilter",
+        "kind": "named",
+        "local": "Filter",
+        "name": "ComboboxFilter"
+      },
+      {
+        "module": "../combobox/root/utils/useFilter",
+        "kind": "named",
+        "local": "UseComboboxFilterOptions",
+        "name": "ComboboxFilterOptions"
+      },
+      {
+        "module": "./items/createItems",
+        "kind": "named",
+        "local": "ComboboxPrimitiveValue",
+        "name": "ComboboxPrimitiveValue"
+      },
+      {
+        "module": "./items/createItems",
+        "kind": "named",
+        "local": "CreateComboboxItemsOptions",
+        "name": "CreateComboboxItemsOptions"
+      },
+      {
+        "module": "./items/itemCollection",
+        "kind": "named",
+        "local": "ComboboxItemCollection",
+        "name": "ComboboxItemCollection"
+      }
+    ]
+  },
+  "scope": "Public export declarations only. Names come from upstream declarations and route to an explicit native group. The current native type policy is retained, not certified as equivalent; changes to the upstream type export surface fail for review. This does not generate component behavior."
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Use native-local dependencies in resolveThumbCollision. No algorithm edits.",
+  "replacements": [
+    {
+      "find": "import { clamp } from '@base-ui/utils/clamp';",
+      "replace": "import { clamp } from './clamp';",
+      "expectedOccurrences": 1
+    },
+    {
+      "find": "import { SliderRootContext } from '../root/SliderRootContext';\n",
+      "replace": "",
+      "expectedOccurrences": 1
+    },
+    {
+      "find": "behavior: SliderRootContext['thumbCollisionBehavior'],",
+      "replace": "behavior: 'push' | 'swap' | 'none',",
+      "expectedOccurrences": 1
+    }
+  ]
+}

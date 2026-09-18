@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/resizable.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "1d96b92d9dd69cc79ffcbf6f9f608ea6befd430b1d2315eefbe44cb03a065326",
+  "classification": "generated-wrapper-with-manual-fixes",
+  "mappingScope": "Registry source selected with Base first, legacy only if the Base file does not exist.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/resizable.tsx",
+      "blob": "76d7a0e2dc9e2ea70b7d01bc286f7cde64fbe6c8",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/shadcn-ui/resizable.tsx.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/shadcn-ui/resizable.tsx.json",
+          "sha256": "43d03d97372d0912428ea96d157783690dc0013b7c963dd8ed31298d3279fa11"
+        },
+        {
+          "path": "generators/stateless-wrapper.mjs",
+          "sha256": "ca9100eda42a35657471586ba9d333fd73c744fce7cb0bf736e5650c8c965887"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "1d96b92d9dd69cc79ffcbf6f9f608ea6befd430b1d2315eefbe44cb03a065326",
+    "finalSha256": "1d96b92d9dd69cc79ffcbf6f9f608ea6befd430b1d2315eefbe44cb03a065326",
+    "equalsNative": true,
+    "overrides": []
+  },
+  "manualException": null
+}

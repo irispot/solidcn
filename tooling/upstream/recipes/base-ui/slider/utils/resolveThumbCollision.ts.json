@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/slider/utils/resolveThumbCollision.ts",
+  "generator": "generators/exact-source-copy.mjs",
+  "generatorInputs": [
+    "packages/react/src/slider/utils/resolveThumbCollision.ts"
+  ],
+  "supportFiles": [],
+  "overrides": [
+    "overrides/slider-resolveThumbCollision.json"
+  ],
+  "dependencies": [],
+  "scope": "Replay the pinned framework-neutral slider helper. Keep runtime imports local to the native Solid package."
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Export family-local Scroll Area types that describe native Solid render state and props.",
+  "replacements": [
+    {
+      "find": "export { ScrollArea } from '../structure';\n",
+      "replace": "export { ScrollArea } from '../structure';\nexport type * from './types';\n",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

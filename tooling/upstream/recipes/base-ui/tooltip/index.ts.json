@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/tooltip/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/tooltip/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": ["overrides/tooltip-public-types.json"],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../overlays",
+    "nativeTypes": "omit",
+    "expectedTypeSurface": [
+      {
+        "module": "./provider/TooltipProvider",
+        "kind": "star"
+      },
+      {
+        "module": "./root/TooltipRoot",
+        "kind": "star"
+      },
+      {
+        "module": "./trigger/TooltipTrigger",
+        "kind": "star"
+      },
+      {
+        "module": "./portal/TooltipPortal",
+        "kind": "star"
+      },
+      {
+        "module": "./positioner/TooltipPositioner",
+        "kind": "star"
+      },
+      {
+        "module": "./popup/TooltipPopup",
+        "kind": "star"
+      },
+      {
+        "module": "./viewport/TooltipViewport",
+        "kind": "star"
+      },
+      {
+        "module": "./arrow/TooltipArrow",
+        "kind": "star"
+      }
+    ]
+  },
+  "scope": "Public export declarations plus an exact-context native type export. Names come from upstream declarations and route to an explicit native group. Changes to the upstream type export surface fail for review. This does not generate component behavior."
+}

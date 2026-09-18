@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Export family-local Toolbar types that describe native Solid render state and props.",
+  "replacements": [
+    {
+      "find": "export { Toolbar } from '../structure';\n",
+      "replace": "export { Toolbar } from '../structure';\nexport type * from './types';\n",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/input.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "e5c597f8f8389ce8bae8f850f7cebe4bf037b306839bb3b5930eb572e1086964",
+  "classification": "generated-wrapper-with-manual-fixes",
+  "mappingScope": "Registry source selected with Base first, legacy only if the Base file does not exist.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/input.tsx",
+      "blob": "06c96abffafcd0fbbedb24778f0c2f668e1b2109",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/shadcn-ui/input.tsx.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/shadcn-ui/input.tsx.json",
+          "sha256": "921f139499ae842a61cea146604e34882e4506553e165e8cab77265965c34333"
+        },
+        {
+          "path": "generators/stateless-wrapper.mjs",
+          "sha256": "ca9100eda42a35657471586ba9d333fd73c744fce7cb0bf736e5650c8c965887"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        },
+        {
+          "path": "overrides/input-props.json",
+          "sha256": "3cba142a44bedfb01d5f5a7123fe06a1dabaff81003d02da0df69a4d1b7022c7"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "9c2129a70934f2b5607b6c15fdda290c520c5dbf33b017c16ff151e7a59f410e",
+    "finalSha256": "e5c597f8f8389ce8bae8f850f7cebe4bf037b306839bb3b5930eb572e1086964",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/input-props.json",
+        "purpose": "Use the native Input primitive's prop type, which includes its native change callback contract, instead of an intrinsic input-only type.",
+        "sha256": "3cba142a44bedfb01d5f5a7123fe06a1dabaff81003d02da0df69a4d1b7022c7"
+      }
+    ]
+  },
+  "manualException": null
+}

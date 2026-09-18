@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Export the implemented native Combobox part and root action/event types.",
+  "replacements": [
+    {
+      "find": "  FilterOptions as ComboboxFilterOptions,\n} from '../selection';\n",
+      "replace": "  FilterOptions as ComboboxFilterOptions,\n} from '../selection';\nexport type {\n  ComboboxChipProps,\n  ComboboxChipRemoveProps,\n  ComboboxChipRemoveState,\n  ComboboxChipState,\n  ComboboxChipsProps,\n  ComboboxChipsState,\n  ComboboxClearProps,\n  ComboboxClearState,\n  ComboboxIconProps,\n  ComboboxIconState,\n  ComboboxInputGroupProps,\n  ComboboxInputGroupState,\n  ComboboxInputProps,\n  ComboboxInputState,\n  ComboboxItemIndicatorProps,\n  ComboboxItemIndicatorState,\n  ComboboxItemProps,\n  ComboboxItemState,\n  ComboboxListProps,\n  ComboboxListState,\n} from '../selection';\n",
+      "expectedOccurrences": 1
+    },
+    {
+      "find": "  ComboboxListState,\n} from '../selection';\n",
+      "replace": "  ComboboxListState,\n  ComboboxRootActions,\n  ComboboxRootChangeEventDetails,\n  ComboboxRootChangeEventReason,\n  ComboboxRootHighlightEventDetails,\n  ComboboxRootHighlightEventReason,\n} from '../selection';\n",
+      "expectedOccurrences": 1
+    },
+    {
+      "find": "export type {\n  ComboboxChipProps,",
+      "replace": "export type {\n  ComboboxArrowProps,\n  ComboboxArrowState,\n  ComboboxBackdropProps,\n  ComboboxBackdropState,\n  ComboboxChipProps,",
+      "expectedOccurrences": 1
+    },
+    {
+      "find": "  ComboboxRootHighlightEventReason,\n} from '../selection';",
+      "replace": "  ComboboxRootHighlightEventReason,\n  ComboboxPopupProps,\n  ComboboxPopupState,\n  ComboboxPositionerProps,\n  ComboboxPositionerState,\n} from '../selection';",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

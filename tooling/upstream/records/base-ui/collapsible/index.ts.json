@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/collapsible/index.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "fed5dbb8fa6aa4cf33f87a3709d0113579fb83c632d03ff53d2b8357801305ab",
+  "classification": "generated-public-entry-with-manual-maintenance",
+  "mappingScope": "Public export reference only.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/collapsible/index.ts",
+      "blob": "a8c3f341cede5c9f575c3be67e9b4bf2aba427db",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/base-ui/collapsible/index.ts.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/base-ui/collapsible/index.ts.json",
+          "sha256": "201308f73a5342d1c8b21bae6cfc63e3706dc2587c79c1f3e8ad41980f6d126e"
+        },
+        {
+          "path": "generators/base-entry.mjs",
+          "sha256": "e8e74928397ba79b917c73974fe3b62edd3feba7163fe249c0ad0898975f52dd"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        },
+        {
+          "path": "overrides/collapsible-public-types.json",
+          "sha256": "0ca33e3891fc499bc89d38f39e28e0dc2b623accb9364acfa0794403e25b8c95"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "268855cc66df31e9356c7415b5ed0e690a0cec9226c7ad13c64edfb9d37a345c",
+    "finalSha256": "fed5dbb8fa6aa4cf33f87a3709d0113579fb83c632d03ff53d2b8357801305ab",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/collapsible-public-types.json",
+        "purpose": "Export the native Collapsible public component and state types from its public module.",
+        "sha256": "0ca33e3891fc499bc89d38f39e28e0dc2b623accb9364acfa0794403e25b8c95"
+      }
+    ]
+  },
+  "manualException": null
+}

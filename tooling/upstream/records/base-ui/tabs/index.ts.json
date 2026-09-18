@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/tabs/index.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "db6d399f2d2d3ea91a5a9f2c4deaefa25d124a8f07173a9ea4db20e22a797ea5",
+  "classification": "generated-public-entry-with-manual-maintenance",
+  "mappingScope": "Public export reference only.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/tabs/index.ts",
+      "blob": "7e23fd5a807fe76aba2f3364f1a93af5b9c046a1",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/base-ui/tabs/index.ts.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/base-ui/tabs/index.ts.json",
+          "sha256": "cb6467b00f0b79066b10102d51f67144235829515ca199f06a97e3b5d865fe33"
+        },
+        {
+          "path": "generators/base-entry.mjs",
+          "sha256": "e8e74928397ba79b917c73974fe3b62edd3feba7163fe249c0ad0898975f52dd"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        },
+        {
+          "path": "overrides/tabs-public-types.json",
+          "sha256": "7a4856a506464a3aee741a50051279cdd0096f875a75af171cafeaf070a5b43f"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "93e1c3a19f261f434ea328a8c0b379f9898db219cc36dfbf712e745941e40a5c",
+    "finalSha256": "db6d399f2d2d3ea91a5a9f2c4deaefa25d124a8f07173a9ea4db20e22a797ea5",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/tabs-public-types.json",
+        "purpose": "Export the native Tabs component state and prop types from the public Tabs module.",
+        "sha256": "7a4856a506464a3aee741a50051279cdd0096f875a75af171cafeaf070a5b43f"
+      }
+    ]
+  },
+  "manualException": null
+}

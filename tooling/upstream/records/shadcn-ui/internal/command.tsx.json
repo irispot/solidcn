@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/internal/command.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "99794ff9fca428ed32e3edc5c9a0898df3afee445bc80859968240afd22d1650",
+  "classification": "manual-native-engine-replacement",
+  "mappingScope": "Original registry or engine API reference; this is a separate native implementation.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Read Command Group: filtering hides a group when no registered item in it matches the search. The docs-command-demo-billing-filtered report (SHA256 8951f982bc9a47fa606ece0672fcefe316d4e932f3637af169fdba11516a0c3a) is complete and passed with zero changed pixels. Full Command behavior remains pending.",
+      "Reviewed makeController/register: item registrations schedule one post-commit first-enabled-item selection when the current value is empty. Disposal cancels that action; an existing controlled or default value is retained. The author reports disabled-first, single-callback, explicit-default and controlled-value checks, plus a passing typecheck. This is not full CMDK behavior acceptance.",
+      "Read the installed cmdk 1.1.1 registration scheduler and first-enabled-item helper in tooling/visual/apps/reference/node_modules/cmdk/dist/index.mjs (SHA256 9e11be720996de8ce85d7c31f91d87a92ddc903880b7b2e2d4f21859b4cbd09d). This is an observed external-package reference, not a pinned upstream Git blob or a generator.",
+      "Read artifacts/visual/cases/docs-command-demo-default/report.json (SHA256 ecdf6f5fcc9eda62b420bd1543bed6b08f476023efcd2c522d3a142580f98c5d): the complete single-case run passed with zero changed pixels and zero repeated-capture differences in both apps. Broader behavior remains pending."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/command.tsx",
+      "blob": "21dd5593478db868a6a566af6b2914fd1dfbc96f",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Original registry or engine API reference; this is a separate native implementation.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator",
+    "missingExternalSource": "The cmdk engine source is not pinned as source blobs in these clones."
+  }
+}

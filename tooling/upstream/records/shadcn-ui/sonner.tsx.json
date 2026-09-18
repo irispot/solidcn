@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/sonner.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "be28fe00bf6ce3b939a10e9cf7bc5d611aab78db8b172bacff2869baf4a30fcc",
+  "classification": "manual-native-engine-replacement",
+  "mappingScope": "Original registry or engine API reference; this is a separate native implementation.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Original React Sonner and native Solid Base UI toast manager run the same success notification action in tooling/visual/apps/*/parity-scenarios.tsx.",
+      "Focused browser comparison: shadcn-sonner-open has zero changed pixels for the visible success notification.",
+      "This covers one visible notification, not all Sonner transitions, stacking, promise states, or keyboard behavior."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/sonner.tsx",
+      "blob": "0c2e93ea32d47a346e4dd0d92b916d965c09d7e5",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Original registry or engine API reference; this is a separate native implementation.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator",
+    "missingExternalSource": "The sonner engine source is not pinned as source blobs in these clones."
+  }
+}

@@ -1,0 +1,774 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/index.ts",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "202ed9c8ee72b7ea55f3732624445cb2f4c50c6f43ce02d71c15d0ccae0cbbc1",
+  "classification": "generated-public-entry-with-manual-maintenance",
+  "mappingScope": "Registry export references; generated output was corrected manually.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": []
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/_registry.ts",
+      "blob": "80a3a705187e8c7c2cc0c7f6c0423d6b85d973df",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/accordion.tsx",
+      "blob": "182ccd8e3e872fc0b0a24bb72c0469b6a5857b16",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/alert-dialog.tsx",
+      "blob": "ab1dc757812bf207ee16691f265470b78ce56d40",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/alert.tsx",
+      "blob": "e9aa02f381ef6e588cfb57696f76703c0f7c4ceb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/aspect-ratio.tsx",
+      "blob": "ebe2783654a6ce3240b2bd3a4bdb80b07c26cf8f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/attachment.tsx",
+      "blob": "be31b4b73bb15e7e080e0b63681a8cae1793261e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/avatar.tsx",
+      "blob": "d46f2e9392747cd065e6e760092a7a2b500b4634",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/badge.tsx",
+      "blob": "10a7f676f81090c851211f363057238d5906e2ca",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/breadcrumb.tsx",
+      "blob": "e0a0a2f1f55e4bba083ddf7a44f85bd34ce91804",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/bubble.tsx",
+      "blob": "0b5a88bcce7ee588094c255e823d69950f841138",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/button-group.tsx",
+      "blob": "9bdfea8e85060ffbc302fab7dad64ca761b4b073",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/button.tsx",
+      "blob": "2007374034d564bb926915baa057e500cab631a4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/calendar.tsx",
+      "blob": "568ab9fd00a03d1651d1b42cb8915eed282cf1a4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/card.tsx",
+      "blob": "2062884f29a8044fa48edf86605182eca29f8716",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/carousel.tsx",
+      "blob": "67bb25fa3ad927545ee1b80189cd7e9c9c3ca96a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/chart.tsx",
+      "blob": "fa460c956066fbc5720ebe4203ba7353628201d5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/checkbox.tsx",
+      "blob": "ecf58adc56fd11b95c5962e3e6482fad5c27ebb1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/collapsible.tsx",
+      "blob": "488fb33af5107a94791ef3235ee58861e3ed6855",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/combobox.tsx",
+      "blob": "8fc7ae799f00cec1cf4efa6ab8509717f64a7a91",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/command.tsx",
+      "blob": "21dd5593478db868a6a566af6b2914fd1dfbc96f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/context-menu.tsx",
+      "blob": "3fc2b82c358ed8f592a6a13539bb051c9d978d19",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/dialog.tsx",
+      "blob": "8c68524ade906dc3754769729ae3cbcb1b9d7b55",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/direction.tsx",
+      "blob": "d8cf134614ac38b4fbc6c902e6e2cf770ba389c1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/drawer.tsx",
+      "blob": "bebe3a912626745d7567982acd7b2465504e59c1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/dropdown-menu.tsx",
+      "blob": "4c4543e2954441c012d3a7dc1d850e99613f5651",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/empty.tsx",
+      "blob": "6a49a9813c02e2ce2548402e1a63b05de550bace",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/field.tsx",
+      "blob": "d58e0d29dbfe52053a21eff0b837f571b278f1ef",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/hover-card.tsx",
+      "blob": "f76bbaa239c8907d8935521f20e940bb4e3a40ff",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/input-group.tsx",
+      "blob": "cb328462c7c372f1b22342b25d396704d87247c1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/input-otp.tsx",
+      "blob": "9680970c7bfcf40588b8c69123b2d02a1e2699b6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/input.tsx",
+      "blob": "06c96abffafcd0fbbedb24778f0c2f668e1b2109",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/item.tsx",
+      "blob": "ebdb220dcada0975388fbf2b095b1db61c5d8413",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/kbd.tsx",
+      "blob": "1fc8d9c188183e3df985d9a1f454ca692186790f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/label.tsx",
+      "blob": "3b0886ba1826c80e7c6e0c22b699a43cb6df5bc9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/marker.tsx",
+      "blob": "4fcf772c96f7649cea01ad6f7a688a521a817a42",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/menubar.tsx",
+      "blob": "ac05ba9b8ef04ea55c038d8b6eb244a8c0f323ef",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/message-scroller.tsx",
+      "blob": "37268f119d3298c7c428bda0751c2af32f0ada9e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/message.tsx",
+      "blob": "ae7aef393f0714997c632fdac0755ce9d830f965",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/native-select.tsx",
+      "blob": "273a3bc8ea586d4d525c7d3da108c65810894e93",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/navigation-menu.tsx",
+      "blob": "54bf3f8c29ab48b087a62dce4bcbe8ede7ab6418",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/pagination.tsx",
+      "blob": "b1f8b1df96e8a29f8f799c190cf545544607d2a5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/popover.tsx",
+      "blob": "808aa62dc13b4b9c37efbe9c676c09b8e06c0738",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/progress.tsx",
+      "blob": "43df6eb11e1c55ad939e24dc408042efa6fe8f93",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/questionnaire.tsx",
+      "blob": "59de4ea25facd1a4514a192eb08d6fe7987ca14e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/radio-group.tsx",
+      "blob": "1293df6fbc4dde4dcd15cb60aacb734031844164",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/resizable.tsx",
+      "blob": "76d7a0e2dc9e2ea70b7d01bc286f7cde64fbe6c8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/scroll-area.tsx",
+      "blob": "a7acc33718ff8d558e276048c9cc191d8d0d5b2b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/select.tsx",
+      "blob": "2cb76c117197336324cfaed1300e92ca65273b40",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/separator.tsx",
+      "blob": "d69c13426761105ab42e5a6bd364dc54bd70f78c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/sheet.tsx",
+      "blob": "72669ad9cb812dcbf389f8be6e8157eaa8023479",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/sidebar.tsx",
+      "blob": "1ca3356406a02d78b828f8ade02a420f19b40e55",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/skeleton.tsx",
+      "blob": "0439455a951949f8a75be48fa2c8b8e9f3d8b0f2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/slider.tsx",
+      "blob": "2e55a9a0fc07b66fc86ce1df33c86c2501939088",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/sonner.tsx",
+      "blob": "0c2e93ea32d47a346e4dd0d92b916d965c09d7e5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/spinner.tsx",
+      "blob": "2a91bf988618e87a3698133b0bd971a00ec3f61b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/switch.tsx",
+      "blob": "753fd22a92536c103d3ff4c4c6171d48f428ead7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/table.tsx",
+      "blob": "160cf7aa14b8467a777eb2405053d2d968f641b9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/tabs.tsx",
+      "blob": "2b39bbfe73883fcb8a6630e0d6af953ed0b08f49",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/textarea.tsx",
+      "blob": "8b8d3f1c6cc7c66c2fab2e050164f355a655b6c9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/toast.tsx",
+      "blob": "0c9dfc0a76eeacfde789c4beed5f4eea2666c686",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/toggle-group.tsx",
+      "blob": "f2d9475eaaa1132ea00efd113a415dac46cd2bb3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/toggle.tsx",
+      "blob": "b058b4d0e74ccc7de2258b63a77f0136bb391b11",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/bases/base/ui/tooltip.tsx",
+      "blob": "8fbd22dacb65913e7e31cde7ad800dce6f889116",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/_registry.ts",
+      "blob": "0514b247508e89fb98a43f36f934a6ac142645c8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/accordion.tsx",
+      "blob": "b83c53e5e3502eb57bbba1cfc4c6fdaeba163339",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/alert-dialog.tsx",
+      "blob": "566c463a61b48c79ad544bfdd80434174107c9d5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/alert.tsx",
+      "blob": "86310a66e80c0a370169b9fb4ed49af6bea954fb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/aspect-ratio.tsx",
+      "blob": "57e38fa96f9c0cb767d7b8de0d6dbc171d1b921a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/attachment.tsx",
+      "blob": "cf4750525db9ec3b3b5efbd4efcc39620ff0997e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/avatar.tsx",
+      "blob": "561f04be186f94896ec31e618fee6818c7fcc6c8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/badge.tsx",
+      "blob": "1a94cc539326e26227271a0b3599be99e0e55fb6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/breadcrumb.tsx",
+      "blob": "12aa08af155d76bf3335b41ba9b92a593b6354d1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/bubble.tsx",
+      "blob": "da2c99035d566dd72536e61b922eb6ef5ffb3b4b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/button-group.tsx",
+      "blob": "965285725a0a5d3af5d512537846455b808602fe",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/button.tsx",
+      "blob": "e3345d985d14c33e3cb9d8c45cf973807326c944",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/calendar.tsx",
+      "blob": "215b068893d3fcabf8ec6ed8d14cce99438380b9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/card.tsx",
+      "blob": "6aebd4cf612dfa24d40ffdf357c6f6363e144d6a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/carousel.tsx",
+      "blob": "25134a12616e729ae8c5a1a1f2eec062f8c94109",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/chart.tsx",
+      "blob": "f4971bf60d74ac43b48d4c86982a6cacb56bde37",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/checkbox.tsx",
+      "blob": "9aaa1baace43e42aba6ee7c3b04adb8ff7e99ea2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/collapsible.tsx",
+      "blob": "2f7a4e7fc64a8874373c1584646a63f28cd63c47",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/combobox.tsx",
+      "blob": "00e208e0398fd1cfe9394ac28f1d5ffeb90b10d3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/command.tsx",
+      "blob": "1605b2f525140db07b1d0f267721e22c185bd43c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/context-menu.tsx",
+      "blob": "188f89f5b45e4a24d45c1924a35e4d44abed9070",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/dialog.tsx",
+      "blob": "ccadf4a85bf6398d52314b112600f796fc97db97",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/direction.tsx",
+      "blob": "22e165774bd595fbf41d0c45efef1cf996897983",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/drawer.tsx",
+      "blob": "4e416683964bdef2c52c5dcd597ab0cb8f4c015b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/dropdown-menu.tsx",
+      "blob": "1f9742d6783223126a3b91e91b7a230243ddf23d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/empty.tsx",
+      "blob": "bfd524fb206070222851692210a62144f44c0611",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/field.tsx",
+      "blob": "9107ef025c35eb5b19c023688743e27e3825e70d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/form.tsx",
+      "blob": "c1c77ca6098eef2a4dc6ac8be6ec2ad3100c7237",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/hover-card.tsx",
+      "blob": "e1ffdb54ce6aeb5473648f219bb3bdd84e13f821",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/input-group.tsx",
+      "blob": "a457945603c5e2fd52190135520fb67ccb6af388",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/input-otp.tsx",
+      "blob": "9a71a837dfe4805a21dfa9b3747e4d7296d4ec72",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/input.tsx",
+      "blob": "ddb9b315e34245addded54b1848bb32c80c418cc",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/item.tsx",
+      "blob": "22bc2521ad4fa762b0de948f3f9d53bc217f1069",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/kbd.tsx",
+      "blob": "8089ad74a1d99d1f7393e7248f9777c4ff4df02b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/label.tsx",
+      "blob": "5aff7469c384001a3f1b49cc5cf8871b10f10386",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/marker.tsx",
+      "blob": "8bad2ea33f03a73a515b11a39e28fedc4e52ad8b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/menubar.tsx",
+      "blob": "9143baeb5a07224bc4224241d51a00d3c539eb5f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/message-scroller.tsx",
+      "blob": "7b394cddd94f0b1108da44f949613481987436c7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/message.tsx",
+      "blob": "765bb9bfd4d9499d74b76a5331fb18d7c0dc4cf9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/native-select.tsx",
+      "blob": "9ddba6b7fcddda52d9c4fc969cd910b929e7aec7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/navigation-menu.tsx",
+      "blob": "ab18d0d2043e6aadd14135ccc854999c0bf6e70e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/pagination.tsx",
+      "blob": "0e5980373355daf65200d8070ed99ffb839fbf8d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/popover.tsx",
+      "blob": "b62cf5d7c9d0688eb4d6a38de5e6a13bb7a9b317",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/progress.tsx",
+      "blob": "ac48e2e5e25d507fcc68df5f95717b8a3df71867",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/radio-group.tsx",
+      "blob": "2dc7ec59fa0af08a9274410db47b03cb78f629eb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/resizable.tsx",
+      "blob": "709e5fd2f97527364ca1ebf1e8fe82b3f9ca8417",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/scroll-area.tsx",
+      "blob": "4542a3e26d68a524dc5e504156eb09dd3440a3f5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/select.tsx",
+      "blob": "8058e266346ddf79b0b156a7c5d07e716d5792ee",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/separator.tsx",
+      "blob": "6a553b978c11cf82c93817b2d0dde1db0e555835",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/sheet.tsx",
+      "blob": "9f7ae5fed9763e9ddbe38692fbf5b3f67224b731",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/sidebar.tsx",
+      "blob": "31cafe4cb8aa5127e050d883afb395b626565d2c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/skeleton.tsx",
+      "blob": "a1ceb0545be73aa39a336271ecb69ed6aa69a64d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/slider.tsx",
+      "blob": "f1a421ef3f90344dac8b53d92e58ba7d2ae0cd13",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/sonner.tsx",
+      "blob": "9b20afe2e10fd9b94d1abc1ae732054b2fb9821c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/spinner.tsx",
+      "blob": "3e0fd0a1d046107cb97bb3028561485c08be65c2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/switch.tsx",
+      "blob": "c45932afe4e484c900aa916e81d0e0d67137bedc",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/table.tsx",
+      "blob": "47ce10b2a4347c9dcdc96b04c8c855d42edbb2a7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/tabs.tsx",
+      "blob": "6e174747a509f8a906ce9cfb27bc2c7603f2b6b5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/textarea.tsx",
+      "blob": "bf23f6c255978311c3069f5da3fa10c1d896e8cf",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/toggle-group.tsx",
+      "blob": "a227abc4c6d630498bed98bd83d10c7fbe3360fc",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/toggle.tsx",
+      "blob": "0291f01cff0429bbf2fb3575a15867556cc88a89",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "apps/v4/registry/new-york-v4/ui/tooltip.tsx",
+      "blob": "c8c47cb146e6167c68f74f8a2f2f0c7c2d06ec72",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Registry export references; generated output was corrected manually.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

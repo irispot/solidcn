@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/input-group.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "a5cc103e06babbbd4f0671dac20517113bcd33e3722addc95856c563f28b6964",
+  "classification": "generated-wrapper-with-manual-fixes",
+  "mappingScope": "Registry source selected with Base first, legacy only if the Base file does not exist.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": []
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/input-group.tsx",
+      "blob": "cb328462c7c372f1b22342b25d396704d87247c1",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Registry source selected with Base first, legacy only if the Base file does not exist.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

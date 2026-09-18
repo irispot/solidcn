@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "baseUrl": "../..",
+    "paths": {
+      "@base-ui/react/accordion": ["./base-ui/packages/solid/src/accordion/index.ts"],
+      "#test-utils": ["./base-ui/packages/utils/src/testUtils.ts"]
+    }
+  },
+  "files": ["../../base-ui/packages/react/src/accordion/root/AccordionRoot.spec.tsx"],
+  "include": []
+}

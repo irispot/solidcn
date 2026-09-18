@@ -1,0 +1,965 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/controls.tsx",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "d986f0a82fd282a49b4efa9c3a59458490079d291afbd1c50d94011f2d59ccdb",
+  "classification": "manual-grouped-native-implementation",
+  "mappingScope": "Family-level review relationship. It is not an exact function or copied-source mapping.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "The native Checkbox and Switch hidden input uses one computed JSX props spread. Solid 2 RC otherwise compiled a mixed static and conditional JSX spread into numeric attributes, so a packed consumer had no functional checkbox input. The new props object includes a value key only when the caller supplies one: direct native SSR emits no default value attribute and emits value=\"yes\" for an explicit value. The packed source and compiled consumer passes client events, server HTML, hydration node identity, CSS, and dialog checks. With source-stable inputs, the unchanged CheckboxRoot Chromium route passes 101 active assertions plus two separately covered hydration cases; the real dual-graph hydration route passes both original cases. CheckboxGroup passes all 114 original assertions across client, browser, and nine native SSR/hydration cases. SwitchRoot and SwitchThumb pass all 98 Chromium assertions. All comparison routes report no assertion mismatches, typecheck passes, and the 1,083 original protected test files remain unchanged. This is bounded component and consumer evidence, not full migration or pixel acceptance.",
+      "The guarded unchanged SliderRoot Chromium comparison now passes all 213 selected assertions in pinned React and native Solid, with three matching original skips, no failures, no status mismatches, no unhandled errors, and a stable source hash. The separate unchanged SliderRoot client comparison passes 171 assertions in each mode with 45 matching skips, and four unchanged Slider utility files pass all 24 assertions per mode. Native SliderControl listens to document pointer and touch moves, tracks the accepted interaction value for commits, handles canceled thumb swaps, transfers focus to the active logical thumb, and restores keyboard focus visibility. SliderRoot exposes clamped values to Form projection, and SliderThumb does not commit merely on blur. Typecheck and the 1,083-file original-test guard pass. This is bounded Slider assertion parity; pixel parity needs another visual run after these changes.",
+      "A new unchanged SliderRoot Chromium diagnostic route runs the original test file in pinned React and native Solid, excluding only the separate server-render suite. React passes 213 cases with three original skips; Solid passes 183 with 30 failures and three skips. Native SliderControl now avoids pointer capture for MouseEvent-backed synthetic pointer events without an active pointer ID; this reduced Solid browser failures from 36 to 30. The browser fixture checks the original warning and computed-style assertions against actual console and computed style output. The unchanged guarded Slider client route still passes 171 React and 171 Solid cases with 45 matching skips and stable input hashes; four unchanged Slider utility suites still pass all 24 assertions per side. Typecheck and the 1,083-file original-test guard pass. Browser drag, touch, focus, commits, and form projection remain open; this is diagnostic evidence, not Slider acceptance.",
+      "The unchanged RadioGroup.test.tsx file contains 93 assertions. A guarded React/native Solid comparison passes 80 in each JSDOM route with 13 matching original browser-only skips, and all 93 in each Chromium route. It reports zero failures, status mismatches, or unexpected React implementation loads, and a stable route and workspace hash. Native RadioGroup and Radio.Root execute in both Solid routes. RadioGroup now handles group state, keyboard modifiers, input references, Field and Form projection, disabled selections, native input events, and dynamic label precedence. The shared Field label and Fieldset legend registration signals permit intentional cleanup writes in Solid 2 so replaced or unmounted IDs clear. The original test is unchanged. This is bounded RadioGroup evidence, not acceptance of all controls or pixel parity.",
+      "The two unchanged CheckboxGroup test files contain 114 assertions. The pinned React baseline passes 89 with 25 original JSDOM skips and 114 in Chromium. Native Solid runs 80 client JSDOM assertions, nine genuine server-render or hydration assertions, and 105 Chromium client assertions; the nine server cases are selected out of client routes and pass in a separate hydratable dual-build route. Every selected assertion passes. The StrictMode case mounts and disposes one native Solid tree before mounting the final tree. Native CheckboxGroup now handles group values, parent selection, form ownership, focus, labels, and hydration IDs. Original test files are unchanged. This is bounded CheckboxGroup evidence, not acceptance of all controls or pixels.",
+      "The unchanged CheckboxRoot suite has 103 assertions. A guarded client route runs 85 in both React and native Solid, with 16 matching original browser-only skips and two separately filtered SSR/hydration cases. A guarded Chromium route runs 101 in each, with only those two hydration cases filtered. A separate guarded dual-graph route runs both original SSR/hydration cases in React and native Solid; Solid server output contains four hydration-keyed nodes per case, client hydrate retains all four node identities, and explicit IDs reach both the control and Field.Label after hydration. The unchanged CheckboxIndicator suite passes 22 in each JSDOM mode with five matching original browser-only skips, and all 27 in each Chromium mode. All guarded comparisons report zero failures and status mismatches with stable input hashes at their recorded runs. Checkbox.Root now defers an explicit ID until client registration, handles native form and label behavior, and emits data-parent with the pinned PARENT_CHECKBOX type export. Checkbox.Indicator provides checked, indeterminate, enter, and exit behavior. This is bounded Checkbox family evidence; other Base UI families and full behavior acceptance remain pending.",
+      "The guarded unchanged SwitchRoot and SwitchThumb suites run 98 original assertions in both modes. Pinned React and native Solid each pass 89 in JSDOM with 9 matching original browser-only skips, then each pass all 98 in Chromium with zero skips, failures, or assertion-status differences and stable input hashes. SwitchThumb now reads the native SwitchRootContext and throws the pinned missing-context error. The test-only context route supplies that native context to unchanged part tests without adding replacement UI logic. This is bounded Switch-part evidence, not full Base UI acceptance.",
+      "The guarded unchanged SwitchRoot Chromium suite passes all 82 original assertions in both pinned React and native Solid, with zero skips, zero status differences, and a stable input hash. Native Switch keeps its managed checked state after a form reset and restores the hidden input property. The guarded JSDOM client comparison passes 73 React and 73 Solid assertions with 9 matching browser-only skips. This covers the SwitchRoot file only, not all Switch parts or full Base UI behavior.",
+      "The guarded unchanged SwitchRoot client suite runs the same 82 assertions in pinned React and native Solid with a stable input hash: 73 pass in each, 9 original JSDOM browser-only skips match, and zero assertion statuses differ. Native Switch.Root executes in the Solid route. The focused changes carry click modifiers, activate Enter, update fallback label IDs, merge Field label and description IDs, omit an unset value attribute, avoid disabled focus state, and permit the intentional Field source cleanup write. Slider ThumbMetadata is exported with the pinned inputId field. Browser-only Switch cases and full behavior acceptance remain pending.",
+      "SliderThumb now creates its range input JSX once and returns the stable node from reactive children. Handler overrides remain getters. The unchanged focused SliderRoot blur-on-disable and format-update client assertions both pass in native Solid. The guarded SliderRoot client comparison passes the same 171 assertions in pinned React and native Solid with 45 matching skips, zero failures, zero status differences, and a stable input hash; its one server assertion is covered by a separate SSR runner. This does not cover browser-only cases or accept full Slider behavior. A new visual capture remains pending.",
+      "SliderRoot emits its max/min warning from a tracked effect; SliderThumb observes both disabled state and its input before blurring. The unchanged warning assertion passes in the native client fixture. The full SliderRoot dual run and final visual capture remain pending after concurrent fixture work.",
+      "The unchanged SliderRoot client diagnostic now passes 169 assertions, fails 3, and matches the 44 original browser-only skips; the original React baseline passes 172. Native SSR passes separately. The native slider uses pinned helper replays for value bounds, rounding, collisions, and minimum distance; ARIA value/label text, unchanged commit suppression, field data states, and Field validation are exercised. Remaining client failures are the warning matcher with Solid strict-read warnings, the SSR case in a client-only route, and a disabled prop added during fixture rerender. This is not full Slider acceptance.",
+      "SliderRoot now uses replayed pinned rounding, range bounds, collision, and minimum-distance helpers in the native Solid path. The helpers have separate exact replay records; full Slider behavior is not accepted until unchanged component tests and visual cases run after this change.",
+      "Read the current SliderRoot code: it emits a generated root id when no id prop is given, as pinned React SliderRoot does, and defaults to group role. The unchanged original SliderRoot SSR assertion passes through the native Solid server route (one selected case; 215 other cases excluded by the SSR test-name filter). This is bounded SSR evidence, not full Slider behavior approval.",
+      "Read the current Field code: Control updates the reactive control ID; Label uses it for a native for attribute or non-native click focus; aria-describedby combines a supplied ID with Field Description and error IDs; Item derives disabled state for its descendants. The author reports passing typecheck, controls checks, and focused Chromium checks for ID changes, description IDs, and disabled state. The unchanged FieldDescription suite reports 19 passing cases. Full Field behavior remains pending.",
+      "Read the current Form and NumberField code: Form validates registered fields before submit, and NumberField parses text, updates its hidden input, and handles keyboard steps. The author reports focused type and browser checks. Full controls behavior remains pending.",
+      "Read the current SliderThumb and SliderIndicator code: thumb and control measurements set inset positions, and the indicator uses those positions for its offset and size. The hidden range input uses a clipped, full-size fixed style. This records current native code only; behavior review remains pending.",
+      "Reviewed SliderThumb index selection: scalar sliders use index zero; arrays use the supplied or registered index. The reference is select-independent slider/thumb/SliderThumb.tsx. The author reports typecheck and the 1,083-file guard passed. No full controls behavior acceptance is claimed.",
+      "Reviewed the FieldsetLegend correction against fieldset/legend/FieldsetLegend.tsx and fieldset/root/FieldsetRootContext.ts: a missing root throws the original error, and a reactive ID accessor updates registration without replacing the legend DOM node. Five unchanged component suites pass 93 cases with three original jsdom skips; both Fieldset files have 19 passing cases. Eight independent adapter/native diagnostics include the no-array-remount ID update and cleanup. The stable-source run summary is artifacts/unchanged-components-native-solid-evidence.json, SHA256 7a41dd8cdf7919f2078285433caf7f65f92cb26c19dc35ca81bb93e0f20f3413. Typecheck and the 1,083-file preservation guard passed. This is bounded evidence, not full controls behavior acceptance.",
+      "Field now accepts a control-specific form value and filled state. Select binds its serialized value as pinned SelectRoot does, while other controls keep their existing raw value behavior. The unchanged Select Form submission assertion and serialized-empty Field assertion pass in focused runs; the external-error-clear Form assertion remains failing. Full controls behavior is not accepted.",
+      "Field.Label now registers its ID for accessible Select.Trigger linkage and marks native label activation so Select can focus its popup listbox after the label opens it. The seven focused unchanged Select label and description assertions pass; this is bounded Select evidence, not full Field acceptance.",
+      "Field supports a Select-specific ordered dirty comparer, and distinguishes its own invalid state from an external Form error when a value changes. Form.flush runs synchronously after validation so an invalid submit focuses the control in Solid 2, matching the original test's keyboard path. Focused unchanged Select dirty, external-error-clear, and on-submit validation assertions pass. Full Field/Form acceptance is pending."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/button/Button.tsx",
+      "blob": "494dbc480cedc1da7f36129c803a6a1f56da0eeb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/button/ButtonDataAttributes.tsx",
+      "blob": "b3bf1454da353b59acb4c1c55c4c6a8021bdfec7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/button/index.ts",
+      "blob": "faedbad025c98dfafbb39f7d2a74aabab0058635",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/checkbox-group/CheckboxGroup.tsx",
+      "blob": "d9a6354887a28f79bc8e53d22e8830f5546711c0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/checkbox-group/CheckboxGroupContext.ts",
+      "blob": "ddf0b7ac4ba2cfe90dd65406dd7142e38de7c06a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/checkbox-group/CheckboxGroupDataAttributes.ts",
+      "blob": "159225f5cc239efde114508703f7c63a004a332a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/checkbox-group/index.ts",
+      "blob": "01e0eb0eeb2d37f20482298e9b30daeb611f32d3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/checkbox-group/useCheckboxGroupParent.ts",
+      "blob": "7ba8e02094954ab4d7ca28fde29a6ff50a9f85a5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/checkbox/index.parts.ts",
+      "blob": "56cac2a02f5bfabbe8f999edbd3ddb95f1ca68de",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/checkbox/index.ts",
+      "blob": "0a1170e208ec40d5f82e1be44246e44699f5e2c2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/checkbox/indicator/CheckboxIndicator.tsx",
+      "blob": "d7b03623c3c618a310e56d6451c61aafbce4a229",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/checkbox/indicator/CheckboxIndicatorDataAttributes.ts",
+      "blob": "a8a1dafef405dc12e94d16485fffb32e3dceb4c1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/checkbox/root/CheckboxRoot.tsx",
+      "blob": "0333631a62264a3c379f5ed447c86a6ac7006da9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/checkbox/root/CheckboxRootContext.ts",
+      "blob": "34567940bf94c18e1510e72c4acdfcc742c6a44f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/checkbox/root/CheckboxRootDataAttributes.ts",
+      "blob": "79a0db7dd1f8bba7549b76d87bec00285df7fda2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/checkbox/utils/getCheckboxStateAttributesMapping.ts",
+      "blob": "002b1c41e3dd269745a333af28ed628fcd37f9ce",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/control/FieldControl.tsx",
+      "blob": "57b6025443cccc863fc0a5388615337bd55a7d54",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/control/FieldControlDataAttributes.ts",
+      "blob": "6ba3807082ba0d2714fad9755f9b0bb532a69a4e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/description/FieldDescription.tsx",
+      "blob": "39f9692b3d7e394cf6be062855cc7d3d685b795c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/description/FieldDescriptionDataAttributes.ts",
+      "blob": "6ba3807082ba0d2714fad9755f9b0bb532a69a4e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/error/FieldError.tsx",
+      "blob": "c7708f6a9641facf6dc22332c44b4d2877d212e6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/error/FieldErrorDataAttributes.ts",
+      "blob": "c0337ad0ba09064e432ba45a959b2ddd505e0259",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/index.parts.ts",
+      "blob": "83d6c2aa86fb128e40e2090e74762a08cad5fe5e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/index.ts",
+      "blob": "4068c80931a2fe8e66ebb45e4189af6369aca3bb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/item/FieldItem.tsx",
+      "blob": "6860da6e41a6be11690f5310ce24fe214b4b4f33",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/item/FieldItemContext.ts",
+      "blob": "a4781ca603d2eca1470cbd794785440197a539fd",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/item/FieldItemDataAttributes.ts",
+      "blob": "6ba3807082ba0d2714fad9755f9b0bb532a69a4e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/label/FieldLabel.tsx",
+      "blob": "fe69a5cb4f15cdfb1f82b216f73cc03a44704508",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/label/FieldLabelDataAttributes.ts",
+      "blob": "6ba3807082ba0d2714fad9755f9b0bb532a69a4e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/root/FieldRoot.tsx",
+      "blob": "74672fa7c7843b8d6eabb5a49cff2ea331472d5d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/root/FieldRootDataAttributes.ts",
+      "blob": "dcd57216c6c7d15ea7077a1b7f6994874418d058",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/root/useFieldValidation.ts",
+      "blob": "77b5d80947210b438d178f9fb694809e8f6d4cbb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/utils/getCombinedFieldValidityData.ts",
+      "blob": "e45f3344085ece42eac27414ca562c23f09ddaf1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/field/validity/FieldValidity.tsx",
+      "blob": "b30c53527472d70185c183959e8bda26d7cb7e2c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/fieldset/index.parts.ts",
+      "blob": "667b0ce2d1b134f4bd093506bfa45455f8a7efab",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/fieldset/index.ts",
+      "blob": "9b7319890075f9bfcea460f79432b67c3626ac50",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/fieldset/legend/FieldsetLegend.tsx",
+      "blob": "1b67a13b1e9586099e3beb7c7268691162e8b84b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/fieldset/root/FieldsetRoot.tsx",
+      "blob": "482386c82697bcf7dd003240a8bdc1deb3068808",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/fieldset/root/FieldsetRootContext.ts",
+      "blob": "946ce96d72bd6346efe5f73bd6c0ccaaee5056f5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/form/Form.tsx",
+      "blob": "dc1d781b7d8511e6fbc50beab8d37498a6a0a805",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/form/index.ts",
+      "blob": "0253efffb38354bfe8a881606d11d9d41b7e751e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/input/Input.tsx",
+      "blob": "ce141f77f750f3d472d9d7ec9540ab842cde0192",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/input/InputDataAttributes.ts",
+      "blob": "83ef68e6ccda6d0d9018d3c1701758532ebf2680",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/input/index.ts",
+      "blob": "d4b71df19ef24940fd724f9dcbba38702477f507",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/meter/index.parts.ts",
+      "blob": "c79245c4e1a4669419ec02ea418a78173eda03fd",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/meter/index.ts",
+      "blob": "06dd198fce49776cd27ffd34f9d62941eda1a04c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/meter/indicator/MeterIndicator.tsx",
+      "blob": "c9637e6ce2f3a7d245a8e328838669f754532643",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/meter/label/MeterLabel.tsx",
+      "blob": "ea1fcd55585ed096e0ad92708d5700b8e00bc3eb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/meter/root/MeterRoot.tsx",
+      "blob": "f9af62dfba18b8b9c61961a6dd85b493bfc05706",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/meter/root/MeterRootContext.ts",
+      "blob": "aaf45daff4614507df64cba04458de4506367a5b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/meter/track/MeterTrack.tsx",
+      "blob": "15a88d919611bb5ec5284e182836cf485e300a23",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/meter/value/MeterValue.tsx",
+      "blob": "2b01f95388958fca9168912338572d7adac77285",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/decrement/NumberFieldDecrement.tsx",
+      "blob": "04a7a18ebd57de1b5a2654865299b268c90dd04b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/decrement/NumberFieldDecrementDataAttributes.ts",
+      "blob": "ba8d141f08f10384fdcb6419760a62c759dda987",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/group/NumberFieldGroup.tsx",
+      "blob": "6dfb0cd0ad2bd8c2f30180739e0bed22fc346bd5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/group/NumberFieldGroupDataAttributes.ts",
+      "blob": "ba8d141f08f10384fdcb6419760a62c759dda987",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/increment/NumberFieldIncrement.tsx",
+      "blob": "b24ec99dbb84d558abd2826411919fea8182c1a6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/increment/NumberFieldIncrementDataAttributes.ts",
+      "blob": "ba8d141f08f10384fdcb6419760a62c759dda987",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/index.parts.ts",
+      "blob": "9c69e6a750ba29e289900face713ec44f9505895",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/index.ts",
+      "blob": "5039de7a0b6ba501cc3a52e7fc2550e8db6c0f29",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/input/NumberFieldInput.tsx",
+      "blob": "debf897e67da3afadd8fa633455ea2f5d8aa857b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/input/NumberFieldInputDataAttributes.ts",
+      "blob": "ba8d141f08f10384fdcb6419760a62c759dda987",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/root/NumberFieldRoot.tsx",
+      "blob": "d15696cd0b73b146d2e6b30679a1b9d4e2805882",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/root/NumberFieldRootContext.ts",
+      "blob": "aa19ad26ae61cd39e3a1561822d4f3e0ec9412ec",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/root/NumberFieldRootDataAttributes.ts",
+      "blob": "ba8d141f08f10384fdcb6419760a62c759dda987",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/root/useNumberFieldStepperButton.ts",
+      "blob": "5653b24a9241ac795c918a48337dd0d452cdf327",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/scrub-area-cursor/NumberFieldScrubAreaCursor.tsx",
+      "blob": "206dbb2f911b30cf14ede57e20d031e38cf99559",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/scrub-area-cursor/NumberFieldScrubAreaCursorDataAttributes.ts",
+      "blob": "ba8d141f08f10384fdcb6419760a62c759dda987",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/scrub-area/NumberFieldScrubArea.tsx",
+      "blob": "94e1916149c2b7a1ef805c6ad88c998276047119",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/scrub-area/NumberFieldScrubAreaContext.ts",
+      "blob": "c7307ee3eb30475088adf90d8ad8762617d3b85c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/scrub-area/NumberFieldScrubAreaDataAttributes.ts",
+      "blob": "ba8d141f08f10384fdcb6419760a62c759dda987",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/utils/constants.ts",
+      "blob": "140422c23808fa0b95296ac300e54e373e73e6ac",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/utils/getViewportRect.ts",
+      "blob": "fe7690d0fb5d877426186df709abb2e88d4d3809",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/utils/parse.ts",
+      "blob": "e85d2d56ebd489b81ee4c83bedeef64234b611d0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/utils/stateAttributesMapping.ts",
+      "blob": "b62fd29219d352f54aa34299cf693cc7a2e74059",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/utils/types.ts",
+      "blob": "0b972bafae03aa25f47927fa5d0fc1ac3540adb3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/number-field/utils/validate.ts",
+      "blob": "947750ddd238c7cebf13a1af73774d21df64bc60",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/otp-field/index.parts.ts",
+      "blob": "19c73b7d1fe095d954b65e377c51edee39754515",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/otp-field/index.ts",
+      "blob": "fee18fd9575711b1371ddcb13dc9cfdb3f04cb54",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/otp-field/input/OTPFieldInput.tsx",
+      "blob": "055a221a1b38d04c4c4494689878f616779c0504",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/otp-field/input/OTPFieldInputDataAttributes.ts",
+      "blob": "ae415649febb58e0836400552ce22077484e2aa8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/otp-field/root/OTPFieldRoot.tsx",
+      "blob": "5c72f90b2ef1ee69f43e0c4c0ee05df4f711e155",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/otp-field/root/OTPFieldRootContext.ts",
+      "blob": "97a425f2258bad922fcf7f9cd16d406cf412d271",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/otp-field/root/OTPFieldRootDataAttributes.ts",
+      "blob": "8005eeda87e0a22d1bdf459a52b91d3e021b6e99",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/otp-field/utils/otp.ts",
+      "blob": "073dad415d605b49fa0a72cd3378cd502d402410",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/otp-field/utils/stateAttributesMapping.ts",
+      "blob": "c8941bccf264fb3e1e7f189a96aee6085dd106b3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/progress/index.parts.ts",
+      "blob": "0f90e5db735fb70e556703add8695ac0af9343db",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/progress/index.ts",
+      "blob": "6a42d1f8f6cc218501b3a9f4d42b022472029470",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/progress/indicator/ProgressIndicator.tsx",
+      "blob": "d8cbda59a77b13f34d4c0edcafe5cb4aba8ec65d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/progress/indicator/ProgressIndicatorDataAttributes.ts",
+      "blob": "ad3cf497aa3e6ea20d61b3ea6476319e501cf112",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/progress/label/ProgressLabel.tsx",
+      "blob": "f375645104c1214d2a3d8571c8a154338298b97d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/progress/label/ProgressLabelDataAttributes.ts",
+      "blob": "ad3cf497aa3e6ea20d61b3ea6476319e501cf112",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/progress/root/ProgressRoot.tsx",
+      "blob": "2a013fe103775bab30381aa3a7e3f24f15d2754b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/progress/root/ProgressRootContext.tsx",
+      "blob": "47f240a09b2b7978ccff28a0de0cd7e442d1510a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/progress/root/ProgressRootDataAttributes.ts",
+      "blob": "ad3cf497aa3e6ea20d61b3ea6476319e501cf112",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/progress/root/stateAttributesMapping.ts",
+      "blob": "b084ad2b783f4982087dda379ee889ac62e8acf0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/progress/track/ProgressTrack.tsx",
+      "blob": "1ac1767146216a41f69b9a0ecc6cff1cee2059f8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/progress/track/ProgressTrackDataAttributes.ts",
+      "blob": "ad3cf497aa3e6ea20d61b3ea6476319e501cf112",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/progress/value/ProgressValue.tsx",
+      "blob": "ee1eb0626627ad408f533068778c05050243eb72",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/progress/value/ProgressValueDataAttributes.ts",
+      "blob": "ad3cf497aa3e6ea20d61b3ea6476319e501cf112",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/radio-group/RadioGroup.tsx",
+      "blob": "4d84bb0dcbcb40ee6c705dcbad580a7a88fbb04a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/radio-group/RadioGroupContext.ts",
+      "blob": "62e124c737b279067270aaa912b7464efbd33ebf",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/radio-group/RadioGroupDataAttributes.ts",
+      "blob": "35a8e6976cef35bb90d855c58f079a5caf4241c0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/radio-group/index.ts",
+      "blob": "9096f7cc428bbcb14fa0258f093a17f2404dfa58",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/radio/index.parts.ts",
+      "blob": "dfa90f73ae8b588e6663ea5d93bf24f9b261f2f8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/radio/index.ts",
+      "blob": "617f4ed9a1ec94b27ca6d7eaac3cd00801b76b50",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/radio/indicator/RadioIndicator.tsx",
+      "blob": "6056a157429619c4a47244f3d305a52f93456bb6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/radio/indicator/RadioIndicatorDataAttributes.ts",
+      "blob": "28e208c858e838b113743e2f4e08311e21f4f3db",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/radio/root/RadioRoot.tsx",
+      "blob": "a8b28f32c8f44cdbf1f306ba9e9711b8a274e4e3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/radio/root/RadioRootContext.ts",
+      "blob": "378f6fd250824b0a0eb744dd70e4a97c9bc9f45c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/radio/root/RadioRootDataAttributes.ts",
+      "blob": "4843063a97af75d4b8cc375b90dcda36cd7187ae",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/radio/utils/stateAttributesMapping.ts",
+      "blob": "c7da59ede976baa07f1103d5d2b2e69e758e75f9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/control/SliderControl.tsx",
+      "blob": "e6cac9b90a45675bf46b4d43b3a8840181fece90",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/control/SliderControlDataAttributes.ts",
+      "blob": "eb392f19b3bb3aefedd8f67dce2a265bc210b994",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/index.parts.ts",
+      "blob": "0183a9e3dc36f4b1a947273af13250ab0e4a2032",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/index.ts",
+      "blob": "e19cd265093d701fdac9d81dc279b49a81295315",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/indicator/SliderIndicator.tsx",
+      "blob": "3f07a9ef2d1a4b5749e46478d77c17809971f9d3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/indicator/SliderIndicatorDataAttributes.ts",
+      "blob": "eb392f19b3bb3aefedd8f67dce2a265bc210b994",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/label/SliderLabel.tsx",
+      "blob": "0ef18d5611a7e3725154c94292fd26f5bf687add",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/root/SliderRoot.tsx",
+      "blob": "ee66ea3910f8d90a338344fc03b5a3f7e7ecd10e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/root/SliderRootContext.ts",
+      "blob": "dea08eead29f6acf51d3449285c53589d1d75362",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/root/SliderRootDataAttributes.ts",
+      "blob": "eb392f19b3bb3aefedd8f67dce2a265bc210b994",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/root/stateAttributesMapping.ts",
+      "blob": "73ac3eb97273c1909776d312987661fe3f8898f1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/thumb/SliderThumb.tsx",
+      "blob": "ffa0ae81d8a184a99d10317dec5d064c09a7efeb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/thumb/SliderThumbDataAttributes.ts",
+      "blob": "b19b5e18e8dee8bdb80e283919ef11de69968146",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/thumb/prehydrationScript.min.ts",
+      "blob": "03c0595fbcb722b470425af91e4dc8f63787db07",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/thumb/prehydrationScript.template.js",
+      "blob": "be813e2a591951fb5209f8bfbe8c2d3fc1bb0347",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/track/SliderTrack.tsx",
+      "blob": "9ceda0f0cfc1f93deab2833d7e128ebd56ecda7d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/track/SliderTrackDataAttributes.ts",
+      "blob": "eb392f19b3bb3aefedd8f67dce2a265bc210b994",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/utils/asc.ts",
+      "blob": "7ec2016b0288a90b14487b23f16651ac9f8df761",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/utils/getMidpoint.ts",
+      "blob": "02ef2d97384cbcd2419fde963b21e63813781225",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/utils/getPushedThumbValues.ts",
+      "blob": "a733aebc73d432ffed9754b25283d529f2752931",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/utils/getSliderValue.ts",
+      "blob": "cd20c4db7536ee620c15bb598a3ddf483186c5b8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/utils/resolveThumbCollision.ts",
+      "blob": "49657930583051571217895c5f5cbdff298291fb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/utils/roundValueToStep.ts",
+      "blob": "c9d7db5d423fb586f25b37a6eede5c3241fc554d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/utils/validateMinimumDistance.ts",
+      "blob": "78db1e7609b63419969096d37d3ab586e098eaea",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/value/SliderValue.tsx",
+      "blob": "a99abf4043d8d26d286599261284fbad2d5f5d78",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/slider/value/SliderValueDataAttributes.ts",
+      "blob": "eb392f19b3bb3aefedd8f67dce2a265bc210b994",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/switch/index.parts.ts",
+      "blob": "cc81006a43148653d8279f201470347ba6d34a83",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/switch/index.ts",
+      "blob": "e7fb5b63f32cd565e7c8f1d8b5703430b42029ee",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/switch/root/SwitchRoot.tsx",
+      "blob": "54a9d3bed1a3ef2d4db082a3b69f7239605b7358",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/switch/root/SwitchRootContext.ts",
+      "blob": "13486b1a5ded0449bc150e5bd9b02cc2671b593e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/switch/root/SwitchRootDataAttributes.ts",
+      "blob": "c18cf44ce60b2e5e76ce48bb38fccc274722c2d9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/switch/stateAttributesMapping.ts",
+      "blob": "923e831ee3a88e0f5fd99ff94dd0c4dcdb67bdfc",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/switch/thumb/SwitchThumb.tsx",
+      "blob": "8ce0c00c0c1fb119a657a3bd40e11d85ff955dd0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/switch/thumb/SwitchThumbDataAttributes.ts",
+      "blob": "c18cf44ce60b2e5e76ce48bb38fccc274722c2d9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toggle-group/ToggleGroup.tsx",
+      "blob": "1ef5454f58f1d331a7404e3732b9184f56082484",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toggle-group/ToggleGroupContext.ts",
+      "blob": "ad6b58c2c22a181e9e7384cc22d0e998a961c59f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toggle-group/ToggleGroupDataAttributes.ts",
+      "blob": "c9bccffa7db71f8dff27b2eb9ecd1b178c060237",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toggle-group/index.ts",
+      "blob": "b885ead15ef23a7aeb6b646cda6e48b3862dbb54",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toggle/Toggle.tsx",
+      "blob": "7f8971a4afafcfb5593211dce74862243276b0e8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toggle/ToggleDataAttributes.ts",
+      "blob": "d03503ac650c5c2282c93691513421d4e1ee8e9b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/toggle/index.ts",
+      "blob": "2cc30b60db4651aefef0b940fd49e8e3e9ab123e",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Family-level review relationship. It is not an exact function or copied-source mapping.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

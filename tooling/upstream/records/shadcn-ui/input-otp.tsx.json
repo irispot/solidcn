@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/input-otp.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "8d197b71549550f662fe0bb6f18b3aecbdcf3badca933f6d9a0fa8867f89604e",
+  "classification": "generated-wrapper-with-manual-fixes",
+  "mappingScope": "Registry source selected with Base first, legacy only if the Base file does not exist.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "The wrapper writes spellcheck=false as a string, as the original React input does. The 11 unchanged InputOTP documentation examples passed exact React/Solid browser images with zero changed pixels in artifacts/visual/batches/input-otp/report.json (SHA256 dde94ab8bce025a793370c10d0385c13062d0fdf104ad4aabd809c508fe142d6). Full behavior review remains pending."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/input-otp.tsx",
+      "blob": "9680970c7bfcf40588b8c69123b2d02a1e2699b6",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Registry source selected with Base first, legacy only if the Base file does not exist.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

@@ -1,0 +1,743 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/selection.tsx",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "e92e16e008d9fe3fd68f23fec6a3b5c3b349f1be7ec9319a2262a6a607a6ea0f",
+  "classification": "manual-grouped-native-implementation",
+  "mappingScope": "Family-level review relationship. It is not an exact function or copied-source mapping.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "The first Floating UI autoUpdate position remains immediate. Later resize callbacks now coalesce in requestAnimationFrame, with a pending frame canceled on cleanup. A browser callback-isolation probe found the repeatable Select-opening ResizeObserver loop came from Floating UI autoUpdate, not MessageScroller or the Select scroll-arrow observer. The focused docs-message-scroller-animation-open-select exact image report (SHA256 83268c0221c985b1929cd38b3835788206706c6a80794cc2e1ba221a844ae2e0) passes with zero changed pixels and no browser error; Select demo, scrollable, and Combobox popup open images also pass. The frame-level report (SHA256 51fcb9017e783c49f950651dfa719bb63b7b1110932db0bae3ee40ff61f3e4f6) passes 20 first-open and reopen cases without source change. Unchanged Select parts pass 220 active assertions and Select root/client passes 146, with their original skips. Typecheck and the 1083-file guard pass. This is a narrow resize-loop fix, not full selection behavior acceptance.",
+      "Pinned React Select and Combobox positioners hide the initial unpositioned popup, and their popups disable mount-time transitions while starting. Native SelectionPositioner now gates each open cycle, seeds the device-pixel-rounded anchor width before paint, and SelectionPopup applies transition:none only during its existing starting phase. The frame-level Chromium check at artifacts/visual/first-popup-width.json (SHA256 9771aa8f2411056c8f872634875761abc44b66453100d8c9e59466d4890cc857) passes 20 shared Combobox, Dropdown, and Select cases on first open and reopen with stable source fingerprint. Unchanged Select JSDOM passes 146 active assertions with 33 original skips; typecheck and the 1083-file original-test guard pass. This is bounded opening-width evidence, not full behavior acceptance.",
+      "Selection.Item now reads its id through a reactive getter so a parent controlled-value update does not replace an existing option DOM node. Select also restores its last focused item after a dynamic list update detaches the portal and leaves focus on body. The unchanged SelectRoot client file passes 146 runnable assertions with 33 original skips, and 14 unchanged Select part files pass 220 assertions with 11 skips in native Solid. This is selected-suite evidence, not full family parity.",
+      "Added 24 concrete Select, Combobox, and Autocomplete popup, positioner, arrow, and backdrop public Props/State type aliases from the implemented native state. The exact public entries regenerate from narrow overrides. This is type-surface work only; full React type compatibility and behavior parity remain pending.",
+      "Removed 13 TypeScript-only function overload declarations added during the type audit. Solid's visual Vite transform emitted them as duplicate runtime declarations; the concrete public type aliases remain in the exported namespaces. Typecheck, production preview build, and docs-select-demo-open-select exact visual check pass. This records only the compile repair, not full Selection behavior parity.",
+      "Read the current SelectionPositioner and SelectionPopup code and pinned SelectPopup reference: a bottom-contact aligned Select uses fixed bottom, viewport margins, and no max-height; the popup sets its transform origin from the selected item text center. This records current native code only; full Select behavior review remains pending.",
+      "Select Popup now mounts the shared inline scrollbar style while mounted, unless CSPProvider disables it, and adds the matching class to aligned popups. Direct Chromium probes show default, nonce, and disabled cases. Full Select behavior remains pending.",
+      "Reviewed Select mousedown frame timing, readOnly navigation/commit boundary, null labels and serialization, placeholder state, and Combobox popup-input context, ARIA, anchor, query reset and focus logic. The author reports matching select/reopen/Escape probes. This is not full behavior acceptance.",
+      "Read artifacts/visual/cases/docs-select-groups-default/report.json (SHA256 2b9b52bf5ce56fc4543d9cebc1c688987fbe243f67b70adcac81a50d3e6a263d): one exact image case passed. Broader family behavior remains pending.",
+      "Read artifacts/visual/cases/docs-combobox-custom-default/report.json (SHA256 690e3c0503caf29360f65cc7f3e3f32fc842b6285749dd2b0e4afcc5701dddf8): one exact image case passed. Broader family behavior remains pending.",
+      "Read artifacts/visual/cases/docs-combobox-popup-open-combobox/report.json (SHA256 ff7ed05b5efc97128d5c76536688daabc80e4b086a0e6355ca75c2d1003da142): one exact image case passed. Broader family behavior remains pending.",
+      "Reviewed the later Select corrections: selected() includes null for single Select, alignmentItem() uses the selected rendered item or first item when no value is selected, item alignment uses fixed positioning, natural height is measured from the list scrollHeight and constrained by Floating UI availability, and aligned popup/list elements use height and scroll styles. Read the matching pinned select/store.ts, select/item/SelectItem.tsx, select/popup/SelectPopup.tsx, select/positioner/SelectPositioner.tsx, select/list/SelectList.tsx, and select/popup/utils.ts source references. The author reports a passing typecheck and the 1,083-file preservation guard. Full alignment and scroll-growth behavior is not proved.",
+      "Read artifacts/visual/batches/select/report.json (SHA256 f81b16b28300c3cec19280e934df78c3fd49da3c11153825c330753336cf07fb): the complete focused run has 14 exact cases and one failed case. docs-select-scrollable-open-select still differs by 533 pixels. All 15 cases have zero repeated-capture differences in both apps. This result is not full Select or grouped-engine behavior acceptance.",
+      "Reviewed the later Select changes: zero-argument JSX children stay static; aligned coordinates retain fractional values; scroll arrows use absolute positioning; natural list height is limited by the viewport margin contract. Source references are select/list/SelectList.tsx, select/scroll-arrow/SelectScrollArrow.tsx and select/popup/SelectPopup.tsx. Full scroll growth, collision and interaction behavior remains pending.",
+      "Read artifacts/visual/batches/select/report.json (SHA256 47186f5a2448080d6c58d0639103218087e61f0cb3dc4fad393763d7822937a4): 14 cases had zero changed pixels; scrollable-open differed by 9 pixels. The source-change guard failed, so the complete run is INVALID for parity acceptance. These are diagnostic observations only. The author reports typecheck and the 1,083-file guard passed.",
+      "The unchanged SelectRoot conformance assertion for a custom Select.Popup id failed in native mode: Select.Trigger aria-controls used a generated id. Resolve it from the mounted list or popup id. The focused conformance run now passes 7 assertions and retains 2 original JSDOM skips. Full Select parity remains pending.",
+      "The unchanged SelectRoot readOnly and id assertion groups found two native differences from pinned React: a listbox rendered by Select.Popup lacked aria-readonly, and the hidden text input lacked the generated id when there was no name. Focused run: 12 assertions passed, 0 failed, 167 filtered or original skips. Typecheck passed. Broader Select parity remains pending.",
+      "Pinned SelectRoot autofill force-mounts the closed item list before matching hidden-input text. Native Select now does the same while keeping the closed popup hidden, and binds its raw value to Field for validation. Focused unchanged autofill and Field parent assertions: 17 passed, 0 failed. Pinned SelectItem also ignores a synthetic unhighlighted mouse click without pointerdown; the focused controlled-value, defaultOpen, and onValueChange run passes 5 assertions. Typecheck passed. Full Select parity is not accepted.",
+      "Solid Portal assigns a logical _$host to portalled content. Native Select outside-press and blur checks now follow that host so a nested portal remains inside the popup. The unchanged original portalled-content assertion passes in isolation, and typecheck passes. The full Select suite remains pending and this is not family acceptance.",
+      "Pinned Select.Trigger force-mounts the closed list on focus for typeahead. Native Select now mounts its hidden items on focus, uses selected value as the closed-list search anchor, keeps a matching current item during multi-letter input, and falls back to the raw value for Select.Value when no items source supplies labels. The unchanged typeahead group passes 7 assertions and retains 172 filtered or original skips. Full Select client parity is pending.",
+      "Select.Trigger now exposes the enclosing Field's filled and focused state, as the pinned SelectTrigger does. The unchanged Select Field group improved to 23 passed and 9 failed; remaining label, blur, and serialized-empty semantics are not accepted.",
+      "Native Select supplies serialized single and multiple values to its Field for form submission and filled state, matching pinned SelectRoot fieldStringValue and hasSelectedValue. The unchanged Select Form submission and serialized-empty Field assertions pass in focused runs. The external-error-clear Form assertion still fails; this is not full Form acceptance.",
+      "Pinned SelectPositioner reconciles selected values when its item map changes. Native Select now compares settled registered values, drops removed multiple selections, and restores a surviving initial single value or null. Focused unchanged dynamic and multiple groups pass 29 assertions with 3 remaining failures and the original skips. An attempted synchronous cleanup callback caused Solid 2 owned-scope write errors and was removed; this record does not claim the immediate remove-and-readd case passes.",
+      "Pinned Select.Trigger chooses Field.Label before Select.Label for aria-labelledby, registers its explicit id, and merges external description with Field.Description. Pinned Select.Label derives its id from the root and renders a non-native div, so activating it focuses the trigger without opening. Native Select now follows these rules and preserves listbox focus after native Field.Label activation. Seven focused unchanged Select label/description assertions pass with no failures.",
+      "Select now matches pinned Field dirty comparison for ordered multiple values, closes and validates when focus leaves its popup, keeps first/selected keyboard-open anchors without a second queued move, does not loop by default, and passes the item first to a custom equality comparer. Scroll arrows now render their original default glyphs, expose visible state, use the original 1-pixel edge tolerance, and clear after manual unmount. Tab from a portalled option moves to the next logical page control. Focused unchanged assertions for these groups pass; full Select parity is still pending.",
+      "When a selected rendered item disappears, native Select records its removal before Solid 2 permits a state write. This keeps an immediately re-added item unselected during the same task and then commits the selected-value fallback outside disposal. The focused unchanged immediate remove-and-readd assertion passes; all 32 dynamic/multiple selected assertions pass with the original skips. A full unchanged Select run and visual capture remain required.",
+      "Native Select scroll arrows now follow the pinned 40 ms mouse-move timer and item-step offset algorithm, including fractional edge normalization, popup fallback, and cancellation on mouse leave. The unchanged native Select part run passed all 205 assertions in 13 files with no failures; the original test files are unchanged. Typecheck passed. This does not accept the full Select family.",
+      "The same 13-file run also covers the native Select default-null item, ItemText parent guard, GroupLabel association and cleanup, and List resolved className. The fixture bridge replays a StrictMode mount-dispose-mount cycle and updates callback refs when fixture props change. These are targeted behavior and transport checks, not full Select acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/autocomplete/clear/AutocompleteClearDataAttributes.ts",
+      "blob": "95d0a85215e6c5fee1a18556b5e6129f54c58832",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/autocomplete/index.parts.ts",
+      "blob": "64afabad2b1ed53d32f76338fb3e2a9842dfb426",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/autocomplete/index.ts",
+      "blob": "0b5e6804101421a7506b74232c1f28f06329f9b5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/autocomplete/input-group/AutocompleteInputGroup.tsx",
+      "blob": "291fc2e9a29e033e4e13b609646647aa55cda3a8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/autocomplete/input-group/AutocompleteInputGroupDataAttributes.ts",
+      "blob": "0678457d8d89761f9bb6cde2315f13bbdfedc2fd",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/autocomplete/item/AutocompleteItem.tsx",
+      "blob": "b6c06d08bd9faf59996b5fe752847751dd6f8798",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/autocomplete/item/AutocompleteItemDataAttributes.ts",
+      "blob": "7db275c11053b24fe1acfd0941cb3ec190b2235b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/autocomplete/root/AutocompleteRoot.tsx",
+      "blob": "993eeb05548c6e3b3e80d8886545c72eb8ec8274",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/autocomplete/separator/AutocompleteSeparator.tsx",
+      "blob": "a627e641498db417c8bc3a1991e242847b896d58",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/autocomplete/trigger/AutocompleteTrigger.tsx",
+      "blob": "8ea3f953339e250d40d155d33cbfd571429d21d1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/autocomplete/trigger/AutocompleteTriggerDataAttributes.ts",
+      "blob": "4376b9bafccd905e077cb473f0a1ee79adcb068c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/autocomplete/value/AutocompleteValue.tsx",
+      "blob": "9ae6b6b550a53955094c05715f9a3c1d578e669b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/arrow/ComboboxArrow.tsx",
+      "blob": "ce71d0044389fa85ad1b5e1d8deb62ae70e8acb8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/arrow/ComboboxArrowDataAttributes.ts",
+      "blob": "f0d2bdcaafcc0ce7b9f3c85b580df33a77a048a1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/backdrop/ComboboxBackdrop.tsx",
+      "blob": "1286ee6db4f4cd20cb2aeab7701a9dba5a35c6d1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/backdrop/ComboboxBackdropDataAttributes.ts",
+      "blob": "b7700c3c83ed87e98750564a06eaf56bb5e21e1e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/chip-remove/ComboboxChipRemove.tsx",
+      "blob": "9d19340e3ad5d455e6e05f55f6e2d2d7be309b45",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/chip/ComboboxChip.tsx",
+      "blob": "132970ae3da60a472e115bbc252e11791df77755",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/chip/ComboboxChipContext.ts",
+      "blob": "845f8419ade427599627f46231ad9f5ae24a16a9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/chips/ComboboxChips.tsx",
+      "blob": "d88a5d9927182d0689d50b3ca426db7a46c573d9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/chips/ComboboxChipsContext.ts",
+      "blob": "1b87c1cec7349eb12984751c14b6a83f00092fd4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/clear/ComboboxClear.tsx",
+      "blob": "aefd67b4285ed609cc8c791ad9ca073c3b911b56",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/clear/ComboboxClearDataAttributes.ts",
+      "blob": "9c6d6179110bd1dacf1b249458071fb2f4bb6a44",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/collection/ComboboxCollection.tsx",
+      "blob": "477f9a269e21ff999cd33739e6705be98d985a61",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/collection/GroupCollectionContext.tsx",
+      "blob": "ce9dd43a0412a4f2005404dd456f9d6b60976152",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/empty/ComboboxEmpty.tsx",
+      "blob": "7d218a4b02f888be5a6dc203a9ebc1b6ada28aaf",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/group-label/ComboboxGroupLabel.tsx",
+      "blob": "4f38ae46da55915a93639f89694be93231cb3679",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/group/ComboboxGroup.tsx",
+      "blob": "c7db0312ee8362c875c9d578fe21b7534f20a114",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/group/ComboboxGroupContext.ts",
+      "blob": "5ddec46075cd8a7bfc48efbc56eb9141c3e6745b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/icon/ComboboxIcon.tsx",
+      "blob": "023d1ec84c9a89f9d3573ae8c124782837d223d3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/index.parts.ts",
+      "blob": "3ccc0e5d7636204887b60470fcab16c202591172",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/index.ts",
+      "blob": "1f322f2c85530cbf818920eb444c9f231e1672c1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/input-group/ComboboxInputGroup.tsx",
+      "blob": "418de88ca2a2bc1127a9c874adf70ffd35a3c0d7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/input-group/ComboboxInputGroupDataAttributes.ts",
+      "blob": "6da89dac0c88fbdcfcf262f059131764ab7d829f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/input/ComboboxInput.tsx",
+      "blob": "71c6e858c6a7e6e6dfa3c2b5bae5dd8595605df2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/input/ComboboxInputDataAttributes.ts",
+      "blob": "8433aeac6b78193af70724ed0df0291cd790a599",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/item-indicator/ComboboxItemIndicator.tsx",
+      "blob": "dedb781ced7358e571e9c7d81f484afff4e563f5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/item-indicator/ComboboxItemIndicatorDataAttributes.ts",
+      "blob": "6c88886f525738c8233d453bdc0cc6ff67fca19b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/item/ComboboxItem.tsx",
+      "blob": "cc0b9d81452a313568fc6f863b45591cff1e9a2a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/item/ComboboxItemContext.ts",
+      "blob": "6e0a477497bcc11b78a2e25f106ed41e4ddf4da4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/item/ComboboxItemDataAttributes.ts",
+      "blob": "2152749fc5d56fe854ca4c1f8044aa5eda3e748a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/items/createItems.ts",
+      "blob": "8961266631542b3faccb9434b9e92736945bf320",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/items/itemCollection.ts",
+      "blob": "91639beff9cd6b370c4fcdf61fb187811d5d556d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/label/ComboboxLabel.tsx",
+      "blob": "ade710d2bd3268b1c4cc0909d9c1ceb23d5f66e0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/list/ComboboxList.tsx",
+      "blob": "5c810070dad7e58617e24bd26f6aa6d203b30efc",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/popup/ComboboxPopup.tsx",
+      "blob": "f36133b456ad76d9f56359893775cb399ec97afc",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/popup/ComboboxPopupDataAttributes.ts",
+      "blob": "836972dab29c40aab56238750f976de09e83cc04",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/portal/ComboboxPortal.tsx",
+      "blob": "c3f900acc1975f6a5fc45a4d688ac468e84e0efc",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/portal/ComboboxPortalContext.tsx",
+      "blob": "6e6849a73bbba42a6275cf1e4c3d63180dc001a0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/positioner/ComboboxPositioner.tsx",
+      "blob": "9e45a9052ef2f7e06c074644365e29a74eb55c82",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/positioner/ComboboxPositionerContext.tsx",
+      "blob": "5860c1e245cdf476f6b584929ed77da09221db7d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/positioner/ComboboxPositionerCssVars.ts",
+      "blob": "3758b2b4294fbfc736b966f8e0b9143093e13e30",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/positioner/ComboboxPositionerDataAttributes.ts",
+      "blob": "2213fe94af1b35e1e1a4302bf2782600d114c859",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/root/AriaCombobox.tsx",
+      "blob": "d0861b1de7125c5f4232abfe1617f6b046a19e69",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/root/ComboboxRoot.tsx",
+      "blob": "cc5cbcb10de2fbef7718ddb7435885e15568320e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/root/ComboboxRootContext.tsx",
+      "blob": "515f950fd5eff0d24e5bdf7881788626ffbac8f3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/root/utils/constants.ts",
+      "blob": "c1d784d327f7e088fefada3d27577e6479f6618c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/root/utils/index.ts",
+      "blob": "5eb26c3f68c59f745f1a82e88c978571471ce3a6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/root/utils/useFilter.ts",
+      "blob": "5bfadaf3fdb98d09f9ba77a5647f4c3e00d1ca0f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/root/utils/useFilteredItems.ts",
+      "blob": "0d944c8ed42fd8ca0ca484dde3b0dc0333d7f765",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/row/ComboboxRow.tsx",
+      "blob": "6079860d47fb4b3784ced54e1470dfe465f38709",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/row/ComboboxRowContext.ts",
+      "blob": "3cb8e5f824990d6b6109c2fb35e9bbfc0bfb49d9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/separator/ComboboxSeparator.tsx",
+      "blob": "2fc359f0683b1c155140da26af7eba9ffaa3d556",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/status/ComboboxStatus.tsx",
+      "blob": "0fe50b85b83bf1b6c84811ee15b802a99e437362",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/store.ts",
+      "blob": "7a15ec5ef429359c3aa21b5eadc6e583db169761",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/trigger/ComboboxTrigger.tsx",
+      "blob": "21c4f83239b3546b204adbc7cdd36527f48ab4eb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/trigger/ComboboxTriggerDataAttributes.ts",
+      "blob": "67dfcd5fd40971dfdad0a7ad2f1393030b6d7084",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/utils/ComboboxInternalDismissButton.tsx",
+      "blob": "96d16253728638e8d2d82418481ad3f205f0ccd1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/utils/handleInputPress.ts",
+      "blob": "0e111fb13c8454c83df972e7da9bb3025f89a56c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/utils/parts.ts",
+      "blob": "1dfad590570cd1beb9a27b722d9db657f8e1ffbc",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/utils/stateAttributesMapping.ts",
+      "blob": "ad82d65a6da11812eb9e06b7f4ab59ff932c77ef",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/utils/useInitialLiveRegionTextMutation.ts",
+      "blob": "129fb50f1df0712f1675e8397230a9054e89ec5e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/combobox/value/ComboboxValue.tsx",
+      "blob": "44df43dbdcd3a52590c36f380c5f00f78a474405",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/floating-ui-react/hooks/useClick.ts",
+      "blob": "c990e99a045169ae1c0f78fefc3b2884a510de6b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/internals/resolveValueLabel.tsx",
+      "blob": "595e988d5a7c16bab3944e2034d2de128937a1c9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/arrow/SelectArrow.tsx",
+      "blob": "9056017e05608d31fd1d015607505962ff4fa6c9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/arrow/SelectArrowDataAttributes.ts",
+      "blob": "3e70602dabee8639417f62952af2b1c2c85acb90",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/backdrop/SelectBackdrop.tsx",
+      "blob": "dc57e573e2246ba7b21754ab8628fb9468a42f1b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/backdrop/SelectBackdropDataAttributes.ts",
+      "blob": "6a3904c31fea1d293bb8ddfd809417a8867f67ed",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/group-label/SelectGroupLabel.tsx",
+      "blob": "34bfd148fff996eeac8650978a9783204bd9a7d2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/group/SelectGroup.tsx",
+      "blob": "52e818032abbfaca3f02b9158052e45efffc7ce5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/group/SelectGroupContext.ts",
+      "blob": "3fc87bae376ec2430e02b66924feac14b1258269",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/icon/SelectIcon.tsx",
+      "blob": "3700bec0e734fc24802176510cf321a675f023a9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/icon/SelectIconDataAttributes.ts",
+      "blob": "bd4b6479dd5bdc28240436484c2d118ee4ff437c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/index.parts.ts",
+      "blob": "cac4a07010d69bf61d8f6415780ccc616ff9c53f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/index.ts",
+      "blob": "87c2bfa7bae00d5ec07a714f66f0a2b0a02c6dac",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/item-indicator/SelectItemIndicator.tsx",
+      "blob": "6f213ac672a904b8d6576aaa332ae158885569a7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/item-indicator/SelectItemIndicatorDataAttributes.ts",
+      "blob": "6c88886f525738c8233d453bdc0cc6ff67fca19b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/item-text/SelectItemText.tsx",
+      "blob": "897ab1eb931e4e39138b48bf54521f56d2fb112e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/item/SelectItem.tsx",
+      "blob": "250eb728d796b790797d38aa837cc98e897a2f1f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/item/SelectItemContext.ts",
+      "blob": "f5559e676e6399e17a437a73104cc1818e94c0e8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/item/SelectItemDataAttributes.ts",
+      "blob": "6ae9401651664f7dac6d3dfadbf80ccdc896a49b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/label/SelectLabel.tsx",
+      "blob": "73f98d8cdff22e04c8ef1a1ef9f5c9b2e5927aef",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/list/SelectList.tsx",
+      "blob": "be135f41f61f566a82df5ec6ebd12633cdd4a4e3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/popup/SelectPopup.tsx",
+      "blob": "556f6d174d78f7d0b4e21184cc520aac16503997",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/popup/SelectPopupDataAttributes.ts",
+      "blob": "628c7e40f4b1a8d291fccaeb66bf25c4e11b3557",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/popup/utils.ts",
+      "blob": "5476f19431e3946ecc36809399f36f87c60977cc",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/portal/SelectPortal.tsx",
+      "blob": "886a43c26d809ec55cebfe1af4e2152f5463c74c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/positioner/SelectPositioner.tsx",
+      "blob": "ad14ce34cff2d3fea33eeb6422faf014dc5e3f1a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/positioner/SelectPositionerContext.ts",
+      "blob": "163d6c5c0bb9cbb9ceedb82b32306aba16beeb48",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/positioner/SelectPositionerCssVars.ts",
+      "blob": "3758b2b4294fbfc736b966f8e0b9143093e13e30",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/positioner/SelectPositionerDataAttributes.ts",
+      "blob": "b04d6db9db61ab87124c348857019640df6034e5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/root/SelectRoot.tsx",
+      "blob": "cd561a995f96a24fb5abcb51cc89401962379a7c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/root/SelectRootContext.ts",
+      "blob": "86d4f7199a17a57eb9a256a3839732e00874ca2a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/scroll-arrow/SelectScrollArrow.tsx",
+      "blob": "1683881d096e9d8f1da06206ca1e5fbc6f1bfd98",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/scroll-down-arrow/SelectScrollDownArrow.tsx",
+      "blob": "17a71cca5ac5f390386fcaa0bb2c20bd2f588a41",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/scroll-down-arrow/SelectScrollDownArrowDataAttributes.ts",
+      "blob": "1c585343e2ae4e561e0fbc4f23a069e9ef3ea369",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/scroll-up-arrow/SelectScrollUpArrow.tsx",
+      "blob": "e746a2bcfcdb894f77d7a0e8966cee16d1170e78",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/scroll-up-arrow/SelectScrollUpArrowDataAttributes.ts",
+      "blob": "8c2c9f6be1d9bb4cdd11c5d7a53558c7e5b6d05d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/separator/SelectSeparator.tsx",
+      "blob": "96ff2f1ba4332d164ee906b03eddd4044abc7f5d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/store.ts",
+      "blob": "7ecc72565f9a38fa3d147985c7744e821aa4e6dc",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/trigger/SelectTrigger.tsx",
+      "blob": "f0122c6e6ec3da9c362873459faa7efff623a11d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/trigger/SelectTriggerDataAttributes.ts",
+      "blob": "8de90b8ca367f3477e59759cdc58ce89af2e8239",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/value/SelectValue.tsx",
+      "blob": "7c0d0fd2d52eda85cdb43e47a8cf6211dfe83331",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/select/value/SelectValueDataAttributes.ts",
+      "blob": "58ebddf902c929db47adf2a655dd4ae225b2b03a",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Family-level review relationship. It is not an exact function or copied-source mapping.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

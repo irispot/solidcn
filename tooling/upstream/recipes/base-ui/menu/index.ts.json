@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/menu/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/menu/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": [],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../overlays",
+    "nativeTypes": "omit",
+    "expectedTypeSurface": [
+      {
+        "module": "./root/MenuRoot",
+        "kind": "star"
+      },
+      {
+        "module": "./arrow/MenuArrow",
+        "kind": "star"
+      },
+      {
+        "module": "./backdrop/MenuBackdrop",
+        "kind": "star"
+      },
+      {
+        "module": "./checkbox-item/MenuCheckboxItem",
+        "kind": "star"
+      },
+      {
+        "module": "./checkbox-item-indicator/MenuCheckboxItemIndicator",
+        "kind": "star"
+      },
+      {
+        "module": "./group-label/MenuGroupLabel",
+        "kind": "star"
+      },
+      {
+        "module": "./group/MenuGroup",
+        "kind": "star"
+      },
+      {
+        "module": "./item/MenuItem",
+        "kind": "star"
+      },
+      {
+        "module": "./link-item/MenuLinkItem",
+        "kind": "star"
+      },
+      {
+        "module": "./popup/MenuPopup",
+        "kind": "star"
+      },
+      {
+        "module": "./portal/MenuPortal",
+        "kind": "star"
+      },
+      {
+        "module": "./positioner/MenuPositioner",
+        "kind": "star"
+      },
+      {
+        "module": "./radio-group/MenuRadioGroup",
+        "kind": "star"
+      },
+      {
+        "module": "./radio-item/MenuRadioItem",
+        "kind": "star"
+      },
+      {
+        "module": "./radio-item-indicator/MenuRadioItemIndicator",
+        "kind": "star"
+      },
+      {
+        "module": "./submenu-root/MenuSubmenuRoot",
+        "kind": "star"
+      },
+      {
+        "module": "./trigger/MenuTrigger",
+        "kind": "star"
+      },
+      {
+        "module": "./submenu-trigger/MenuSubmenuTrigger",
+        "kind": "star"
+      },
+      {
+        "module": "./viewport/MenuViewport",
+        "kind": "star"
+      }
+    ]
+  },
+  "scope": "Public export declarations only. Names come from upstream declarations and route to an explicit native group. The current native type policy is retained, not certified as equivalent; changes to the upstream type export surface fail for review. This does not generate component behavior."
+}

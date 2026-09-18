@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/textarea.tsx",
+  "generator": "generators/simple-wrapper.mjs",
+  "generatorInputs": ["apps/v4/registry/bases/base/ui/textarea.tsx"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": [],
+  "dependencies": ["typescript", "prettier"],
+  "scope": "One stateless native textarea wrapper, type-only React namespace removal, and reactive prop access."
+}

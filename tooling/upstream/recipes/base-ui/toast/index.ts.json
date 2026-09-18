@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/toast/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/toast/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": [],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../notifications",
+    "nativeTypes": "group-star",
+    "expectedTypeSurface": [
+      {
+        "module": "./root/ToastRoot",
+        "kind": "star"
+      },
+      {
+        "module": "./provider/ToastProvider",
+        "kind": "star"
+      },
+      {
+        "module": "./viewport/ToastViewport",
+        "kind": "star"
+      },
+      {
+        "module": "./content/ToastContent",
+        "kind": "star"
+      },
+      {
+        "module": "./description/ToastDescription",
+        "kind": "star"
+      },
+      {
+        "module": "./title/ToastTitle",
+        "kind": "star"
+      },
+      {
+        "module": "./close/ToastClose",
+        "kind": "star"
+      },
+      {
+        "module": "./action/ToastAction",
+        "kind": "star"
+      },
+      {
+        "module": "./portal/ToastPortal",
+        "kind": "star"
+      },
+      {
+        "module": "./positioner/ToastPositioner",
+        "kind": "star"
+      },
+      {
+        "module": "./arrow/ToastArrow",
+        "kind": "star"
+      },
+      {
+        "module": "./useToastManager",
+        "kind": "star"
+      },
+      {
+        "module": "./createToastManager",
+        "kind": "star"
+      }
+    ],
+    "liftTypeModules": ["./createToastManager", "./useToastManager"]
+  },
+  "scope": "Public export declarations only. Names come from upstream declarations and route to an explicit native group. The current native type policy is retained, not certified as equivalent; changes to the upstream type export surface fail for review. This does not generate component behavior."
+}

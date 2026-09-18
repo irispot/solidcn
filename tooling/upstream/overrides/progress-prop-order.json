@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Preserve the native Progress prop order: the omitted-prop object precedes the controlled value and native wrapper attributes. This keeps the current reactive spread boundary.",
+  "replacements": [
+    {
+      "find": "    <ProgressPrimitive.Root\n      value={__props0.value}\n      data-slot=\"progress\"\n      class={cn('cn-progress-root flex flex-wrap gap-3', __props0.className ?? __props0.class)}\n      {...omitProps(__props0, ['className', 'children', 'value'])}",
+      "replace": "    <ProgressPrimitive.Root\n      {...omitProps(__props0, ['className', 'children', 'value'])}\n      value={__props0.value}\n      data-slot=\"progress\"\n      class={cn('cn-progress-root flex flex-wrap gap-3', __props0.className ?? __props0.class)}",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": "Preserves an existing native reactive spread fix. Full Progress behavior remains pending."
+}

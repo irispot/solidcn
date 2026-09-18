@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/types/index.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "ce0a702aec33d187c61f98b71ff61884133a834f7e3f9c3d40b7cd4cfae6fb33",
+  "classification": "generated-public-entry-with-manual-maintenance",
+  "mappingScope": "Public export reference only.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "The public HTMLProps, ComponentRenderFn, BaseUIEvent, and BaseUIGenericEventDetails types now use Solid JSX and native DOM events. The reason-to-event map follows the pinned Base UI type source. Root typecheck passes; the remaining public type audit gaps are still open.",
+      "The root type barrel now includes the Solid Tabs public state and props. The unchanged Tabs runtime suites pass, and the current source export-name audit finds no missing names in the Tabs module. Full type-level equivalence remains pending."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/types/index.ts",
+      "blob": "ae3f6419e86e49e5005fa8aa460c7204180d02e5",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Public export reference only.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/separator.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "f27dd76561270da15f46d75fe1ec5da7ea7a09262efe8f212623ca24d4c789f4",
+  "classification": "generated-wrapper-with-manual-fixes",
+  "mappingScope": "Registry source selected with Base first, legacy only if the Base file does not exist.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/separator.tsx",
+      "blob": "d69c13426761105ab42e5a6bd364dc54bd70f78c",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/shadcn-ui/separator.tsx.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/shadcn-ui/separator.tsx.json",
+          "sha256": "459b6ea2093e088afc11a9b8322764ed161ffd01e234a72badafa576bf28894f"
+        },
+        {
+          "path": "generators/simple-wrapper.mjs",
+          "sha256": "ac459abc4cc9f73ce066e79d58ef14a6389d15d5db44643811f1afaaef21a6e0"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        },
+        {
+          "path": "overrides/separator-props.json",
+          "sha256": "7c6de4dac46de9aa7a9e7691f4916848ade4d0e5f50b0e9524a0a833d04003c2"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "57d5cfb23f3585bb2917208aa10a5611ace967d31480fbd4aab0ac16117eb388",
+    "finalSha256": "f27dd76561270da15f46d75fe1ec5da7ea7a09262efe8f212623ca24d4c789f4",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/separator-props.json",
+        "purpose": "The native Solid separator exports a component, not the React namespace Props type. Use the component's native props type.",
+        "sha256": "7c6de4dac46de9aa7a9e7691f4916848ade4d0e5f50b0e9524a0a833d04003c2"
+      }
+    ]
+  },
+  "manualException": null
+}

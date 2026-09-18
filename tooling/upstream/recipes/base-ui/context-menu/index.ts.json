@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/context-menu/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/context-menu/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": [],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../overlays",
+    "nativeTypes": "omit",
+    "expectedTypeSurface": [
+      {
+        "module": "./root/ContextMenuRoot",
+        "kind": "star"
+      },
+      {
+        "module": "./trigger/ContextMenuTrigger",
+        "kind": "star"
+      },
+      {
+        "module": "./positioner/ContextMenuPositioner",
+        "kind": "star"
+      },
+      {
+        "module": "../menu/backdrop/MenuBackdrop",
+        "kind": "named",
+        "local": "MenuBackdropProps",
+        "name": "ContextMenuBackdropProps"
+      },
+      {
+        "module": "../menu/backdrop/MenuBackdrop",
+        "kind": "named",
+        "local": "MenuBackdropState",
+        "name": "ContextMenuBackdropState"
+      },
+      {
+        "module": "../menu/portal/MenuPortal",
+        "kind": "named",
+        "local": "MenuPortalProps",
+        "name": "ContextMenuPortalProps"
+      },
+      {
+        "module": "../menu/portal/MenuPortal",
+        "kind": "named",
+        "local": "MenuPortalState",
+        "name": "ContextMenuPortalState"
+      },
+      {
+        "module": "../menu/popup/MenuPopup",
+        "kind": "named",
+        "local": "MenuPopupProps",
+        "name": "ContextMenuPopupProps"
+      },
+      {
+        "module": "../menu/popup/MenuPopup",
+        "kind": "named",
+        "local": "MenuPopupState",
+        "name": "ContextMenuPopupState"
+      },
+      {
+        "module": "../menu/arrow/MenuArrow",
+        "kind": "named",
+        "local": "MenuArrowProps",
+        "name": "ContextMenuArrowProps"
+      },
+      {
+        "module": "../menu/arrow/MenuArrow",
+        "kind": "named",
+        "local": "MenuArrowState",
+        "name": "ContextMenuArrowState"
+      },
+      {
+        "module": "../menu/group/MenuGroup",
+        "kind": "named",
+        "local": "MenuGroupProps",
+        "name": "ContextMenuGroupProps"
+      },
+      {
+        "module": "../menu/group/MenuGroup",
+        "kind": "named",
+        "local": "MenuGroupState",
+        "name": "ContextMenuGroupState"
+      },
+      {
+        "module": "../menu/group-label/MenuGroupLabel",
+        "kind": "named",
+        "local": "MenuGroupLabelProps",
+        "name": "ContextMenuGroupLabelProps"
+      },
+      {
+        "module": "../menu/group-label/MenuGroupLabel",
+        "kind": "named",
+        "local": "MenuGroupLabelState",
+        "name": "ContextMenuGroupLabelState"
+      },
+      {
+        "module": "../menu/item/MenuItem",
+        "kind": "named",
+        "local": "MenuItemProps",
+        "name": "ContextMenuItemProps"
+      },
+      {
+        "module": "../menu/item/MenuItem",
+        "kind": "named",
+        "local": "MenuItemState",
+        "name": "ContextMenuItemState"
+      },
+      {
+        "module": "../menu/link-item/MenuLinkItem",
+        "kind": "named",
+        "local": "MenuLinkItemProps",
+        "name": "ContextMenuLinkItemProps"
+      },
+      {
+        "module": "../menu/link-item/MenuLinkItem",
+        "kind": "named",
+        "local": "MenuLinkItemState",
+        "name": "ContextMenuLinkItemState"
+      },
+      {
+        "module": "../menu/checkbox-item/MenuCheckboxItem",
+        "kind": "named",
+        "local": "MenuCheckboxItemProps",
+        "name": "ContextMenuCheckboxItemProps"
+      },
+      {
+        "module": "../menu/checkbox-item/MenuCheckboxItem",
+        "kind": "named",
+        "local": "MenuCheckboxItemState",
+        "name": "ContextMenuCheckboxItemState"
+      },
+      {
+        "module": "../menu/checkbox-item-indicator/MenuCheckboxItemIndicator",
+        "kind": "named",
+        "local": "MenuCheckboxItemIndicatorProps",
+        "name": "ContextMenuCheckboxItemIndicatorProps"
+      },
+      {
+        "module": "../menu/checkbox-item-indicator/MenuCheckboxItemIndicator",
+        "kind": "named",
+        "local": "MenuCheckboxItemIndicatorState",
+        "name": "ContextMenuCheckboxItemIndicatorState"
+      },
+      {
+        "module": "../menu/radio-group/MenuRadioGroup",
+        "kind": "named",
+        "local": "MenuRadioGroupProps",
+        "name": "ContextMenuRadioGroupProps"
+      },
+      {
+        "module": "../menu/radio-group/MenuRadioGroup",
+        "kind": "named",
+        "local": "MenuRadioGroupState",
+        "name": "ContextMenuRadioGroupState"
+      },
+      {
+        "module": "../menu/radio-item/MenuRadioItem",
+        "kind": "named",
+        "local": "MenuRadioItemProps",
+        "name": "ContextMenuRadioItemProps"
+      },
+      {
+        "module": "../menu/radio-item/MenuRadioItem",
+        "kind": "named",
+        "local": "MenuRadioItemState",
+        "name": "ContextMenuRadioItemState"
+      },
+      {
+        "module": "../menu/radio-item-indicator/MenuRadioItemIndicator",
+        "kind": "named",
+        "local": "MenuRadioItemIndicatorProps",
+        "name": "ContextMenuRadioItemIndicatorProps"
+      },
+      {
+        "module": "../menu/radio-item-indicator/MenuRadioItemIndicator",
+        "kind": "named",
+        "local": "MenuRadioItemIndicatorState",
+        "name": "ContextMenuRadioItemIndicatorState"
+      },
+      {
+        "module": "../menu/submenu-root/MenuSubmenuRoot",
+        "kind": "named",
+        "local": "MenuSubmenuRootProps",
+        "name": "ContextMenuSubmenuRootProps"
+      },
+      {
+        "module": "../menu/submenu-root/MenuSubmenuRoot",
+        "kind": "named",
+        "local": "MenuSubmenuRootState",
+        "name": "ContextMenuSubmenuRootState"
+      },
+      {
+        "module": "../menu/submenu-trigger/MenuSubmenuTrigger",
+        "kind": "named",
+        "local": "MenuSubmenuTriggerProps",
+        "name": "ContextMenuSubmenuTriggerProps"
+      },
+      {
+        "module": "../menu/submenu-trigger/MenuSubmenuTrigger",
+        "kind": "named",
+        "local": "MenuSubmenuTriggerState",
+        "name": "ContextMenuSubmenuTriggerState"
+      }
+    ]
+  },
+  "scope": "Public export declarations only. Names come from upstream declarations and route to an explicit native group. The current native type policy is retained, not certified as equivalent; changes to the upstream type export surface fail for review. This does not generate component behavior."
+}

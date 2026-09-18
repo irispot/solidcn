@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Export the implemented native Select part and root action/event types.",
+  "replacements": [
+    {
+      "find": "export type { SelectRootProps } from '../selection';\n",
+      "replace": "export type { SelectRootProps } from '../selection';\nexport type {\n  SelectItemIndicatorProps,\n  SelectItemIndicatorState,\n  SelectItemProps,\n  SelectItemState,\n  SelectListProps,\n  SelectListState,\n  SelectScrollDownArrowProps,\n  SelectScrollDownArrowState,\n  SelectScrollUpArrowProps,\n  SelectScrollUpArrowState,\n  SelectValueProps,\n  SelectValueState,\n} from '../selection';\n",
+      "expectedOccurrences": 1
+    },
+    {
+      "find": "  SelectListState,\n  SelectScrollDownArrowProps,\n",
+      "replace": "  SelectListState,\n  SelectRootActions,\n  SelectRootChangeEventDetails,\n  SelectRootChangeEventReason,\n  SelectScrollDownArrowProps,\n",
+      "expectedOccurrences": 1
+    },
+    {
+      "find": "export type {\n  SelectItemIndicatorProps,",
+      "replace": "export type {\n  SelectArrowProps,\n  SelectArrowState,\n  SelectBackdropProps,\n  SelectBackdropState,\n  SelectItemIndicatorProps,",
+      "expectedOccurrences": 1
+    },
+    {
+      "find": "  SelectRootChangeEventReason,\n  SelectScrollDownArrowProps,",
+      "replace": "  SelectRootChangeEventReason,\n  SelectPopupProps,\n  SelectPopupState,\n  SelectPositionerProps,\n  SelectPositionerState,\n  SelectScrollDownArrowProps,",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

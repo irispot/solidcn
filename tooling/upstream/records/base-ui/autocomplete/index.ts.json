@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/autocomplete/index.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "bcb16534de88c67b0467e582f1bc7a2c1f4016803eae429b6cf8d66db3453707",
+  "classification": "manual-native-public-entry",
+  "mappingScope": "Public export reference only.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/autocomplete/index.ts",
+      "blob": "0b5e6804101421a7506b74232c1f28f06329f9b5",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/base-ui/autocomplete/index.ts.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/base-ui/autocomplete/index.ts.json",
+          "sha256": "3ccc19cc25daccb8ff5edcab67ffc1397d3caf219753feae0775410280e351fb"
+        },
+        {
+          "path": "generators/base-entry.mjs",
+          "sha256": "e8e74928397ba79b917c73974fe3b62edd3feba7163fe249c0ad0898975f52dd"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        },
+        {
+          "path": "overrides/autocomplete-public-types.json",
+          "sha256": "3c708a01d1b1670c971ef73ce84138043f14e8820b04ba5da0be54bc296729b7"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "530ad707fe0d38f02c10e5e1c5f3f349d11d01cf5541481139f806f573889812",
+    "finalSha256": "bcb16534de88c67b0467e582f1bc7a2c1f4016803eae429b6cf8d66db3453707",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/autocomplete-public-types.json",
+        "purpose": "Export the implemented native Autocomplete part and root action/event types.",
+        "sha256": "3c708a01d1b1670c971ef73ce84138043f14e8820b04ba5da0be54bc296729b7"
+      }
+    ]
+  },
+  "manualException": null
+}

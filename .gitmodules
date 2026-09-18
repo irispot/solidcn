@@ -1,0 +1,6 @@
+[submodule "base-ui"]
+	path = base-ui
+	url = https://github.com/irispot/solidcn.git
+[submodule "shadcn-ui"]
+	path = shadcn-ui
+	url = https://github.com/irispot/solidcn.git

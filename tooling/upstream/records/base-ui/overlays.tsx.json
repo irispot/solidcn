@@ -1,0 +1,1427 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/overlays.tsx",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "4bce78223bc44366180839ea97cbf186f883cf18ac138fc685565d6c9ce3e0e6",
+  "classification": "manual-grouped-native-implementation",
+  "mappingScope": "Family-level review relationship. It is not an exact function or copied-source mapping.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Nested Drawer state now separates open-child count from child presence: the parent clears data-nested-drawer-open and --nested-drawers at child close start, and restores its frontmost height at the same point, while it keeps a fixed own height during the child's exit. Pinned React useDialogRoot.ts counts only open nested drawers; DrawerPopup.tsx tracks ending presence separately for height. Unchanged DrawerPopup.test.tsx cases at lines 578-813 assert both the immediate state clear and fixed height during exit. The focused browser report artifacts/visual/drawer-nested-close.json passes: React and Solid clear the parent nested flag at 13 and 12 ms on desktop, 13 and 14 ms on mobile; parent content reaches half opacity at 86 and 89 ms on desktop, 79 and 81 ms on mobile. The child stays mounted through its exit. Native root typecheck and the 1083-file original-test guard pass. This is bounded nested-close behavior evidence, not full Drawer acceptance.",
+      "DrawerPanel now claims only Drawer-axis touch swipes with a non-passive capture touchmove listener, and yields cross-axis gestures and native scrolling inside scrollable content until its dismiss edge. This mirrors the pinned DrawerViewport touchmove arbitration without changing Shadcn CSS or original tests. The stable browser report artifacts/visual/drawer-touch.json passes React and Solid swipe cases for DrawerDialog and DrawerDemo at 390px and 544px, plus scroll and cross-axis guards; the Drawer reopen report also passes desktop and mobile cycles. Typecheck and the original-test guard pass. This is bounded touch behavior evidence, not full Drawer acceptance.",
+      "Drawer close now waits for finite popup-local animations, as pinned React useAnimationsFinished/getFiniteAnimations does. The Solid browser had retained two scroll-driven descendant CSSAnimations (scroll-fade-reveal-t/b), which kept the modal portal, inert state, and scroll lock after close. Modal focus, inert state, and scroll lock now release on open=false while the popup remains mounted for its exit animation, as pinned React does. DrawerViewport and DrawerBackdrop also set pointer-events none while closed. A fresh Chromium check reopened docs-drawer-demo-default three times and docs-dialog-demo-default plus docs-alert-dialog-demo-default twice each; each close removed the portal, restored body overflow, and left no inert body child. Immediate Drawer close made the trigger the hit-test target and allowed rapid reopening; immediate Dialog and AlertDialog close matched React overlay hit testing. Native Tooltip passed 138 active unchanged assertions and 37 original skips; three selected Popover cases passed; root typecheck passed. This is bounded repeat-open evidence, not full overlay behavior acceptance.",
+      "PopupPositioner now hides an unpositioned popup in each open cycle, matching the pinned React useAnchorPositioning visibility rule. The frame-level Chromium check at artifacts/visual/first-popup-width.json (SHA256 9771aa8f2411056c8f872634875761abc44b66453100d8c9e59466d4890cc857) passes all 13 shared Dropdown states on first open and reopen, alongside Select and Combobox states. Unchanged Tooltip JSDOM passes 138 active assertions with 37 original skips; typecheck and the 1083-file original-test guard pass. This is bounded first-frame evidence, not full overlay behavior acceptance.",
+      "Read PopupPortal and pinned DialogPortal: the Solid portal places an inert internal backdrop before modal dialog, alert-dialog, and drawer content. The focused docs-attachment-trigger-open-dialog report (SHA256 16338a8d3830f21545b914f51da3545138262a387799959527358b59c3dba8b9) is complete and passed with zero changed pixels. Broader overlay behavior remains pending.",
+      "Read the current Drawer snap-point and NavigationMenu direction code. Drawer resolves viewport-based snap offsets, NavigationMenu uses text direction for horizontal activation, and menu triggers render focus guards while open. This records current native code only; behavior review remains pending.",
+      "Reviewed PopupPositioner: alignmentAxis now uses alignOffset, and anchor width/height use device-pixel-rounded edges. These expressions match packages/react/src/internals/useAnchorPositioning.ts at pinned Git blob 31ac54345575df1e8eaee3c31a8c3c6df19cf1fe. This is a narrow source review, not full positioning or overlay behavior acceptance. The author reports a passing typecheck.",
+      "Read artifacts/visual/cases/docs-menubar-rtl-open-menubar/report.json (SHA256 61d0c4453a9b080f5b782c4024a3ce3bf937e68ee77f8a44da9e3c15aa362266): the complete single-case run passed with zero changed pixels and zero repeated-capture differences in both apps. Broader behavior remains pending.",
+      "Read artifacts/visual/cases/docs-dropdown-menu-radio-icons-open-dropdown-menu/report.json (SHA256 93fb9313a38b3076c78e8d4420064b77690250cdd8791c074788ce5c7cab592a): the complete single-case run passed with zero changed pixels and zero repeated-capture differences in both apps. Broader behavior remains pending.",
+      "The unchanged NavigationMenuContent.test.tsx SSR pair now runs on both pinned React and native Solid: 2 passed, 19 filtered in each, with matching assertion names and statuses. Native keepMounted content renders hidden before a viewport exists, as pinned React does. The focused navigation-menu visual batch passed 4/4 exact images, including two open states. This is bounded SSR and visual evidence; broader navigation behavior remains pending.",
+      "NavigationItemRoot now registers item-unregister cleanup only on the client. Solid SSR disposed that cleanup and warned about a server signal write. The unchanged Navigation SSR pair passed 2/2 in each mode, the supplemental hidden-state probe passed in each mode, both Solid logs had no SERVER_WRITE warning, typecheck passed, and the focused navigation-menu visual report (SHA256 38917a398d951b772bcc1d5affb1c2afb199e46f37b5d9a2854939176ca7b252) passed 4/4 exact images. This does not accept broader behavior.",
+      "Pinned MenuPositioner defaults start alignment for Menubar and Context Menu. Root Context Menu uses pointer offsets (-5 main, +2 alignment) and fixed positioning; Menubar uses start alignment. Native PopupPositioner now follows these defaults without changing standalone menu defaults. The shared Base Context Menu and Menubar open screenshots each pass with zero changed pixels.",
+      "The unchanged TooltipProvider.test.tsx and TooltipRoot.test.tsx suites match pinned React in JSDOM (138 passed, 37 original skips) and Chromium (174 passed, 1 original skip). Typecheck and the protected-file guard pass. This accepts only the routed Tooltip assertions, not broader overlay behavior.",
+      "Popover Root passes 141 of 144 active unchanged original JSDOM assertions, with 44 original skips; Trigger passes 30 of 31, with 1 original skip. Root passes nested Menu dismissal, nested Popover inside-to-outside press, and canceled-close isolation cases. Three controlled nested Popover fixture cases and one Trigger payload text case remain. Popover Positioner now applies modal scroll lock independently of Close-part focus handling; touch opens lock only when the positioner is within 20px of viewport width, matching the pinned React width rule. All 6 targeted unchanged Chromium touch scroll-lock cases pass. Full Chromium Root passes 175 of 187 active assertions, with 1 original skip; Trigger passes 30 of 32. Tooltip JSDOM passes 138 active assertions with 37 original skips; Chromium passes 174 active assertions with 1 original skip. Typecheck and protected-file guard pass. Broader overlay behavior is pending.",
+      "Popover and Tooltip public types are now in family-local Solid type modules and replayed through exact-context index overrides. The static source-name audit finds 35 of 36 Popover and 26 of 27 Tooltip type names; both missing names are Viewport transition states that native Viewport does not implement. Typecheck passes. Type-field and runtime acceptance remain pending.",
+      "A native Solid signal probe confirms that a controlled nested Popover mounts when open changes, and now returns focus to its programmatic opener after a Close part changes the focus-manager mode. PopupPanel preserves the opening focus across that mode change and does not return focus until the popup closes. The supplemental probe passes 1/1. The three unchanged PopoverRoot JSDOM tests still fail before the focus assertion because their React fixture adapter does not deliver the controlled child open update; React passes all three. Solid PopoverRoot remains 141 passed, 3 failed, 44 original skips; Tooltip remains 138 passed, 37 original skips. Typecheck and protected-file guard pass. This accepts neither the adapter behavior nor full Popover parity."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/alert-dialog/handle.ts",
+      "blob": "197c5a4a4fd7b56b965ca8f268cb769d5c6030a2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/alert-dialog/index.parts.ts",
+      "blob": "8b77d0e7c0481970fbda22cb435888a7b76a80a0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/alert-dialog/index.ts",
+      "blob": "df23f75615a0af27271a278cc013902f2afd84ce",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/alert-dialog/root/AlertDialogRoot.tsx",
+      "blob": "12a89ca1dea665303c92255e3b71aa58e0cee633",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/alert-dialog/trigger/AlertDialogTrigger.tsx",
+      "blob": "4638c873278ef97dc3d249ad6f1539466f4c36d2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/alert-dialog/trigger/AlertDialogTriggerDataAttributes.ts",
+      "blob": "a013cf883a405b1f70a748c377b01e2bbcc0c660",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/context-menu/index.parts.ts",
+      "blob": "772004960e1adf4c97a2b5709f706cb586820243",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/context-menu/index.ts",
+      "blob": "f26d519d2184682ce44e0b53a8859fd1f35cc873",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/context-menu/positioner/ContextMenuPositioner.tsx",
+      "blob": "ffe66993966be207da656b63e7a2bfbfe1c63996",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/context-menu/positioner/ContextMenuPositionerCssVars.ts",
+      "blob": "6b4be62d84039fc9ad3c9555aca4b88b7718a12c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/context-menu/positioner/ContextMenuPositionerDataAttributes.ts",
+      "blob": "1e000f5543ef1394c9dbc37a1559129175c1a264",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/context-menu/root/ContextMenuRoot.tsx",
+      "blob": "7d3f3e20975d32150441b34b3100737c82879ff9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/context-menu/root/ContextMenuRootContext.ts",
+      "blob": "a24677bcc5def86985cd28690901a7b2295fcd23",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/context-menu/trigger/ContextMenuTrigger.tsx",
+      "blob": "e33c21da38fa2f3bc2b641dd27a8425a41552b7f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/context-menu/trigger/ContextMenuTriggerDataAttributes.ts",
+      "blob": "ed4940537ee56896487f4577cfab652938f25674",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/backdrop/DialogBackdrop.tsx",
+      "blob": "0c25c66397967397189a6dde7117a0172ef2be99",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/backdrop/DialogBackdropDataAttributes.ts",
+      "blob": "00cefc32cedd9a1555366b12c08b2e9a932592d2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/close/DialogClose.tsx",
+      "blob": "737e2996d2c240e4244dad57d1a82802f5702966",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/close/DialogCloseDataAttributes.ts",
+      "blob": "b3bf1454da353b59acb4c1c55c4c6a8021bdfec7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/description/DialogDescription.tsx",
+      "blob": "8ed13ad243542d77449a5a52d92050c04716dcc9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/index.parts.ts",
+      "blob": "08fdf054a249ea101cc03c2ab320df9b292ddfc9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/index.ts",
+      "blob": "e1fe4dbc727c6d244aac4d9d92e63ef4f02193a8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/popup/DialogPopup.tsx",
+      "blob": "0cf93053a81647d50dedbc541ea5015521b75566",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/popup/DialogPopupCssVars.ts",
+      "blob": "46532da3ab1ac9a5a12ce44beced7b1be9fc6a28",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/popup/DialogPopupDataAttributes.ts",
+      "blob": "0a6d9ad5067f12f1061735e5d3ee271ff62c7be7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/portal/DialogPortal.tsx",
+      "blob": "8e64f90c2cd4bd03e92e0276e88c0dcbdc5aac7f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/portal/DialogPortalContext.ts",
+      "blob": "90ff9a63093fd352774a8a770675e34f7fabfb43",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/root/DialogRoot.tsx",
+      "blob": "97ac450c0437f5fb971ce1af65335a8192790c0d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/root/DialogRootContext.ts",
+      "blob": "8178bb9a01405b439e36a506d43a3417ab7ca7e5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/root/useDialogRoot.ts",
+      "blob": "74ed59fba5c78c362d479b6107e9c3cd2d0e2365",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/root/useRenderDialogRoot.tsx",
+      "blob": "7deae6a99709eaa582ad3d824889b6befab1e654",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/store/DialogHandle.ts",
+      "blob": "23604419e1e44f7e7192fc30d23acc82d77910a3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/store/DialogStore.ts",
+      "blob": "17b00a87aeb3d0d5cb8063e37116abec1bcddba4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/title/DialogTitle.tsx",
+      "blob": "9bed126527b7e37dd73177490750f397c02aafed",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/trigger/DialogTrigger.tsx",
+      "blob": "7655ccf3c53e79a0140d0f57b307a6bce7d5634e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/trigger/DialogTriggerDataAttributes.ts",
+      "blob": "bdeb84226e998d41b053dc89fe309cee7830f40a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/utils/stateAttributesMapping.ts",
+      "blob": "004ccf0c946de5696df2d74021f8ba9a9312eb26",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/viewport/DialogViewport.tsx",
+      "blob": "cc706a3f6df06b221cbc16092e7dc9ed03abea13",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/dialog/viewport/DialogViewportDataAttributes.ts",
+      "blob": "0a6d9ad5067f12f1061735e5d3ee271ff62c7be7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/backdrop/DrawerBackdrop.tsx",
+      "blob": "b2da2bd9ca060aaf464a275ced113b173de0a1b4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/backdrop/DrawerBackdropCssVars.ts",
+      "blob": "112886b282369b996f96dfa82983137c81da09b3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/backdrop/DrawerBackdropDataAttributes.ts",
+      "blob": "97026c6f2e0a413583a513f9e1e6033802533e3a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/close/DrawerClose.tsx",
+      "blob": "c7263511b9aaa0c96c1885536edba4679c681645",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/content/DrawerContent.tsx",
+      "blob": "7fee108fb48c7bb1a5847a9141a1e663fcb7327b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/content/drawerContentAttribute.ts",
+      "blob": "5ddd57b70ba92fd87d2f94dcbc5357ebe3dd0fd2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/description/DrawerDescription.tsx",
+      "blob": "0c17a3654ce33e31ba261c042c71a55dcf8f43d8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/handle.ts",
+      "blob": "6146a931bd39b0e0fa93ec3279efd2ddb436ea5e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/indent-background/DrawerIndentBackground.tsx",
+      "blob": "3fb394f19751ba035d836ff423a618c119731603",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/indent/DrawerIndent.tsx",
+      "blob": "066c5b48db43f22dced48102f8231e643fdbb954",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/index.parts.ts",
+      "blob": "2d32347e6ea487f29c8046b5527ef5f66fb9dc84",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/index.ts",
+      "blob": "df2831c7cdf79df15d8b23f2fa938c9fa8ac466f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/popup/DrawerPopup.tsx",
+      "blob": "a30e58d6d5f4bb0fe0a806deaeb399702f947097",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/popup/DrawerPopupCssVars.ts",
+      "blob": "609b6938bc236e233638cd6a0f4cbdbecfe7eeab",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/popup/DrawerPopupDataAttributes.ts",
+      "blob": "2585cfc3da0ebf74a22c5fd69ac777cf62485af5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/portal/DrawerPortal.tsx",
+      "blob": "54764f036b6ec19bdea84cb088fd4ae9006e388c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/provider/DrawerProvider.tsx",
+      "blob": "ae6226c5bef9695b63f2dd9243cd6d627afbdd37",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/provider/DrawerProviderContext.ts",
+      "blob": "f48a96f9dade563d40ffe32b1f275fae4f3bca68",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/root/DrawerRoot.tsx",
+      "blob": "f2f7afced1b6520a3832ce91b20ecac9361f1074",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/root/DrawerRootContext.ts",
+      "blob": "40930f15366efaa70c5f238e88692903838a7dad",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/root/useDrawerSnapPoints.ts",
+      "blob": "efa8b2fe90d48ece96a79b7e57be93f38f1e7596",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/swipe-area/DrawerSwipeArea.tsx",
+      "blob": "be48c2cd43297bfe18f684d387728e4d987e3016",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/swipe-area/DrawerSwipeAreaDataAttributes.ts",
+      "blob": "7c016a0ca3b35c0a02ffba8e3a658c5982d10937",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/title/DrawerTitle.tsx",
+      "blob": "0fd8da8575ba91dfafb8b939c78cd3c66a94a5cf",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/trigger/DrawerTrigger.tsx",
+      "blob": "10ebe735a4880504f9aaa0a8036449b6a6449a4f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/viewport/DrawerViewport.tsx",
+      "blob": "81467dd4b1d4fc05467430ca13492324660589db",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/viewport/DrawerViewportContext.tsx",
+      "blob": "bd11d146888e7296df804cee9efe67dd50e6c9fb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/viewport/DrawerViewportCssVars.ts",
+      "blob": "807e050555351c4c93a6b0fa118c55a723fa8603",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/viewport/DrawerViewportDataAttributes.ts",
+      "blob": "4de7a29a6a38343e713ee3dd0f135d40f11c43af",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/virtual-keyboard-provider/DrawerVirtualKeyboardContext.tsx",
+      "blob": "4e36de832fe185aa5f75a40729fb6e28d19cd797",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/drawer/virtual-keyboard-provider/DrawerVirtualKeyboardProvider.tsx",
+      "blob": "09f8338d7f3612ddb9409599678c03ea925ae189",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/arrow/MenuArrow.tsx",
+      "blob": "66d102a3ce67f496355c46f0dc0b070c31636879",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/arrow/MenuArrowDataAttributes.ts",
+      "blob": "2276a332293202270998d3a5a35bfd4bd2f8a908",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/backdrop/MenuBackdrop.tsx",
+      "blob": "a9285ad538ceb924a427a88e0d2135e56d094e75",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/backdrop/MenuBackdropDataAttributes.ts",
+      "blob": "b6db549f948330c51af55938c705d84286818f67",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/checkbox-item-indicator/MenuCheckboxItemIndicator.tsx",
+      "blob": "dee6a3ccc89775aec1fb4c8980413a7bd07ace13",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/checkbox-item-indicator/MenuCheckboxItemIndicatorDataAttributes.ts",
+      "blob": "14758fef6680fb04ade9b609d19f7755ce3d4461",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/checkbox-item/MenuCheckboxItem.tsx",
+      "blob": "ce077dd01df6db0256ef9046c5482965ca068590",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/checkbox-item/MenuCheckboxItemContext.ts",
+      "blob": "9f4e22cc84234a25744955db294f5b0f4dab12df",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/checkbox-item/MenuCheckboxItemDataAttributes.ts",
+      "blob": "c019ac7cbf8688d485914f70feb0513627537325",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/group-label/MenuGroupLabel.tsx",
+      "blob": "d4a7cec7392c1e95f42abaa616152ddccde93cef",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/group/MenuGroup.tsx",
+      "blob": "850a63d80b078f6837dfae06e32db00311fc54f5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/group/MenuGroupContext.ts",
+      "blob": "77dd201f9b2e293f7f4fb140b725fe2e0ced3f41",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/index.parts.ts",
+      "blob": "0b5815b4588e11eb34c30a4405fc7282955f4026",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/index.ts",
+      "blob": "e0acd39203e305f1b4d1fdfbec464ebf77f709bb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/item/MenuItem.tsx",
+      "blob": "55f12663bd50eec1dd1a299e2cffb6057624f607",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/item/MenuItemDataAttributes.ts",
+      "blob": "24ef050147ac74b68a15a57bd167d3766d251b74",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/item/useMenuItem.ts",
+      "blob": "569ba4e1c82a01e177b3e999aee49b4e8bd364d0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/item/useMenuItemCommonProps.ts",
+      "blob": "4196b9e3e59161bd8f502b2cff07a065a8c7bd76",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/link-item/MenuLinkItem.tsx",
+      "blob": "3e426c3ac6a13d951a6270a22b1fa592536366ff",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/link-item/MenuLinkItemDataAttributes.ts",
+      "blob": "6852819ce8ebbffe0ccd8c6f5a68685eec937359",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/popup/MenuPopup.tsx",
+      "blob": "d506799080bfa15fe3e9a5d601ef83e29d32e52b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/popup/MenuPopupDataAttributes.ts",
+      "blob": "9c628e53600f906a4fcabab4b62abb639583daf0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/portal/MenuPortal.tsx",
+      "blob": "ed3e1a01a62f46545d127794b49edd9f028c6296",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/portal/MenuPortalContext.ts",
+      "blob": "be11452bb5c26dc0a58cbf5294ec3480c9701188",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/positioner/MenuPositioner.tsx",
+      "blob": "f6c2b70911cd90827b83c2ee1ddec9588c868140",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/positioner/MenuPositionerContext.ts",
+      "blob": "2d482159cd8495d0b2f851edf219d73566324854",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/positioner/MenuPositionerCssVars.ts",
+      "blob": "4289e81d3d6bd36858f5491f80669373e86d5967",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/positioner/MenuPositionerDataAttributes.ts",
+      "blob": "defa3e0f9ec024c36274471bae736605b342c3dc",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/radio-group/MenuRadioGroup.tsx",
+      "blob": "92f7424f19b202be823a59ca943affa0ce6655e0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/radio-group/MenuRadioGroupContext.ts",
+      "blob": "bc3a9fb0649ebfa60e48e505cd5ca849840245e0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/radio-item-indicator/MenuRadioItemIndicator.tsx",
+      "blob": "2641755323bb58ba06c208ef21308d31392e1978",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/radio-item-indicator/MenuRadioItemIndicatorDataAttributes.ts",
+      "blob": "51d4be41bd3d5b28d8b2276f6329f0d4725efac9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/radio-item/MenuRadioItem.tsx",
+      "blob": "044ead95926cda9338db523d7acff6b56a573e31",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/radio-item/MenuRadioItemContext.ts",
+      "blob": "2f410ae38bc3eee3d8efd9f178477ff5c57fd52e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/radio-item/MenuRadioItemDataAttributes.ts",
+      "blob": "d4ea0b5b9f3635bed4ab876c4f318b9f15bf9bdc",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/root/MenuRoot.tsx",
+      "blob": "6089b4afa83c3c2826dd4fc35e98568ba441b761",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/root/MenuRootContext.ts",
+      "blob": "e3430e78cbe1339bfdf0ce7bc6b2cc98b9710a0c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/store/MenuHandle.ts",
+      "blob": "1412a9d0c26ecc59ab639fb470ab647105cba2b0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/store/MenuStore.ts",
+      "blob": "b3a75b39f5ed4e843f8c9152c987c6b164bbf4cb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/submenu-root/MenuSubmenuRoot.tsx",
+      "blob": "572661bcffe46b103939db5e784fa85c3dd48254",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/submenu-root/MenuSubmenuRootContext.ts",
+      "blob": "1e8af65b65c205b1c566c307ec5f52c6d2520c81",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/submenu-trigger/MenuSubmenuTrigger.tsx",
+      "blob": "35d081047aa7254bbab15a5c85f9eca93adc6d4a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/submenu-trigger/MenuSubmenuTriggerDataAttributes.ts",
+      "blob": "5b06b427c38d9bc13c54b88579dada0e1d364102",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/trigger/MenuTrigger.tsx",
+      "blob": "9e7007231ee80381822400606ae1e8272aaf6796",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/trigger/MenuTriggerDataAttributes.ts",
+      "blob": "6ddefee3727c6eba5ea5df06e34f029efe451153",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/utils/findRootOwnerId.ts",
+      "blob": "810e4bd4f95492443cfc0a4c5ab120a716880625",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/utils/stateAttributesMapping.ts",
+      "blob": "09918a36773e98782b3360a6a50c49a97a72fbba",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/utils/types.ts",
+      "blob": "9617076621fa5246a4294a02926c9f9aa7b52cce",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/viewport/MenuViewport.tsx",
+      "blob": "874a1de95ad190c91f9784f7495968edcf3553ea",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/viewport/MenuViewportCssVars.ts",
+      "blob": "29e12362ef68357f14d9f544dc4565ff16867ef5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/menu/viewport/MenuViewportDataAttributes.ts",
+      "blob": "6875fa476c91278876303b2039683230b8df2de7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/arrow/NavigationMenuArrow.tsx",
+      "blob": "2e42cbf59bfd545121855b0148149ae098a5944c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/arrow/NavigationMenuArrowDataAttributes.ts",
+      "blob": "e744912e3d0ea111b968e695aceb6de1904432da",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/backdrop/NavigationMenuBackdrop.tsx",
+      "blob": "6d205f8976ca2f3e2c4ee6511acd125abb279791",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/backdrop/NavigationMenuBackdropDataAttributes.ts",
+      "blob": "b7700c3c83ed87e98750564a06eaf56bb5e21e1e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/content/NavigationMenuContent.tsx",
+      "blob": "df5d04f1291d1b9c8e05bd502ff585160d0fc245",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/content/NavigationMenuContentDataAttributes.ts",
+      "blob": "cddab682a555c7d1d0eb2675b45e49f6f2114db2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/icon/NavigationMenuIcon.tsx",
+      "blob": "3dfa01faa70395d8d0cdcb9f673c0319464e4f55",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/icon/NavigationMenuIconDataAttributes.ts",
+      "blob": "f30e1a3de4ac921c39061523065a742e9c1b9d00",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/index.parts.ts",
+      "blob": "66da211b675ced7e2151106f8660470fdd7fc377",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/index.ts",
+      "blob": "b15aad37eed66a0dfd4a30db4cd4b3ddc6cdfd33",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/item/NavigationMenuItem.tsx",
+      "blob": "0c195c76db5457e93c525b3243400c0e24431fb0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/item/NavigationMenuItemContext.ts",
+      "blob": "c3eb1cc55231ba9c23bbf4c790cccc2018c5578b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/link/NavigationMenuLink.tsx",
+      "blob": "3c5e2d96b6f595d9e4b435189960d0eb7b125e48",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/link/NavigationMenuLinkDataAttributes.ts",
+      "blob": "4cd8a8a1e5be7db15fe632db5ce132bfd989e392",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/list/NavigationMenuDismissContext.ts",
+      "blob": "de78f2c630e78306e4718531a8f6a5ead9ab72d5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/list/NavigationMenuList.tsx",
+      "blob": "99b6cfd94523dd3c7dc7706d9b2f68e60dbad9cb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/popup/NavigationMenuPopup.tsx",
+      "blob": "52838904683d121d4f377e96d8bec361d0ddd79f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/popup/NavigationMenuPopupCssVars.ts",
+      "blob": "8475bc2043d73d9f2ab50cc0a456e6f9e95aa2d3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/popup/NavigationMenuPopupDataAttributes.ts",
+      "blob": "2628a317c3d738173f5af436a339f26096b1462d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/portal/NavigationMenuPortal.tsx",
+      "blob": "7be8b63a6541e04568e7eb79a8b42e87008c007a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/portal/NavigationMenuPortalContext.ts",
+      "blob": "72ef41e7c2d7789e8f3394c9779d4fa3bf38488a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/positioner/NavigationMenuPositioner.tsx",
+      "blob": "ecfbe9fbb53126688c21a807a987e6a42e222ad6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/positioner/NavigationMenuPositionerContext.ts",
+      "blob": "b62f43845a3a4cc116d414c8b5a114c0d1e32227",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/positioner/NavigationMenuPositionerCssVars.ts",
+      "blob": "233c4772e72e8cd986e5545dfe32e13dca49d780",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/positioner/NavigationMenuPositionerDataAttributes.ts",
+      "blob": "1b952f425a42f3ac0601891ae533337f95a28793",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/root/NavigationMenuRoot.tsx",
+      "blob": "5f00abe4bb4080135e83b55885ce602f43755887",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/root/NavigationMenuRootContext.ts",
+      "blob": "93ed473775571b09ebaca8bd7f9b492804e0a1e8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/trigger/NavigationMenuTrigger.tsx",
+      "blob": "c48ec5a32c3d965560dcfeb4b767a6ecc84d7423",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/trigger/NavigationMenuTriggerDataAttributes.ts",
+      "blob": "cf38ef0e9d860fb50661214fa3f48eb4db2fb214",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/utils/constants.ts",
+      "blob": "70f2c250eb08dae9ba34cb4ff0ca7b4f0b220239",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/utils/isOutsideMenuEvent.ts",
+      "blob": "1f52c7d913bb31e220d4aa8d6abfd3282cbf6ee5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/utils/setSharedFixedSize.ts",
+      "blob": "b97340c12cc8eff56589033cc850c8213f4ace24",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/utils/useNavigationMenuAnchorPositioning.ts",
+      "blob": "8a61abd78ba61a7121ab84f129ec3aab0ef9e74c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/navigation-menu/viewport/NavigationMenuViewport.tsx",
+      "blob": "1aa8534617827e797ce2c27e4e7d9d2a93188937",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/arrow/PopoverArrow.tsx",
+      "blob": "32a3e3adda72037baabb7eeda890ec371277373c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/arrow/PopoverArrowDataAttributes.ts",
+      "blob": "0e8ea720885545f5d7dc203f317492ebab8191a2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/backdrop/PopoverBackdrop.tsx",
+      "blob": "5fe2b7184859787b2e6b16909bc2c751874d713e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/backdrop/PopoverBackdropDataAttributes.ts",
+      "blob": "b7700c3c83ed87e98750564a06eaf56bb5e21e1e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/close/PopoverClose.tsx",
+      "blob": "8f1dc1e076b2c863fd9c5e2463b714ae7b9cf94e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/description/PopoverDescription.tsx",
+      "blob": "5883025569179d6960c88066e05a9f98e5bc814d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/index.parts.ts",
+      "blob": "22f1b3d43c6a71a31811f1dca25a9680e1428eb8",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/index.ts",
+      "blob": "fc762c3b9b938f1e6e319aac7c0c3a3f78bd1555",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/popup/PopoverPopup.tsx",
+      "blob": "c89c3dc64a5cd224828ff62182c947b38d175540",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/popup/PopoverPopupCssVars.ts",
+      "blob": "a6625ad84f74deaf1e81f0afab0cd90a76dc6f3f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/popup/PopoverPopupDataAttributes.ts",
+      "blob": "ff812ae41182aad9378bb50383f316fd96cf57f4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/portal/PopoverPortal.tsx",
+      "blob": "91d1b193ced4d32170411272e3a937f577c8620f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/portal/PopoverPortalContext.ts",
+      "blob": "ab5e3b6829747478ebd0e52e767bd9cbb8d9a79a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/positioner/PopoverPositioner.tsx",
+      "blob": "e2fa272effc2a74e118fb3c8a0d0c5e55bc76acf",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/positioner/PopoverPositionerContext.ts",
+      "blob": "639b19d37256fc0888018120ea2d30f397902413",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/positioner/PopoverPositionerCssVars.ts",
+      "blob": "e1cbb5b08d92ba0a1a34036fe0b28975cf99f430",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/positioner/PopoverPositionerDataAttributes.ts",
+      "blob": "b693a09b0a7f950912ad2cf42ed6e723245897c6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/root/PopoverRoot.tsx",
+      "blob": "9e258bf8d8a2e4cc96c14399ca891cb4deab6221",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/root/PopoverRootContext.ts",
+      "blob": "4af44de829bcf8071bf6545c3448a9b6601381da",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/store/PopoverHandle.ts",
+      "blob": "b7166adb51e60fdac352dcc91f186c421c715f2d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/store/PopoverStore.ts",
+      "blob": "346c126251a2912d74c04bbdf42ad2670773cdb3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/title/PopoverTitle.tsx",
+      "blob": "ebfcf47c2fed325f53c3405d04f1365364a7eeea",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/trigger/PopoverTrigger.tsx",
+      "blob": "f7dbc831073fb42557ebce6f6a802b6a84e35d22",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/trigger/PopoverTriggerDataAttributes.ts",
+      "blob": "c960bf8567d37bdf269467468cd20de22bf6f232",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/utils/constants.ts",
+      "blob": "8a7158161999b5668f73ea50ace21f5ef66530bf",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/viewport/PopoverViewport.tsx",
+      "blob": "2f86f2dd480caed7abff24e53fd8865d837d635f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/viewport/PopoverViewportCssVars.ts",
+      "blob": "29e12362ef68357f14d9f544dc4565ff16867ef5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/popover/viewport/PopoverViewportDataAttributes.ts",
+      "blob": "45a835347b66161106837168c0d4f6bb8b0c19bb",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/arrow/PreviewCardArrow.tsx",
+      "blob": "1597dc5a5493e069e623f2aeb66b0025c7e5622f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/arrow/PreviewCardArrowDataAttributes.ts",
+      "blob": "1056c79d44d560f49dd8dd2bb9daa7a3d2306f32",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/backdrop/PreviewCardBackdrop.tsx",
+      "blob": "371d2477c717c59c2a0cb1e5747d4b0a44b536d6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/backdrop/PreviewCardBackdropDataAttributes.ts",
+      "blob": "1c296cf7e9cf5931a3bee879be3b7a5478aac5aa",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/index.parts.ts",
+      "blob": "fbb0fc582ea1b5f7e4c4cceb035da8861c4707f2",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/index.ts",
+      "blob": "76156101bf62f73a746072b665d8917f6f645f5d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/popup/PreviewCardPopup.tsx",
+      "blob": "5a44b522986c32003469558d9c083182a1012b08",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/popup/PreviewCardPopupDataAttributes.ts",
+      "blob": "6b012992052ed101dcd7a02829e06db4720a4487",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/portal/PreviewCardPortal.tsx",
+      "blob": "7d26458faa414485dbbf3c11a0bb908107e70e7a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/portal/PreviewCardPortalContext.ts",
+      "blob": "691a020de001f2e2ead45f70705b1579e2aaf1a0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/positioner/PreviewCardPositioner.tsx",
+      "blob": "812e0a45ab4ccae47f1a0e96e21a70f152ef7a3e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/positioner/PreviewCardPositionerContext.ts",
+      "blob": "f057e5f5f79aff859251c3fb8a7be89d2a01a769",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/positioner/PreviewCardPositionerCssVars.ts",
+      "blob": "9b0f4b79e8a105bb80737308abe059a7560bd1d4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/positioner/PreviewCardPositionerDataAttributes.ts",
+      "blob": "b43c1aed03a87bc47a43dc167adb4b6917144a76",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/root/PreviewCardContext.ts",
+      "blob": "370901fd81a318aa09185fe6bd5119a470dccfa4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/root/PreviewCardRoot.tsx",
+      "blob": "7a9b79428bc642bc66176617150dbccd860c2210",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/store/PreviewCardHandle.ts",
+      "blob": "11375594ad667182f87c4ff5b81a4f8513ca222d",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/store/PreviewCardStore.ts",
+      "blob": "abde1b97db3d5c0d9e19a8bde77d3093a68b90f3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/trigger/PreviewCardTrigger.tsx",
+      "blob": "0f72413e0a7486ced2f0cc2a15323224b5d8e5c9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/trigger/PreviewCardTriggerDataAttributes.ts",
+      "blob": "8fbe6109e5ba53b989c96bec197bf3bacd8811c6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/utils/constants.ts",
+      "blob": "a55834acb9ea6ca890ec8f85341060703d39d90f",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/viewport/PreviewCardViewport.tsx",
+      "blob": "761b1f95fcf48b9a232378bd40fc5ec9781f84c6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/viewport/PreviewCardViewportCssVars.ts",
+      "blob": "29e12362ef68357f14d9f544dc4565ff16867ef5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/preview-card/viewport/PreviewCardViewportDataAttributes.ts",
+      "blob": "daff59fb0476162687e59ec14b4660f467179cb7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/arrow/TooltipArrow.tsx",
+      "blob": "223ca42ad0dbb0372caee24239cd1042a902c651",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/arrow/TooltipArrowDataAttributes.ts",
+      "blob": "e148126708ea6de1ee3ff344a0dcd5dff64d077e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/index.parts.ts",
+      "blob": "f2112b8fb6af3ba12ec7a4a2a5085df597428c6a",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/index.ts",
+      "blob": "6e7492ef246c34f90ed24cdbead3047eb4fd9bf0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/popup/TooltipPopup.tsx",
+      "blob": "b2397fb623dee12c066034bcbacd0c800c38ad83",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/popup/TooltipPopupDataAttributes.ts",
+      "blob": "c782e68d54a773e5867d3a900c6a8768b5db4750",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/portal/TooltipPortal.tsx",
+      "blob": "6efacfbfb13f860db6b57bc9212959fa71eb79e3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/portal/TooltipPortalContext.ts",
+      "blob": "890e8709614a6accfbe13a9d26770b163a8714ac",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/positioner/TooltipPositioner.tsx",
+      "blob": "0ef6afc40e3b953fe30221d7bb6423d7abab0785",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/positioner/TooltipPositionerContext.ts",
+      "blob": "349106aa81e5a3f61d3fa345c826cb3caf01f3d6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/positioner/TooltipPositionerCssVars.ts",
+      "blob": "11c9bbb456201ba4d5ce5df1780d05dc4ce9d3f7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/positioner/TooltipPositionerDataAttributes.ts",
+      "blob": "c06a7cd7d7503fa793da5e4392d7434b43946f71",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/provider/TooltipProvider.tsx",
+      "blob": "61518f2504b08cd70a728403ba2852b7040e1698",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/provider/TooltipProviderContext.ts",
+      "blob": "a4425f5f99baac6e27a1f5b69cc7e7b4d9c9e248",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/root/TooltipRoot.tsx",
+      "blob": "2511030b7018d973aef4959c0012c5a01cd01a92",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/root/TooltipRootContext.ts",
+      "blob": "9e0def06bb902b49ab278031368e0c35b187ea8b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/store/TooltipHandle.ts",
+      "blob": "4a6723e7cd8d0ba0276eed031c41f51b4401cda3",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/store/TooltipStore.ts",
+      "blob": "b4879148e73a8568ac43661b7086acae9caf1d64",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/trigger/TooltipTrigger.tsx",
+      "blob": "307631af7a23c75482ec7d3c29e8a7470616b268",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/trigger/TooltipTriggerDataAttributes.ts",
+      "blob": "683ac53d13b03d14810a57646d01c6d3ea37b4d0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/utils/constants.ts",
+      "blob": "16c23aa3b75f44da900c88d1b7d7cc93606cd90c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/viewport/TooltipViewport.tsx",
+      "blob": "40830d4c946ba1b1f7e8ace98cf02249323cdcce",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/viewport/TooltipViewportCssVars.ts",
+      "blob": "29e12362ef68357f14d9f544dc4565ff16867ef5",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/tooltip/viewport/TooltipViewportDataAttributes.ts",
+      "blob": "e3217f1977c46c6df8d1af1efcf136ce1c9a2329",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Family-level review relationship. It is not an exact function or copied-source mapping.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

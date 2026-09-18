@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/radio/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/radio/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": [],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../controls",
+    "nativeTypes": "group-star",
+    "expectedTypeSurface": [
+      {
+        "module": "./root/RadioRoot",
+        "kind": "star"
+      },
+      {
+        "module": "./indicator/RadioIndicator",
+        "kind": "star"
+      }
+    ]
+  },
+  "scope": "Public export declarations only. Names come from upstream declarations and route to an explicit native group. The current native type policy is retained, not certified as equivalent; changes to the upstream type export surface fail for review. This does not generate component behavior."
+}

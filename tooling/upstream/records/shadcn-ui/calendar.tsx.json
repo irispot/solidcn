@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/calendar.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "5462f14b4a7b1e7d7e5c934ec6b2e72d4138c577533c29645f994cf009e8d5be",
+  "classification": "manual-native-engine-replacement",
+  "mappingScope": "Original registry or engine API reference; this is a separate native implementation.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Read the current Calendar formatter: it maps digits in supplied date text, including short weekday names, through the selected numeral system. This records current native code only; Persian and full calendar behavior remain pending.",
+      "Reviewed current native Calendar layout/classes, modifiers, week numbers, caption bounds, roving focus and range-selection code. The author reports a passing typecheck, seven exact in-memory image states, a matching Jan 12-15 range, and matching month selection. Those in-memory checks are author-reported, not persisted reports verified by this record. Full DayPicker API and behavior acceptance remain pending.",
+      "Reviewed the default caption format: Gregorian calendar and Latin year digits are explicit in both caption paths. A supplied formatCaption still takes priority. This is a narrow RTL caption correction, not full DayPicker behavior acceptance.",
+      "Read artifacts/visual/cases/docs-date-picker-rtl-default/report.json (SHA256 73f42262eda1b8a481b89561f8caf091b4f55914ef2ab9965395d504b0746ab6): the complete single-case run passed with zero changed pixels. The author reports typecheck and the 1,083-file guard passed.",
+      "Reviewed the added pure CalendarDateLib operations, numeral mapping, unstyled mode, and custom Root/Chevron/WeekNumber dispatch. Dates remain ordinary JavaScript Date values. The current caption/grid/navigation paths read the supplied date operations. This is a manual native contract extension, not a complete DayPicker implementation.",
+      "Read artifacts/visual/batches/calendar/report.json (SHA256 5173660e52435eb5c88e554eab063dee92694e7f5bd372388b71f52dc0331ced): the run is complete with no source changes, 11 exact Gregorian cases and one failed docs-calendar-hijri-default case. That case failed in the original React font import before comparison. The report is not a pass; Persian behavior remains unproved."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/calendar.tsx",
+      "blob": "568ab9fd00a03d1651d1b42cb8915eed282cf1a4",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Original registry or engine API reference; this is a separate native implementation.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator",
+    "missingExternalSource": "The react-day-picker engine source is not pinned as source blobs in these clones."
+  }
+}

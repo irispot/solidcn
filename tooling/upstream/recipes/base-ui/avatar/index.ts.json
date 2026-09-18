@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/avatar/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/avatar/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": ["overrides/avatar-public-types.json"],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../structure",
+    "nativeTypes": "omit",
+    "expectedTypeSurface": [
+      {
+        "module": "./root/AvatarRoot",
+        "kind": "star"
+      },
+      {
+        "module": "./image/AvatarImage",
+        "kind": "star"
+      },
+      {
+        "module": "./fallback/AvatarFallback",
+        "kind": "star"
+      }
+    ]
+  },
+  "scope": "Public export declarations and an exact-context native Avatar type export. Names come from upstream declarations and route to an explicit native group. A change to the upstream type export surface fails for review. This does not generate component behavior."
+}

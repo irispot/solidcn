@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/select/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/select/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": ["overrides/select-public-types.json"],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../selection",
+    "nativeTypes": [
+      {
+        "public": "SelectRootProps"
+      }
+    ],
+    "expectedTypeSurface": [
+      {
+        "module": "./root/SelectRoot",
+        "kind": "star"
+      },
+      {
+        "module": "./label/SelectLabel",
+        "kind": "star"
+      },
+      {
+        "module": "./trigger/SelectTrigger",
+        "kind": "star"
+      },
+      {
+        "module": "./value/SelectValue",
+        "kind": "star"
+      },
+      {
+        "module": "./icon/SelectIcon",
+        "kind": "star"
+      },
+      {
+        "module": "./portal/SelectPortal",
+        "kind": "star"
+      },
+      {
+        "module": "./backdrop/SelectBackdrop",
+        "kind": "star"
+      },
+      {
+        "module": "./positioner/SelectPositioner",
+        "kind": "star"
+      },
+      {
+        "module": "./popup/SelectPopup",
+        "kind": "star"
+      },
+      {
+        "module": "./list/SelectList",
+        "kind": "star"
+      },
+      {
+        "module": "./item/SelectItem",
+        "kind": "star"
+      },
+      {
+        "module": "./item-indicator/SelectItemIndicator",
+        "kind": "star"
+      },
+      {
+        "module": "./item-text/SelectItemText",
+        "kind": "star"
+      },
+      {
+        "module": "./arrow/SelectArrow",
+        "kind": "star"
+      },
+      {
+        "module": "./scroll-down-arrow/SelectScrollDownArrow",
+        "kind": "star"
+      },
+      {
+        "module": "./scroll-up-arrow/SelectScrollUpArrow",
+        "kind": "star"
+      },
+      {
+        "module": "./group/SelectGroup",
+        "kind": "star"
+      },
+      {
+        "module": "./group-label/SelectGroupLabel",
+        "kind": "star"
+      },
+      {
+        "module": "./separator/SelectSeparator",
+        "kind": "star"
+      }
+    ]
+  },
+  "scope": "Public export declarations only. Names come from upstream declarations and route to an explicit native group. The current native type policy is retained, not certified as equivalent; changes to the upstream type export surface fail for review. This does not generate component behavior."
+}

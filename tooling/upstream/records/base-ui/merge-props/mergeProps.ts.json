@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/merge-props/mergeProps.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "015ff3f236152c3bc55881243537ff6d474f73a9f2d7ed134fd9865c4b2b322a",
+  "classification": "manual-native-utility",
+  "mappingScope": "Family-level review relationship. It is not an exact function or copied-source mapping.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": []
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/merge-props/index.ts",
+      "blob": "e03df598cb287a0228cabb37f2a01e50cb8b2aa1",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/merge-props/mergeProps.ts",
+      "blob": "ec1cb4a2036be9a23e5eb22c07005698d1ebb65b",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Family-level review relationship. It is not an exact function or copied-source mapping.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

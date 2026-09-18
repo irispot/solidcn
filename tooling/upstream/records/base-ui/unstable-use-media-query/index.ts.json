@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/unstable-use-media-query/index.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "523283f428ece3e01a418fdb30b46f5ff5192b596303101a4ce1b93cc3a0596e",
+  "classification": "generated-public-entry-with-manual-maintenance",
+  "mappingScope": "Public export reference only.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": ["The native public entry exports the pinned UseMediaQueryOptions and UseMediaQueryState names. Native client and server option checks pass; full original behavior review remains pending."]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/unstable-use-media-query/index.ts",
+      "blob": "d023b7e1be6194994e38a14cf6499694ca683af3",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Public export reference only.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

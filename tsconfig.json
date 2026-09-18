@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "preserve",
+    "jsxImportSource": "@solidjs/web",
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowImportingTsExtensions": true,
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "types": ["node"],
+    "paths": {
+      "@solid-cn/base-ui": ["./base-ui/packages/solid/src/index.ts"],
+      "@solid-cn/base-ui/*": ["./base-ui/packages/solid/src/*/index.ts"],
+      "@solid-cn/ui/*": ["./shadcn-ui/packages/solid/src/*"]
+    }
+  },
+  "include": ["base-ui/packages/solid/src", "shadcn-ui/packages/solid/src", "examples"],
+  "exclude": ["node_modules", "**/dist/**"]
+}

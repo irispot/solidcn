@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Export the native Tabs component state and prop types from the public Tabs module.",
+  "replacements": [
+    {
+      "find": "export { Tabs } from '../structure';\n",
+      "replace": "export { Tabs } from '../structure';\nexport type * from './types';\n",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

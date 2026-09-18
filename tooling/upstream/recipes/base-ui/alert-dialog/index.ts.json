@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/alert-dialog/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/alert-dialog/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": [],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../overlays",
+    "nativeTypes": "omit",
+    "expectedTypeSurface": [
+      {
+        "module": "./root/AlertDialogRoot",
+        "kind": "star"
+      },
+      {
+        "module": "../dialog/backdrop/DialogBackdrop",
+        "kind": "named",
+        "local": "DialogBackdropProps",
+        "name": "AlertDialogBackdropProps"
+      },
+      {
+        "module": "../dialog/backdrop/DialogBackdrop",
+        "kind": "named",
+        "local": "DialogBackdropState",
+        "name": "AlertDialogBackdropState"
+      },
+      {
+        "module": "../dialog/close/DialogClose",
+        "kind": "named",
+        "local": "DialogCloseProps",
+        "name": "AlertDialogCloseProps"
+      },
+      {
+        "module": "../dialog/close/DialogClose",
+        "kind": "named",
+        "local": "DialogCloseState",
+        "name": "AlertDialogCloseState"
+      },
+      {
+        "module": "../dialog/description/DialogDescription",
+        "kind": "named",
+        "local": "DialogDescriptionProps",
+        "name": "AlertDialogDescriptionProps"
+      },
+      {
+        "module": "../dialog/description/DialogDescription",
+        "kind": "named",
+        "local": "DialogDescriptionState",
+        "name": "AlertDialogDescriptionState"
+      },
+      {
+        "module": "../dialog/popup/DialogPopup",
+        "kind": "named",
+        "local": "DialogPopupProps",
+        "name": "AlertDialogPopupProps"
+      },
+      {
+        "module": "../dialog/popup/DialogPopup",
+        "kind": "named",
+        "local": "DialogPopupState",
+        "name": "AlertDialogPopupState"
+      },
+      {
+        "module": "../dialog/portal/DialogPortal",
+        "kind": "named",
+        "local": "DialogPortalProps",
+        "name": "AlertDialogPortalProps"
+      },
+      {
+        "module": "../dialog/portal/DialogPortal",
+        "kind": "named",
+        "local": "DialogPortalState",
+        "name": "AlertDialogPortalState"
+      },
+      {
+        "module": "../dialog/title/DialogTitle",
+        "kind": "named",
+        "local": "DialogTitleProps",
+        "name": "AlertDialogTitleProps"
+      },
+      {
+        "module": "../dialog/title/DialogTitle",
+        "kind": "named",
+        "local": "DialogTitleState",
+        "name": "AlertDialogTitleState"
+      },
+      {
+        "module": "./trigger/AlertDialogTrigger",
+        "kind": "star"
+      },
+      {
+        "module": "../dialog/viewport/DialogViewport",
+        "kind": "named",
+        "local": "DialogViewportProps",
+        "name": "AlertDialogViewportProps"
+      },
+      {
+        "module": "../dialog/viewport/DialogViewport",
+        "kind": "named",
+        "local": "DialogViewportState",
+        "name": "AlertDialogViewportState"
+      }
+    ]
+  },
+  "scope": "Public export declarations only. Names come from upstream declarations and route to an explicit native group. The current native type policy is retained, not certified as equivalent; changes to the upstream type export surface fail for review. This does not generate component behavior."
+}

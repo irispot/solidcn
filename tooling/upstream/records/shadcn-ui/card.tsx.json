@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/card.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "097d8e1a5582ebcb65e5b81c11aafd3a961f33d64697d0053a2018585a286486",
+  "classification": "generated-wrapper-with-manual-fixes",
+  "mappingScope": "Registry source selected with Base first, legacy only if the Base file does not exist.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/card.tsx",
+      "blob": "2062884f29a8044fa48edf86605182eca29f8716",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/shadcn-ui/card.tsx.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/shadcn-ui/card.tsx.json",
+          "sha256": "ccc99e0875a41fbad99f2ccd921580176075ef8a7934d1ebde1f962ce296e502"
+        },
+        {
+          "path": "generators/simple-wrapper.mjs",
+          "sha256": "ac459abc4cc9f73ce066e79d58ef14a6389d15d5db44643811f1afaaef21a6e0"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        },
+        {
+          "path": "overrides/card-data-size.json",
+          "sha256": "2c935ced642e7ab533c2fab00e9fd340425e8317d668cf469a401ee98d48f09e"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "6306df1266f915f3a68a3c26e923d900b138b60018957d79dac76001e40b39b6",
+    "finalSha256": "097d8e1a5582ebcb65e5b81c11aafd3a961f33d64697d0053a2018585a286486",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/card-data-size.json",
+        "purpose": "Keep the existing native dataValue serialization at Card's data-size boundary. The supported size values are strings; their value is unchanged.",
+        "sha256": "2c935ced642e7ab533c2fab00e9fd340425e8317d668cf469a401ee98d48f09e"
+      }
+    ]
+  },
+  "manualException": null
+}

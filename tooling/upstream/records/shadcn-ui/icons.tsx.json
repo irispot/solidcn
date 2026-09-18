@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/icons.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "cabee872c80c1de9c304deb0ff7b858f45bc91140b411dc159bd7915f56fa800",
+  "classification": "manual-native-support",
+  "mappingScope": "API or integration reference; native helpers contain additional code.",
+  "nativeGeometryModule": "shadcn-ui/packages/solid/src/icon-data.ts",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Reviewed current renderer and literal data provenance. Native byte check: node tooling/generate-icons.mjs --check passed for 16 Lucide 0.474.0 icons. Behavior and candidate-ref replay remain pending."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/app/(app)/(create)/components/icon-placeholder.tsx",
+      "blob": "a383c7ac12a5a1870de23a092cc5d13f7a88fcd4",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "API or integration reference; native helpers contain additional code.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

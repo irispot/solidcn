@@ -1,0 +1,226 @@
+{
+  "accordion-demo": {
+    "states": [
+      {"name":"default"},
+      {"name":"returns-open","covers":["accordion"],"actions":[{"type":"click","selector":"[data-slot='accordion-trigger']:has-text('What is your return policy?')"},{"type":"wait","selector":"[data-slot='accordion-content']:has-text('Returns accepted')"}]}
+    ]
+  },
+  "command-demo": {
+    "states": [
+      {"name":"default"},
+      {"name":"billing-filtered","covers":["command"],"actions":[{"type":"fill","selector":"[data-slot='command-input']","value":"Billing"},{"type":"wait","selector":"[data-slot='command-item']:has-text('Billing')"},{"type":"wait","selector":"[data-slot='command-item']:has-text('Calendar')","state":"hidden"}]}
+    ]
+  },
+  "command-dialog": {
+    "states": [
+      {"name":"default"},
+      {"name":"keyboard-open","covers":["command","dialog"],"actions":[{"type":"press","selector":"body","value":"Control+j"},{"type":"wait","selector":"[data-slot='dialog-content']"}],"popups":["[data-slot='dialog-content']"]}
+    ]
+  },
+  "input-otp-demo": {
+    "states": [
+      {"name":"default"},
+      {"name":"typed","covers":["input-otp"],"actions":[{"type":"fill","selector":"input[data-slot='input-otp']","value":"654321"}]}
+    ]
+  },
+  "tabs-demo": {
+    "states": [
+      {"name":"default"},
+      {"name":"analytics","covers":["tabs"],"actions":[{"type":"click","selector":"[data-slot='tabs-trigger']:has-text('Analytics')"},{"type":"wait","selector":"[data-slot='tabs-content']:has-text('Page views are up')"}]}
+    ]
+  },
+  "toast-demo": {
+    "states": [
+      {"name":"default"},
+      {"name":"shown","covers":["toast"],"actions":[{"type":"click","selector":"button:has-text('Show Toast')"},{"type":"wait","selector":"[data-slot='toast']"}],"popups":["[data-slot='toast']"]}
+    ]
+  },
+  "message-scroller-group-chat": {
+    "states": [
+      {"name":"default"},
+      {"name":"open-tooltip","covers":["tooltip"],"actions":[{"type":"click","selector":"button:has-text('Add Rocky')"},{"type":"hover","selector":"button[aria-label='Reset conversation']:not([disabled])"},{"type":"wait","selector":"[data-slot='tooltip-content']"}],"popups":["[data-slot='tooltip-content']"]}
+    ]
+  },
+  "message-scroller-load-history": {
+    "states": [
+      {"name":"default"},
+      {"name":"open-tooltip","covers":["tooltip"],"actions":[{"type":"click","selector":"button:has-text('Load History')"},{"type":"hover","selector":"button[aria-label='Reset loaded messages']:not([disabled])"},{"type":"wait","selector":"[data-slot='tooltip-content']"}],"popups":["[data-slot='tooltip-content']"]}
+    ]
+  },
+  "message-scroller-streaming": {
+    "states": [
+      {"name":"default"},
+      {"name":"open-tooltip","covers":["tooltip"],"actions":[{"type":"click","selector":"button[type='submit']"},{"type":"wait","selector":"button[aria-label='Reset stream']:not([disabled])"},{"type":"hover","selector":"button[aria-label='Reset stream']"},{"type":"wait","selector":"[data-slot='tooltip-content']"}],"popups":["[data-slot='tooltip-content']"]}
+    ]
+  },
+  "drawer-dialog": {
+    "states": [
+      {"name":"default"},
+      {"name":"open-dialog","covers":["dialog"],"actions":[{"type":"click","selector":"[data-slot='dialog-trigger']"},{"type":"wait","selector":"[data-slot='dialog-content']"}],"popups":["[data-slot='dialog-content']"]},
+      {"name":"open-drawer","covers":["drawer"],"viewport":{"width":390,"height":844},"width":390,"actions":[{"type":"click","selector":"[data-slot='drawer-trigger']"},{"type":"wait","selector":"[data-slot='drawer-content']"}],"popups":["[data-slot='drawer-content']"]}
+    ]
+  },
+  "drawer-nested": {
+    "states": [
+      {"name":"default"},
+      {"name":"second-open","actions":[{"type":"click","selector":"[data-slot='drawer-trigger']:text-is('Open Drawer')"},{"type":"wait","selector":"[data-slot='drawer-content']:has(> [data-slot='drawer-header'] > [data-slot='drawer-title']:text-is('Drawer'))"},{"type":"click","selector":"[data-slot='drawer-trigger']:text-is('Open Nested Drawer')"},{"type":"wait","selector":"[data-slot='drawer-content']:has(> [data-slot='drawer-header'] > [data-slot='drawer-title']:text-is('Nested Drawer'))"}],"popups":["[data-slot='drawer-content']:has(> [data-slot='drawer-header'] > [data-slot='drawer-title']:text-is('Nested Drawer'))"]},
+      {"name":"third-open","actions":[{"type":"click","selector":"[data-slot='drawer-trigger']:text-is('Open Drawer')"},{"type":"wait","selector":"[data-slot='drawer-content']:has(> [data-slot='drawer-header'] > [data-slot='drawer-title']:text-is('Drawer'))"},{"type":"click","selector":"[data-slot='drawer-trigger']:text-is('Open Nested Drawer')"},{"type":"wait","selector":"[data-slot='drawer-content']:has(> [data-slot='drawer-header'] > [data-slot='drawer-title']:text-is('Nested Drawer'))"},{"type":"click","selector":"[data-slot='drawer-trigger']:text-is('Open Third Drawer')"},{"type":"wait","selector":"[data-slot='drawer-content']:has(> [data-slot='drawer-header'] > [data-slot='drawer-title']:text-is('Third Drawer'))"}],"popups":["[data-slot='drawer-content']:has(> [data-slot='drawer-header'] > [data-slot='drawer-title']:text-is('Third Drawer'))"]},
+      {"name":"fourth-open","actions":[{"type":"click","selector":"[data-slot='drawer-trigger']:text-is('Open Drawer')"},{"type":"wait","selector":"[data-slot='drawer-content']:has(> [data-slot='drawer-header'] > [data-slot='drawer-title']:text-is('Drawer'))"},{"type":"click","selector":"[data-slot='drawer-trigger']:text-is('Open Nested Drawer')"},{"type":"wait","selector":"[data-slot='drawer-content']:has(> [data-slot='drawer-header'] > [data-slot='drawer-title']:text-is('Nested Drawer'))"},{"type":"click","selector":"[data-slot='drawer-trigger']:text-is('Open Third Drawer')"},{"type":"wait","selector":"[data-slot='drawer-content']:has(> [data-slot='drawer-header'] > [data-slot='drawer-title']:text-is('Third Drawer'))"},{"type":"click","selector":"[data-slot='drawer-trigger']:text-is('Open Fourth Drawer')"},{"type":"wait","selector":"[data-slot='drawer-content']:has(> [data-slot='drawer-header'] > [data-slot='drawer-title']:text-is('Fourth Drawer'))"}],"popups":["[data-slot='drawer-content']:has(> [data-slot='drawer-header'] > [data-slot='drawer-title']:text-is('Fourth Drawer'))"]}
+    ]
+  },
+  "drawer-snap-points": {
+    "states": [
+      {"name":"default"},
+      {"name":"open-drawer","covers":["drawer"],"actions":[{"type":"click","selector":"[data-slot='drawer-trigger']"},{"type":"wait","selector":"[data-slot='drawer-content']"}],"popups":["[data-slot='drawer-content']"],"popupOverflow":{"[data-slot='drawer-content']":{"edges":["bottom"],"reason":"The original Drawer starts at the compact 31rem snap point. Its remaining content extends below the viewport until the user expands it."}}}
+    ]
+  },
+  "sidebar-rsc": {"states":[{"name":"default","actions":[{"type":"wait","selector":"a:has-text('Design Engineering')"}]}]},
+  "data-table-demo": {
+    "states": [
+      {"name": "default"},
+      {"name": "filtered", "actions": [{"type":"fill","selector":"input[placeholder='Filter emails...']","value":"ken"},{"type":"wait","selector":"tbody tr:has-text('ken99'):only-child"}]},
+      {"name": "sorted", "actions": [{"type":"click","selector":"button:has-text('Email')"},{"type":"wait","selector":"tbody tr:first-child:has-text('abe45')"}]},
+      {"name": "selected", "actions": [{"type":"click","selector":"tbody tr:first-child [role='checkbox']"},{"type":"wait","selector":"tbody tr:first-child[data-state='selected']"}]},
+      {"name": "columns-open", "actions": [{"type":"click","selector":"button:has-text('Columns')"},{"type":"wait","selector":"[role='menu']"}],"popups":["[role='menu']"]}
+    ]
+  },
+  "input-group-custom": {
+    "states": [
+      {"name":"default"},
+      {"name":"grown","actions":[{"type":"fill","selector":"textarea[data-slot='input-group-control']","value":"First line\nSecond line\nThird line\nFourth line\nFifth line\nSixth line"}]},
+      {"name":"cleared","actions":[{"type":"fill","selector":"textarea[data-slot='input-group-control']","value":"First\nSecond\nThird\nFourth\nFifth\nSixth"},{"type":"fill","selector":"textarea[data-slot='input-group-control']","value":""}]}
+    ]
+  },
+  "button-group-demo": {
+    "states": [
+      {
+        "name": "default"
+      },
+      {
+        "name": "open",
+        "actions": [
+          {
+            "type": "click",
+            "selector": "button[aria-label='More Options']"
+          },
+          {
+            "type": "wait",
+            "selector": "[role='menu']"
+          }
+        ],
+        "popups": ["[role='menu']"],
+        "covers": ["dropdown-menu"]
+      },
+      {
+        "name": "submenu",
+        "actions": [
+          {
+            "type": "click",
+            "selector": "button[aria-label='More Options']"
+          },
+          {
+            "type": "hover",
+            "selector": "[role='menuitem']:has-text('Label As')"
+          },
+          {
+            "type": "wait",
+            "selector": "[role='menuitemradio']"
+          }
+        ],
+        "popups": ["[role='menu']:has([role='menuitemradio'])"],
+        "covers": ["dropdown-menu"]
+      }
+    ]
+  },
+  "button-group-dropdown": {
+    "states": [
+      {
+        "name": "default"
+      },
+      {
+        "name": "open",
+        "actions": [
+          {
+            "type": "click",
+            "selector": "button[aria-haspopup='menu']"
+          },
+          {
+            "type": "wait",
+            "selector": "[role='menu']"
+          }
+        ],
+        "popups": ["[role='menu']"],
+        "covers": ["dropdown-menu"]
+      }
+    ]
+  },
+  "button-group-select": {
+    "states": [
+      {
+        "name": "default"
+      },
+      {
+        "name": "open",
+        "actions": [
+          {
+            "type": "click",
+            "selector": "[role='combobox']"
+          },
+          {
+            "type": "wait",
+            "selector": "[role='listbox']"
+          }
+        ],
+        "popups": ["[role='listbox']"],
+        "covers": ["select"]
+      }
+    ]
+  },
+  "button-group-popover": {
+    "states": [
+      {
+        "name": "default"
+      },
+      {
+        "name": "open",
+        "actions": [
+          {
+            "type": "click",
+            "selector": "button[aria-haspopup='dialog']"
+          },
+          {
+            "type": "wait",
+            "selector": "[role='dialog']"
+          }
+        ],
+        "popups": ["[role='dialog']"],
+        "covers": ["popover"]
+      }
+    ]
+  },
+  "button-group-rtl": {
+    "exportName": "ButtonGroupRtl",
+    "direction": "rtl",
+    "language": "ar",
+    "states": [
+      {
+        "name": "default"
+      },
+      {
+        "name": "open",
+        "actions": [
+          {
+            "type": "click",
+            "selector": "button[aria-haspopup='menu']"
+          },
+          {
+            "type": "wait",
+            "selector": "[role='menu']"
+          }
+        ],
+        "popups": ["[role='menu']"],
+        "covers": ["dropdown-menu"]
+      }
+    ]
+  }
+}

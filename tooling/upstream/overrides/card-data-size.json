@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Keep the existing native dataValue serialization at Card's data-size boundary. The supported size values are strings; their value is unchanged.",
+  "replacements": [
+    {
+      "find": "// Native Solid 2 port of the upstream Base UI registry.",
+      "replace": "import { dataValue } from './utils';\n// Native Solid 2 port of the upstream Base UI registry.",
+      "expectedOccurrences": 1
+    },
+    {
+      "find": "data-size={__props0.size === undefined ? 'default' : __props0.size}",
+      "replace": "data-size={dataValue(__props0.size === undefined ? 'default' : __props0.size)}",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

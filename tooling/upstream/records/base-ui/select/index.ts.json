@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/select/index.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "8cc1051b57cf8db2004a928b70e4ebf7ebddf5586ac3ce80f9f32b62b728d8f5",
+  "classification": "manual-native-public-entry",
+  "mappingScope": "Public export reference only.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/select/index.ts",
+      "blob": "87c2bfa7bae00d5ec07a714f66f0a2b0a02c6dac",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/base-ui/select/index.ts.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/base-ui/select/index.ts.json",
+          "sha256": "31c525b09ffd6c5db743412a580a226b5e44beb2dd4660622ad0b5033c7439ad"
+        },
+        {
+          "path": "generators/base-entry.mjs",
+          "sha256": "e8e74928397ba79b917c73974fe3b62edd3feba7163fe249c0ad0898975f52dd"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        },
+        {
+          "path": "overrides/select-public-types.json",
+          "sha256": "c0312888126ef24519e82d3dc0d694b458361956141255861c73904e7343b97b"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "02548ac83548bb10ffcef69fedc7c151027d212706f721de131b597a1bef3678",
+    "finalSha256": "8cc1051b57cf8db2004a928b70e4ebf7ebddf5586ac3ce80f9f32b62b728d8f5",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/select-public-types.json",
+        "purpose": "Export the implemented native Select part and root action/event types.",
+        "sha256": "c0312888126ef24519e82d3dc0d694b458361956141255861c73904e7343b97b"
+      }
+    ]
+  },
+  "manualException": null
+}

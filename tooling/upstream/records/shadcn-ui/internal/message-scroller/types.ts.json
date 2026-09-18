@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/internal/message-scroller/types.ts",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "1739b340a6ec2e0a2590d30ed5ec2f75a075e42e6830dd03daca2d81aba3e259",
+  "classification": "manual-solid-type-shim",
+  "mappingScope": "Only the geometry constants and framework-neutral types are needed; no React types are copied.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": ["Only the constants and types imported by the copied geometry module are defined here. The original React test still runs in both routes."]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/message-scroller/types.ts",
+      "blob": "7959990d925c01ef30d025c9235210453fbcfec4",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Only the geometry constants and framework-neutral types are needed; no React types are copied.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

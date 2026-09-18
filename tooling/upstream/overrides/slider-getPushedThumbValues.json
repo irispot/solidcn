@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Use native-local dependencies in getPushedThumbValues. No algorithm edits.",
+  "replacements": [
+    {
+      "find": "import { clamp } from '@base-ui/utils/clamp';",
+      "replace": "import { clamp } from './clamp';",
+      "expectedOccurrences": 1
+    }
+  ]
+}

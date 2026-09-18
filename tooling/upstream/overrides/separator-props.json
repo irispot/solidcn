@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "purpose": "The native Solid separator exports a component, not the React namespace Props type. Use the component's native props type.",
+  "replacements": [
+    {
+      "find": "__props0: SeparatorPrimitive.Props",
+      "replace": "__props0: ComponentProps<typeof SeparatorPrimitive>",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

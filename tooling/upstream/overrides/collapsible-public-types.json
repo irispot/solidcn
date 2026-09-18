@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Export the native Collapsible public component and state types from its public module.",
+  "replacements": [
+    {
+      "find": "export { Collapsible } from '../structure';\n",
+      "replace": "export { Collapsible } from '../structure';\nexport type CollapsibleRoot = typeof import('../structure').Collapsible.Root;\nexport type CollapsibleTrigger = typeof import('../structure').Collapsible.Trigger;\nexport type CollapsiblePanel = typeof import('../structure').Collapsible.Panel;\nexport type {\n  CollapsiblePanelProps,\n  CollapsiblePanelState,\n  CollapsibleRootChangeEventDetails,\n  CollapsibleRootChangeEventReason,\n  CollapsibleRootProps,\n  CollapsibleRootState,\n  CollapsibleTriggerProps,\n  CollapsibleTriggerState,\n} from '../structure';\n",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

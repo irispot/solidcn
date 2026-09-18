@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Export the implemented native Autocomplete part and root action/event types.",
+  "replacements": [
+    {
+      "find": "  FilterOptions as AutocompleteFilterOptions,\n} from '../selection';\n",
+      "replace": "  FilterOptions as AutocompleteFilterOptions,\n} from '../selection';\nexport type {\n  AutocompleteClearProps,\n  AutocompleteClearState,\n  AutocompleteIconProps,\n  AutocompleteIconState,\n  AutocompleteInputGroupProps,\n  AutocompleteInputGroupState,\n  AutocompleteInputProps,\n  AutocompleteInputState,\n  AutocompleteItemProps,\n  AutocompleteItemState,\n  AutocompleteListProps,\n  AutocompleteListState,\n} from '../selection';\n",
+      "expectedOccurrences": 1
+    },
+    {
+      "find": "  AutocompleteListState,\n} from '../selection';\n",
+      "replace": "  AutocompleteListState,\n  AutocompleteRootActions,\n  AutocompleteRootChangeEventDetails,\n  AutocompleteRootChangeEventReason,\n  AutocompleteRootHighlightEventDetails,\n  AutocompleteRootHighlightEventReason,\n} from '../selection';\n",
+      "expectedOccurrences": 1
+    },
+    {
+      "find": "export type {\n  AutocompleteClearProps,",
+      "replace": "export type {\n  AutocompleteArrowProps,\n  AutocompleteArrowState,\n  AutocompleteBackdropProps,\n  AutocompleteBackdropState,\n  AutocompleteClearProps,",
+      "expectedOccurrences": 1
+    },
+    {
+      "find": "  AutocompleteRootHighlightEventReason,\n} from '../selection';",
+      "replace": "  AutocompleteRootHighlightEventReason,\n  AutocompletePopupProps,\n  AutocompletePopupState,\n  AutocompletePositionerProps,\n  AutocompletePositionerState,\n} from '../selection';",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

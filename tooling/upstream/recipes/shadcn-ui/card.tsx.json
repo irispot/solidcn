@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/card.tsx",
+  "generator": "generators/simple-wrapper.mjs",
+  "generatorInputs": ["apps/v4/registry/bases/base/ui/card.tsx"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": ["overrides/card-data-size.json"],
+  "dependencies": ["typescript", "prettier"],
+  "scope": "Seven stateless native card wrappers, one literal default prop, and an explicit data-attribute serialization override."
+}

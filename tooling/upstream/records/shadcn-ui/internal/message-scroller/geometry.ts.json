@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/internal/message-scroller/geometry.ts",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "52a11fc0ece219f48e8388a3c6226c52b27e8157d4611b1eae07a3a5c222e035",
+  "classification": "exact-framework-neutral-source-copy",
+  "mappingScope": "Exact pinned source bytes; adjacent types are Solid-owned.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/message-scroller/geometry.ts",
+      "blob": "c3137f68e659c9640d45f377f82c2c63ddd80e2e",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/shadcn-ui/internal/message-scroller/geometry.ts.json",
+    "toolchain": {
+      "files": [
+        { "path": "replay.mjs", "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32" },
+        { "path": "replay-lib.mjs", "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb" },
+        { "path": "recipes/shadcn-ui/internal/message-scroller/geometry.ts.json", "sha256": "1c9e400fb693ac9671051a1045b792170a3abc72c2bf094efad4d83d9c8430b4" },
+        { "path": "generators/exact-source-copy.mjs", "sha256": "71a6f8290e24a0a8da0e021a58fa9fdea27737bed42cb3b3a6c02fa3b3ec938c" }
+      ],
+      "dependencies": {},
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "52a11fc0ece219f48e8388a3c6226c52b27e8157d4611b1eae07a3a5c222e035",
+    "finalSha256": "52a11fc0ece219f48e8388a3c6226c52b27e8157d4611b1eae07a3a5c222e035",
+    "equalsNative": true,
+    "overrides": []
+  },
+  "manualException": null
+}

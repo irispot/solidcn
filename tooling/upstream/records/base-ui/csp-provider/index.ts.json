@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/csp-provider/index.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "7738414100ecbfd52cdde7f1f774bed4a047e3017500f8e70c4acc8ba461238b",
+  "classification": "generated-public-entry-with-manual-maintenance",
+  "mappingScope": "Public export reference only.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration and the exact CSPProvider type export override equal the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/csp-provider/index.ts",
+      "blob": "267a7f66f4471f2ca05357e598c0fcf1c9a59158",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/base-ui/csp-provider/index.ts.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/base-ui/csp-provider/index.ts.json",
+          "sha256": "030024f68f1a975cc8a7d9bbdf00a759394a2889b45372ab3afbc14ce29d58ab"
+        },
+        {
+          "path": "generators/base-entry.mjs",
+          "sha256": "e8e74928397ba79b917c73974fe3b62edd3feba7163fe249c0ad0898975f52dd"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        },
+        {
+          "path": "overrides/csp-provider-public-types.json",
+          "sha256": "a0f45f61b6c5f3f593bc1ce7f7ab4a8c06676d2e87675ee1f9308e4a2a5ab7c3"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "073b99ca150887205c0cce68b88ba98ca132dc06beae6692089ff58ce364f6ad",
+    "finalSha256": "7738414100ecbfd52cdde7f1f774bed4a047e3017500f8e70c4acc8ba461238b",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/csp-provider-public-types.json",
+        "purpose": "Export the native CSPProvider prop and state types from its public module.",
+        "sha256": "a0f45f61b6c5f3f593bc1ce7f7ab4a8c06676d2e87675ee1f9308e4a2a5ab7c3"
+      }
+    ]
+  },
+  "manualException": null
+}

@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/scroll-area/types.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "590e4ccb08494fb07dff0e01f423704f17fbcda93b291aa18ab0ec8a8a7068b7",
+  "classification": "manual-native-public-types",
+  "mappingScope": "Pinned family type declarations translated to native Solid types; name coverage is not type or behavior acceptance.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Reviewed the pinned scroll-area family type declarations and the native Solid type module. The public source-name audit and workspace typecheck cover the declared names. This manual record does not prove type-field, behavior, or pixel parity."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/scroll-area/constants.ts",
+      "blob": "1372a9533a6b8b9c03149ff887241b172792b006",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/content/ScrollAreaContent.tsx",
+      "blob": "93a8870f8a11b28cf67a73c7fd3f1f6288e91b2b",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/content/ScrollAreaContentDataAttributes.ts",
+      "blob": "fec5e1687b8643fc5ff5a73f92a7ea12b667db80",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/corner/ScrollAreaCorner.tsx",
+      "blob": "6d567d67caa06c713680663ad0a841d017831356",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/index.parts.ts",
+      "blob": "a754e48d8eee11b80e332de772e611f4895c821e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/index.ts",
+      "blob": "4ea5801d9e7e546b00093e05d02064aad4aea3c6",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/root/ScrollAreaRoot.tsx",
+      "blob": "a6f44c2a8dfcfca8975157efc6c2d980fbdd42c0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/root/ScrollAreaRootContext.ts",
+      "blob": "0d04449ef1c93cfae44abbe61f77d7db2a73287e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/root/ScrollAreaRootCssVars.ts",
+      "blob": "2fd5261f27181fca877b37a70e8291bd4139154e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/root/ScrollAreaRootDataAttributes.ts",
+      "blob": "fec5e1687b8643fc5ff5a73f92a7ea12b667db80",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/root/stateAttributes.ts",
+      "blob": "7bfecddc28fd88426d1bef9c5f42f4231b5d0b08",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/scrollbar/ScrollAreaScrollbar.tsx",
+      "blob": "2ab99b7051c477e3a002c84578b6b16c8aad1eec",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/scrollbar/ScrollAreaScrollbarContext.ts",
+      "blob": "24513ccebc84dad87a1033608aaf2d3332053abc",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/scrollbar/ScrollAreaScrollbarCssVars.ts",
+      "blob": "f494bbd308ca7d16530bcac7fa080a3d4656de37",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/scrollbar/ScrollAreaScrollbarDataAttributes.ts",
+      "blob": "60fd02c70020d186243af9bc3302138e140708ed",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/thumb/ScrollAreaThumb.tsx",
+      "blob": "cf53bae8110a28ab87de7576ddccbd9785e753b7",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/thumb/ScrollAreaThumbDataAttributes.ts",
+      "blob": "60a7ab224d6d0f39c54d8d7963ee2f1a81aab159",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/utils/getOffset.ts",
+      "blob": "9858533cc1dbb5269857bb432be99bde3041d4bf",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/viewport/ScrollAreaViewport.tsx",
+      "blob": "d817198769520c74a323b92955907c770688f20c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/viewport/ScrollAreaViewportContext.ts",
+      "blob": "0189130ddad7b6f688c38b1007ea95cd91a85534",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/viewport/ScrollAreaViewportCssVars.ts",
+      "blob": "ca4dcd321603301789e244f9dbf5f3a65de26159",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/scroll-area/viewport/ScrollAreaViewportDataAttributes.ts",
+      "blob": "fec5e1687b8643fc5ff5a73f92a7ea12b667db80",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Pinned family type declarations translated to native Solid types; name coverage is not type or behavior acceptance.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "migrationComplete": false,
+  "solidVersion": "2.0.0-rc.8",
+  "originalFilesPreserved": 1083,
+  "originalTestsExecutedAgainstSolid": {
+    "scope": "The numbers below are the original verify:dual baseline only. Other routed suites have separate reports and are not included here.",
+    "utilityFiles": 1,
+    "utilityTests": 35,
+    "componentFiles": 19,
+    "componentTestsPassed": 362,
+    "componentTestsFailed": 0,
+    "componentTestsSkippedByOriginalSuite": 8
+  },
+  "fullComponentParity": "not-established",
+  "knownGaps": [
+    "React fixture and renderer adapters for the unchanged component suites",
+    "Nested navigation menus, safe hover paths, and cross-content exit transitions",
+    "Drawer snap points, nested gesture arbitration and indent behavior",
+    "Virtualized and grid selection behavior",
+    "Complete public prop types and callback ordering rules",
+    "Complete third-party chart, calendar, form and command engine options",
+    "Complete browser, accessibility, RTL, touch and hydration parity"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/combobox/index.ts",
+  "repository": "base-ui",
+  "pinnedCommit": "ca182273cc0013bacd443e4ab03d4bd4f8cc1f35",
+  "nativeSha256": "35876a781abe76c754bf28fb606884ad9fb5f483d3ff4cc6b3a4ef3decbd57a7",
+  "classification": "manual-native-public-entry",
+  "mappingScope": "Public export reference only.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "packages/react/src/combobox/index.ts",
+      "blob": "1f322f2c85530cbf818920eb444c9f231e1672c1",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/base-ui/combobox/index.ts.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/base-ui/combobox/index.ts.json",
+          "sha256": "989f4dc394e9bfa6eac59d07d33162be0c53389ba0b845d6e874705956882ac9"
+        },
+        {
+          "path": "generators/base-entry.mjs",
+          "sha256": "e8e74928397ba79b917c73974fe3b62edd3feba7163fe249c0ad0898975f52dd"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        },
+        {
+          "path": "overrides/combobox-public-types.json",
+          "sha256": "03680d9a24eef64049bc1c573a97ce0acf8e8f196655a845d0e0995d0c9cf6f1"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "2f07e21c749e2a9ed051ee320f360359efb3928e54b453baacf97aa7b5e3119d",
+    "finalSha256": "35876a781abe76c754bf28fb606884ad9fb5f483d3ff4cc6b3a4ef3decbd57a7",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/combobox-public-types.json",
+        "purpose": "Export the implemented native Combobox part and root action/event types.",
+        "sha256": "03680d9a24eef64049bc1c573a97ce0acf8e8f196655a845d0e0995d0c9cf6f1"
+      }
+    ]
+  },
+  "manualException": null
+}

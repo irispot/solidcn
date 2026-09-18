@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/drawer/index.ts",
+  "generator": "generators/base-entry.mjs",
+  "generatorInputs": ["packages/react/src/drawer/index.ts"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": [],
+  "dependencies": ["typescript", "prettier"],
+  "options": {
+    "nativeModule": "../overlays",
+    "nativeTypes": "omit",
+    "expectedTypeSurface": [
+      {
+        "module": "./root/DrawerRoot",
+        "kind": "star"
+      },
+      {
+        "module": "./provider/DrawerProvider",
+        "kind": "star"
+      },
+      {
+        "module": "./indent/DrawerIndent",
+        "kind": "star"
+      },
+      {
+        "module": "./indent-background/DrawerIndentBackground",
+        "kind": "star"
+      },
+      {
+        "module": "./trigger/DrawerTrigger",
+        "kind": "star"
+      },
+      {
+        "module": "./portal/DrawerPortal",
+        "kind": "star"
+      },
+      {
+        "module": "./popup/DrawerPopup",
+        "kind": "star"
+      },
+      {
+        "module": "./swipe-area/DrawerSwipeArea",
+        "kind": "star"
+      },
+      {
+        "module": "./content/DrawerContent",
+        "kind": "star"
+      },
+      {
+        "module": "./backdrop/DrawerBackdrop",
+        "kind": "star"
+      },
+      {
+        "module": "./viewport/DrawerViewport",
+        "kind": "star"
+      },
+      {
+        "module": "./title/DrawerTitle",
+        "kind": "star"
+      },
+      {
+        "module": "./description/DrawerDescription",
+        "kind": "star"
+      },
+      {
+        "module": "./close/DrawerClose",
+        "kind": "star"
+      },
+      {
+        "module": "./virtual-keyboard-provider/DrawerVirtualKeyboardProvider",
+        "kind": "star"
+      }
+    ]
+  },
+  "scope": "Public export declarations only. Names come from upstream declarations and route to an explicit native group. The current native type policy is retained, not certified as equivalent; changes to the upstream type export surface fail for review. This does not generate component behavior."
+}

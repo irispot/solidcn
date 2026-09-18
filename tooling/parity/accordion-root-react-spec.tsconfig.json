@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "baseUrl": "../..",
+    "paths": {
+      "@base-ui/react/*": ["./base-ui/packages/react/src/*"],
+      "@base-ui/utils/*": ["./base-ui/packages/utils/src/*"],
+      "#test-utils": ["./base-ui/packages/utils/src/testUtils.ts"]
+    }
+  },
+  "files": [
+    "../../base-ui/packages/react/src/accordion/root/AccordionRoot.spec.tsx",
+    "../../base-ui/packages/react/src/global.d.ts"
+  ],
+  "include": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/carousel.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "08a72cc70bd89110b1710b7a70b5faccbcfecb21d344cd7731fa2280160a60fb",
+  "classification": "manual-native-engine-replacement",
+  "mappingScope": "Original registry or engine API reference; this is a separate native implementation.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Read the current Carousel code: it creates Embla on the content node, updates previous and next button state on select and reInit, exposes the API, and destroys the instance on cleanup. The author reports a passing typecheck, 10 Shadcn browser checks, and a targeted nested-input ArrowRight check that moved Embla from slide 0 to 1. These are local checks; full Carousel behavior and the external engine source remain pending."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/carousel.tsx",
+      "blob": "67bb25fa3ad927545ee1b80189cd7e9c9c3ca96a",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Original registry or engine API reference; this is a separate native implementation.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator",
+    "missingExternalSource": "The embla-carousel-react engine source is not pinned as source blobs in these clones."
+  }
+}

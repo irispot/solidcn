@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/chart.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "3669345b4f43b267c14b1894528eccc053e03f3a4b55db3c4cb05ddc04526960",
+  "classification": "manual-native-engine-replacement",
+  "mappingScope": "Original registry or engine API reference; this is a separate native implementation.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Read Line and Area: each mounted Line registers its series with the plot and removes it on cleanup; Area renders Line for its shared series. The author reports a passing typecheck and 10 Shadcn browser cases, including tooltip. Full chart behavior remains pending.",
+      "Reviewed the current manual chart milestone: measured container size, grouped bar spacing and rectangle geometry, numeric domain/tick rules, XAxis constraints, HTML legend measurement, and measured tooltip/cursor placement. Native code retains a complete Recharts MIT notice. These are manual adaptations, not generator replay or full Recharts behavior acceptance.",
+      "The author reports six of eight default image cases and four first/last-category LTR/RTL hover states exact. The remaining default cases require separate source-converter work. Stacking, polar charts, full animation behavior, and the complete Recharts API remain unproved. These image results are not a complete chart contract.",
+      "External source observation: installed recharts 3.8.0 at tooling/visual/apps/reference/node_modules/recharts. SHA256 package.json=6372ffc286cfc8a73cb32a15077600f23b3231e0b47c90d6f5712953f759ee7a; LICENSE=2d3aa48a8d1d3b93093680e8e68d3a64cfb590c3ade377ffcaefc69dac7c2ce5; es6/state/selectors/combiners/combineAllBarPositions.js=ba725563a382974e02633be2205fe17aff664dcbcb34247c5188560b254c27f2; es6/cartesian/Bar.js=8ceddf08c486aa96f29cfe5a3a2c92b9b9bedf642af90560e862652960e4d7d1; es6/shape/Rectangle.js=f0ec75a62f5732b7adb9f4f3f9e3747e06f70cc2d50dd4fc388610d24397d226; es6/util/scale/getNiceTickValues.js=a21745939e96865cf388e2581fc2ee3799116225d71734057d54d6ac549ba3d7; es6/cartesian/getTicks.js=52caa49fa7da24e3f505b049c41b68bdfe36b7982595f3a101c479691f09f39c; es6/util/tooltip/translate.js=f34940ec284825e7be7c1b5f747eeab9092d2f1d7339fe84cea75475e834b62a. These external files are not Git-ref replay inputs or automatically verified by the current recipe engine.",
+      "The legacy chart wrapper was also read as an API/style reference: apps/v4/registry/new-york-v4/ui/chart.tsx at pinned blob f4971bf60d74ac43b48d4c86982a6cacb56bde37. The automatic provenance mapping still lists the canonical Base wrapper only."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/chart.tsx",
+      "blob": "fa460c956066fbc5720ebe4203ba7353628201d5",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Original registry or engine API reference; this is a separate native implementation.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator",
+    "missingExternalSource": "The recharts engine source is not pinned as source blobs in these clones."
+  }
+}

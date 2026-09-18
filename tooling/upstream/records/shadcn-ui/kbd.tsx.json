@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/kbd.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "f4c37b16ca5d931a04dfe1c937d1f9e76fdf795842d8488bae553d3d69ea6b74",
+  "classification": "generated-wrapper-with-manual-fixes",
+  "mappingScope": "Registry source selected with Base first, legacy only if the Base file does not exist.",
+  "review": {
+    "state": "replay-equality-confirmed",
+    "acceptedBehavior": false,
+    "evidence": [
+      "node tooling/upstream/replay.mjs check",
+      "Pinned source regeneration equals the recorded native bytes. This is not behavior or visual acceptance."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/kbd.tsx",
+      "blob": "1fc8d9c188183e3df985d9a1f454ca692186790f",
+      "mode": "100644",
+      "review": "replay-input-equality-confirmed"
+    }
+  ],
+  "replay": {
+    "recipeFile": "recipes/shadcn-ui/kbd.tsx.json",
+    "toolchain": {
+      "files": [
+        {
+          "path": "replay.mjs",
+          "sha256": "f40598034e900c70dea3d38d0c51288b4899c09963f661d2b76e402751854e32"
+        },
+        {
+          "path": "replay-lib.mjs",
+          "sha256": "005c285f4bc1b79a2f75a900302997283a7d30fb85502838664765a4606adedb"
+        },
+        {
+          "path": "recipes/shadcn-ui/kbd.tsx.json",
+          "sha256": "11ab2810aa3b83474675b36a38a9cebf4880afb1c572c0e1d542a7edc38c46f1"
+        },
+        {
+          "path": "generators/simple-wrapper.mjs",
+          "sha256": "ac459abc4cc9f73ce066e79d58ef14a6389d15d5db44643811f1afaaef21a6e0"
+        },
+        {
+          "path": "generators/format.json",
+          "sha256": "1ed256b071c0aacc1dfa91e5968b58c111e645a2c1c98b3be1d2cd64d0bca21c"
+        },
+        {
+          "path": "overrides/kbd-props.json",
+          "sha256": "47e26769fd69a7452fbced5ae5f26313c4235058132d2e8d6174ca98384e4931"
+        }
+      ],
+      "dependencies": {
+        "typescript": "5.9.3",
+        "prettier": "3.9.7"
+      },
+      "dependencyLockSha256": "fda5617c4f03364eb41b438f7c9fd582d720aab5363f5bba3e182d336e5b7fcf"
+    },
+    "generatedSha256": "91886f6a4aefb80f275290f48010cc381199762b7776d26d87bb78b3ca125ec5",
+    "finalSha256": "f4c37b16ca5d931a04dfe1c937d1f9e76fdf795842d8488bae553d3d69ea6b74",
+    "equalsNative": true,
+    "overrides": [
+      {
+        "path": "overrides/kbd-props.json",
+        "purpose": "KbdGroup renders a kbd element. Keep the native prop type aligned with that element instead of the upstream div annotation.",
+        "sha256": "47e26769fd69a7452fbced5ae5f26313c4235058132d2e8d6174ca98384e4931"
+      }
+    ]
+  },
+  "manualException": null
+}

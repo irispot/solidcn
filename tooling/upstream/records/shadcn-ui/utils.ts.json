@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/utils.ts",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "dcabd82d463978c558153d656ad91fc504211264ba812555e997db6ee9dc2bd3",
+  "classification": "manual-native-support",
+  "mappingScope": "API or integration reference; native helpers contain additional code.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Observed and reviewed omitProps/dataValue conversion of boolean data-* and aria-* spread attributes to literal true/false strings. The root agent reported a React/native invalid-textarea attribute probe. Full utility and consumer behavior acceptance remains pending."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/lib/utils.ts",
+      "blob": "f815ded4d7865413255682a8b1f8f95beb620d0a",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "API or integration reference; native helpers contain additional code.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

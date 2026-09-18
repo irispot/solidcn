@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/slider/utils/clamp.ts",
+  "generator": "generators/exact-source-copy.mjs",
+  "generatorInputs": [
+    "packages/utils/src/clamp.ts"
+  ],
+  "supportFiles": [],
+  "overrides": [],
+  "dependencies": [],
+  "scope": "Replay the pinned framework-neutral slider helper. Keep runtime imports local to the native Solid package."
+}

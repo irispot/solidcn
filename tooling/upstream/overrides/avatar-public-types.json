@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Export the native Avatar component state and prop types from the public Avatar module.",
+  "replacements": [
+    {
+      "find": "export { Avatar } from '../structure';\n",
+      "replace": "export { Avatar } from '../structure';\nexport type {\n  AvatarFallback,\n  AvatarFallbackProps,\n  AvatarFallbackState,\n  AvatarImage,\n  AvatarImageProps,\n  AvatarImageState,\n  AvatarRoot,\n  AvatarRootProps,\n  AvatarRootState,\n  ImageLoadingStatus,\n} from '../structure';\n",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

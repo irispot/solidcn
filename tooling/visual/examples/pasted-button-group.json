@@ -1,0 +1,18 @@
+{
+  "component": "button-group",
+  "docUrl": "https://ui.shadcn.com/docs/components/base/button-group",
+  "states": [
+    { "name": "default" },
+    {
+      "name": "clicked",
+      "actions": [
+        { "type": "click", "selector": "button:has-text('Archive')" },
+        { "type": "wait", "selector": "button:has-text('Archived')" }
+      ]
+    },
+    {
+      "name": "focus",
+      "actions": [{ "type": "press", "selector": "body", "value": "Tab" }]
+    }
+  ]
+}

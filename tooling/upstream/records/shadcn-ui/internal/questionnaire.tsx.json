@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/internal/questionnaire.tsx",
+  "repository": "shadcn-ui",
+  "pinnedCommit": "f5bb039c749afd2d111ad970dfaa9ab30bd90b3b",
+  "nativeSha256": "61a71b3171ee00a997fe0d69529c99a2cbdcd3dee182673c11b53dab9b8866e1",
+  "classification": "manual-native-engine-replacement",
+  "mappingScope": "Original registry or engine API reference; this is a separate native implementation.",
+  "review": {
+    "state": "manual-review-pending",
+    "acceptedBehavior": false,
+    "evidence": [
+      "Reviewed navigation visibility, inert/tab-index state, user-click cancellation and Progress rendering through native useRender with live state getters. Reference: packages/react/src/questionnaire/components.tsx and use-questionnaire-root.ts. The author reports typecheck and the 1,083-file guard passed. Full Questionnaire behavior remains pending.",
+      "Read artifacts/visual/batches/questionnaire/report.json (SHA256 0fc729e4d4401392c93a731056fe3c97b47fd5fc2d5e1f3a9932bd8bd9b37dbe): all 15 cases had zero changed pixels, but the source-change guard failed. The complete run is INVALID for parity acceptance and is diagnostic only.",
+      "Routed the unchanged questionnaire-ssr.test.tsx server-rendering group through the native Solid primitive. All 9 selected original assertions pass in React and Solid. The native changes align initial item fallback, form state, shortcut limits, unstyled input and navigation output, and the pinned defaultChecked SSR limit.",
+      "Routed all 10 unchanged questionnaire-ssr.test.tsx hydration assertions through real Solid 2 RC server rendering and hydrate(). React and Solid each pass 10/10, with 9 matching filtered server cases, no failures, native hydration evidence in each case, and stable test/native source hashes. Native changes reserve matching server/client owner slots, register and clean up items/choices safely, preserve collection warning behavior and shortcut selection, and update fallback state when definitions change. This does not accept all Questionnaire behavior or the separate main/browser suites.",
+      "Routed all 53 unchanged questionnaire.test.tsx client assertions through the same source in React and native Solid 2 RC. Both pass 53/53 with no skips, native execution recorded in every case, and stable source hashes. The native implementation preserves selection, reset, keyboard, validation, DOM-order reconciliation, render callbacks, and shortcut behavior for this suite.",
+      "Routed all 23 unchanged questionnaire.browser.test.tsx assertions through React and native Solid 2 RC in Chromium. Both pass 23/23 with no skips, native execution in every Solid case, and stable source hashes in artifacts/unchanged-shadcn-questionnaire-browser-comparison.json. Native updates preserve controlled choice state after an intentional skip, focus a selected invalid freeform input, and restore native default values on reset. Other browser modules and visual screenshot parity remain separate scopes; this records behavioral browser assertions only."
+    ]
+  },
+  "sources": [
+    {
+      "path": "apps/v4/registry/bases/base/ui/questionnaire.tsx",
+      "blob": "59de4ea25facd1a4514a192eb08d6fe7987ca14e",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/questionnaire/collection.ts",
+      "blob": "b4c14b13ed94eedfad6425551c678f1e68022e70",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/questionnaire/components.tsx",
+      "blob": "0b0513a6946cc7e2c23f13aca152f4020a9cf85c",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/questionnaire/context.ts",
+      "blob": "74233db652b44d9542dd5f51a91fb18a6ae783c0",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/questionnaire/index.ts",
+      "blob": "2c110b09bbb07c03ace47c33428c5b3d4ef6ba33",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/questionnaire/types.ts",
+      "blob": "da3f4f6463711eaabb930f8e0b8526865d6cf755",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/questionnaire/use-questionnaire-choice.ts",
+      "blob": "089e91d9defd583931dc22b80bacf33cd0628fe9",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/questionnaire/use-questionnaire-input.ts",
+      "blob": "e357ae8419f87563143e9e3ed2b328c5af5dce00",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/questionnaire/use-questionnaire-item.ts",
+      "blob": "f7c828b6028ab44c6e29f6608aa37601e3a2ecce",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/questionnaire/use-questionnaire-root.ts",
+      "blob": "511957c4c7e3d693294a6d476ef252f39cc068c4",
+      "mode": "100644",
+      "review": "pending"
+    },
+    {
+      "path": "packages/react/src/questionnaire/utils.ts",
+      "blob": "86b50aa53a1fc6d12914dfd881f68a35dfc8eb13",
+      "mode": "100644",
+      "review": "pending"
+    }
+  ],
+  "replay": null,
+  "manualException": {
+    "reason": "Original registry or engine API reference; this is a separate native implementation.",
+    "retainLiveImplementation": true,
+    "sourceReview": "pending",
+    "behaviorTranslation": "not automatic",
+    "patchHistory": "not reconstructed; this hash is an observation, not a generator"
+  }
+}

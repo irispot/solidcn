@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Export native Solid Popover types from the family-local type module.",
+  "replacements": [
+    {
+      "find": "export { Popover } from '../overlays';\n",
+      "replace": "export { Popover } from '../overlays';\nexport type * from './types';\n",
+      "expectedOccurrences": 1
+    }
+  ],
+  "behaviorChange": false
+}

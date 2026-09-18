@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "module": "shadcn-ui/packages/solid/src/styles/style-lyra.css",
+  "generator": "generators/style.mjs",
+  "generatorInputs": ["apps/v4/registry/styles/style-lyra.css"],
+  "supportFiles": ["generators/format.json"],
+  "overrides": [],
+  "dependencies": ["prettier"],
+  "scope": "Pinned upstream CSS passed through the recorded formatter. This is not a native behavior translation."
+}

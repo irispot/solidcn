@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "module": "base-ui/packages/solid/src/slider/utils/getPushedThumbValues.ts",
+  "generator": "generators/exact-source-copy.mjs",
+  "generatorInputs": [
+    "packages/react/src/slider/utils/getPushedThumbValues.ts"
+  ],
+  "supportFiles": [],
+  "overrides": [
+    "overrides/slider-getPushedThumbValues.json"
+  ],
+  "dependencies": [],
+  "scope": "Replay the pinned framework-neutral slider helper. Keep runtime imports local to the native Solid package."
+}
